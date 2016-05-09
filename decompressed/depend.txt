@@ -1,0 +1,10 @@
+BitUtils.o: BitUtils.cc BitUtils.h
+FileInfo.o: FileInfo.cc FileInfo.h BitUtils.h Trie.h
+HuffmanCo.o: HuffmanCo.cc HuffmanCo.h BitUtils.h Debug.h FileInfo.h \
+ Trie.h PriorityList.h
+HuffmanDec.o: HuffmanDec.cc HuffmanDec.h BitUtils.h Debug.h FileInfo.h \
+ Trie.h HuffmanCo.h PriorityList.h
+PriorityList.o: PriorityList.cc PriorityList.h
+Trie.o: Trie.cc Trie.h
+main.o: main.cc main.h HuffmanCo.h BitUtils.h Debug.h FileInfo.h Trie.h \
+ PriorityList.h HuffmanDec.h

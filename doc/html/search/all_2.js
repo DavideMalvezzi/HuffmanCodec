@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['c',['c',['../structTrieItem.html#a3def553589ae0f8d6d23b0cdf7da24e4',1,'TrieItem']]],
+  ['char_5fset_5fsize',['CHAR_SET_SIZE',['../FileInfo_8h.html#adebebe79bb84190296da4c5d67e4e434',1,'FileInfo.h']]],
+  ['charkey',['CharKey',['../structCharKey.html',1,'']]],
+  ['charsetfreq',['charSetFreq',['../structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff',1,'FileInfo']]],
+  ['clearbit',['clearBit',['../BitUtils_8cc.html#ad354678ad3105fa9d6bfb68f02ec4fd5',1,'clearBit(word b, int bit):&#160;BitUtils.cc'],['../BitUtils_8h.html#ad354678ad3105fa9d6bfb68f02ec4fd5',1,'clearBit(word b, int bit):&#160;BitUtils.cc']]],
+  ['clearfilelist',['clearFileList',['../main_8cc.html#affc83df88722646ada6c05050c9a4288',1,'clearFileList():&#160;main.cc'],['../main_8h.html#affc83df88722646ada6c05050c9a4288',1,'clearFileList():&#160;main.cc']]],
+  ['clearfileview',['clearFileView',['../main_8cc.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24',1,'clearFileView():&#160;main.cc'],['../main_8h.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24',1,'clearFileView():&#160;main.cc']]],
+  ['col_5fcmp_5frateo',['COL_CMP_RATEO',['../main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468',1,'main.h']]],
+  ['col_5fcmp_5fsize',['COL_CMP_SIZE',['../main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe',1,'main.h']]],
+  ['col_5fname',['COL_NAME',['../main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24',1,'main.h']]],
+  ['col_5fsize',['COL_SIZE',['../main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2',1,'main.h']]],
+  ['col_5ftype',['COL_TYPE',['../main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442',1,'main.h']]],
+  ['compress',['COMPRESS',['../main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911a36e3418e8d662d2bdaa39409c84415b2',1,'main.h']]],
+  ['compressedfileheadersize',['compressedFileHeaderSize',['../HuffmanDec_8cc.html#ab01a95cd575564efa7800d7812ee334c',1,'HuffmanDec.cc']]],
+  ['compressfile',['compressFile',['../HuffmanCo_8cc.html#a75cdd32ca021fd11e1b95ece95c42d64',1,'compressFile(ofstream &amp;outputFile, FileInfo *fileInfo):&#160;HuffmanCo.cc'],['../HuffmanCo_8h.html#a75cdd32ca021fd11e1b95ece95c42d64',1,'compressFile(ofstream &amp;outputFile, FileInfo *fileInfo):&#160;HuffmanCo.cc']]],
+  ['compresstofile',['compressToFile',['../HuffmanCo_8cc.html#ac53c32ba2d1b0a98bea974586b6e1046',1,'compressToFile(const gchar *path, GSList *fileList):&#160;HuffmanCo.cc'],['../HuffmanCo_8h.html#ac53c32ba2d1b0a98bea974586b6e1046',1,'compressToFile(const gchar *path, GSList *fileList):&#160;HuffmanCo.cc']]],
+  ['comprsize',['comprSize',['../structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6',1,'FileInfo']]],
+  ['computefilekeywords',['computeFileKeywords',['../HuffmanCo_8cc.html#a6c42db933f93f373c8947f8a454c8b09',1,'computeFileKeywords(const gchar *path, gint *charSetFreq, Trie *&amp;keywordsTrie):&#160;HuffmanCo.cc'],['../HuffmanCo_8h.html#a6c42db933f93f373c8947f8a454c8b09',1,'computeFileKeywords(const gchar *path, gint *charSetFreq, Trie *&amp;keywordsTrie):&#160;HuffmanCo.cc']]],
+  ['createfilechooser',['createFileChooser',['../main_8cc.html#adbb5c9a558d9ad058e9f089f40a6a60d',1,'createFileChooser(GtkWindow *parent, GtkFileChooserAction action, const gchar *title):&#160;main.cc'],['../main_8h.html#adbb5c9a558d9ad058e9f089f40a6a60d',1,'createFileChooser(GtkWindow *parent, GtkFileChooserAction action, const gchar *title):&#160;main.cc']]],
+  ['createnewfileinfo',['createNewFileInfo',['../FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd',1,'createNewFileInfo(const gchar *path):&#160;FileInfo.cc'],['../FileInfo_8cc.html#a55211361ec0d92e1d5ffd17cc79a4970',1,'createNewFileInfo(const gchar *name, word size, word compSize, Trie *keywords):&#160;FileInfo.cc'],['../FileInfo_8h.html#a8291875b8cbc4b67e1572a9ed6b25dcd',1,'createNewFileInfo(const gchar *path):&#160;FileInfo.cc'],['../FileInfo_8h.html#a8ab6a625ec367e7df7ffa42778a892a5',1,'createNewFileInfo(const gchar *name, word size, word compSize, Trie *keywords=NULL):&#160;FileInfo.cc']]],
+  ['createnewprioritylist',['createNewPriorityList',['../PriorityList_8cc.html#a145cd560145288e5a290efcc257f9bef',1,'createNewPriorityList(const int size):&#160;PriorityList.cc'],['../PriorityList_8h.html#a145cd560145288e5a290efcc257f9bef',1,'createNewPriorityList(const int size):&#160;PriorityList.cc']]],
+  ['createnewtrieroot',['createNewTrieRoot',['../Trie_8cc.html#a7faf8c8701264541ada285fa0673c373',1,'createNewTrieRoot(Trie *left, Trie *right, void *data):&#160;Trie.cc'],['../Trie_8h.html#a7faf8c8701264541ada285fa0673c373',1,'createNewTrieRoot(Trie *left, Trie *right, void *data):&#160;Trie.cc']]],
+  ['currentmode',['currentMode',['../main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998',1,'main.h']]]
+];

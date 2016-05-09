@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Huffman CoDec:  File sorgente main.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Huffman CoDec
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pagina&#160;Principale</span></a></li>
+      <li><a href="annotated.html"><span>Classi</span></a></li>
+      <li class="current"><a href="files.html"><span>File</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Elenco&#160;dei&#160;file</span></a></li>
+      <li><a href="globals.html"><span>Elementi&#160;dei&#160;file</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HuffmanCo_8h.html">HuffmanCo.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HuffmanDec_8h.html">HuffmanDec.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="main_8h.html#a98326692d709b680863850b87101f813">   19</a></span>&#160;<span class="preprocessor">#define GTK_HANDLER(constructor) extern &quot;C&quot; constructor(GtkWidget* widget, GdkEvent* event, gpointer user_data)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4">   26</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4">FileListStoreCols</a>{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24">   27</a></span>&#160;    <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24">COL_NAME</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442">   28</a></span>&#160;    <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442">COL_TYPE</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2">   29</a></span>&#160;    <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2">COL_SIZE</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe">   30</a></span>&#160;    <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe">COL_CMP_SIZE</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468">   31</a></span>&#160;    <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468">COL_CMP_RATEO</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911">   38</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88">   39</a></span>&#160;    <a class="code" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911a36e3418e8d662d2bdaa39409c84415b2">COMPRESS</a>, <a class="code" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88">DECOMPRESS</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">   56</a></span>&#160;<span class="keyword">static</span> gchar* <a class="code" href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998">   62</a></span>&#160;<span class="keyword">static</span> <a class="code" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a> <a class="code" href="main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998">currentMode</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">   68</a></span>&#160;<span class="keyword">static</span> GSList* <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">   74</a></span>&#160;<span class="keyword">static</span> GtkBuilder* <a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">   80</a></span>&#160;<span class="keyword">static</span> GtkListStore* <a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a8a7e6d0713d20bfff044bf84b69a4590">initGUI</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#ad65aae470e8d427480930bea6377d819">parseCommandLine</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;gboolean <a class="code" href="main_8h.html#a7b2c2d4491b2eb0b280c85094c1c7c27">parseArgFileList</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a8a9387f8b15aa25f30c923be465c3f1b">addToFileList</a>(<span class="keyword">const</span> gchar* path);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a>(<a class="code" href="structFileInfo.html">FileInfo</a>* info);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24">clearFileView</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#affc83df88722646ada6c05050c9a4288">clearFileList</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a336e3c041a1bc0d243f2e414af4e7891">reloadFileView</a>();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8h.html#a5331c046c01eec997ef4865da817ed35">getFileViewSelectedRow</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;GtkWidget* <a class="code" href="main_8h.html#adbb5c9a558d9ad058e9f089f40a6a60d">createFileChooser</a>(GtkWindow* parent, GtkFileChooserAction action, <span class="keyword">const</span> gchar* title);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8h.html#a5a06aa053942f906276afd1a5c465090">showMessageDialog</a>(GtkWindow* parent, GtkMessageType type, <span class="keyword">const</span> gchar* msg);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<a class="code" href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a>(<span class="keywordtype">void</span> onOpenClick);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<a class="code" href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a>(<span class="keywordtype">void</span> onDecompressClick);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<a class="code" href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a>(<span class="keywordtype">void</span> onAddClick);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<a class="code" href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a>(<span class="keywordtype">void</span> onRemoveClick);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<a class="code" href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a>(<span class="keywordtype">void</span> onCompressClick);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<a class="code" href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a>(gboolean onWindowDelete);</div>
+<div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4">FileListStoreCols</a></div><div class="ttdeci">FileListStoreCols</div><div class="ttdef"><b>Definition:</b> main.h:26</div></div>
+<div class="ttc" id="main_8h_html_a98326692d709b680863850b87101f813"><div class="ttname"><a href="main_8h.html#a98326692d709b680863850b87101f813">GTK_HANDLER</a></div><div class="ttdeci">#define GTK_HANDLER(constructor)</div><div class="ttdoc">Macro per la creazione degli handler dei segnali generati dai widget GTK. </div><div class="ttdef"><b>Definition:</b> main.h:19</div></div>
+<div class="ttc" id="main_8h_html_ad65aae470e8d427480930bea6377d819"><div class="ttname"><a href="main_8h.html#ad65aae470e8d427480930bea6377d819">parseCommandLine</a></div><div class="ttdeci">void parseCommandLine(int argc, char *argv[])</div><div class="ttdoc">Esegue le operazioni richieste da linea di comando. </div><div class="ttdef"><b>Definition:</b> main.cc:108</div></div>
+<div class="ttc" id="HuffmanDec_8h_html"><div class="ttname"><a href="HuffmanDec_8h.html">HuffmanDec.h</a></div></div>
+<div class="ttc" id="main_8h_html_a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88"><div class="ttname"><a href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88">DECOMPRESS</a></div><div class="ttdef"><b>Definition:</b> main.h:39</div></div>
+<div class="ttc" id="main_8h_html_a2c6c449e0366687d868d91bd26f07e3c"><div class="ttname"><a href="main_8h.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a></div><div class="ttdeci">void addToFileView(FileInfo *info)</div><div class="ttdoc">Aggiunge un&#39;istanza di FileInfo a fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:268</div></div>
+<div class="ttc" id="main_8h_html_affc83df88722646ada6c05050c9a4288"><div class="ttname"><a href="main_8h.html#affc83df88722646ada6c05050c9a4288">clearFileList</a></div><div class="ttdeci">void clearFileList()</div><div class="ttdoc">Libera la memoria occupata da fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:290</div></div>
+<div class="ttc" id="main_8h_html_a25cb099170736b974f91fbc5282f0106"><div class="ttname"><a href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a></div><div class="ttdeci">static GtkBuilder * builder</div><div class="ttdef"><b>Definition:</b> main.h:74</div></div>
+<div class="ttc" id="main_8h_html_a7427a09ca1ad0f2a73d96a0d9e3a5c24"><div class="ttname"><a href="main_8h.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24">clearFileView</a></div><div class="ttdeci">void clearFileView()</div><div class="ttdoc">Rimuove tutte le righe da fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:286</div></div>
+<div class="ttc" id="main_8h_html_a8a9387f8b15aa25f30c923be465c3f1b"><div class="ttname"><a href="main_8h.html#a8a9387f8b15aa25f30c923be465c3f1b">addToFileList</a></div><div class="ttdeci">void addToFileList(const gchar *path)</div><div class="ttdoc">Aggiunge un&#39;istanza di FileInfo a fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:253</div></div>
+<div class="ttc" id="main_8h_html_af712cc9f4bd2ad4a901a5ba0727a6998"><div class="ttname"><a href="main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998">currentMode</a></div><div class="ttdeci">static Mode currentMode</div><div class="ttdef"><b>Definition:</b> main.h:62</div></div>
+<div class="ttc" id="main_8h_html_a336e3c041a1bc0d243f2e414af4e7891"><div class="ttname"><a href="main_8h.html#a336e3c041a1bc0d243f2e414af4e7891">reloadFileView</a></div><div class="ttdeci">void reloadFileView()</div><div class="ttdoc">Rimuove tutte le righe da fileListModel e reinserisce tutti i dati presenti in fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:297</div></div>
+<div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442">COL_TYPE</a></div><div class="ttdef"><b>Definition:</b> main.h:28</div></div>
+<div class="ttc" id="main_8h_html_a8a7e6d0713d20bfff044bf84b69a4590"><div class="ttname"><a href="main_8h.html#a8a7e6d0713d20bfff044bf84b69a4590">initGUI</a></div><div class="ttdeci">void initGUI(int argc, char *argv[])</div><div class="ttdoc">Inizializza l&#39;interfaccia grafica. </div><div class="ttdef"><b>Definition:</b> main.cc:90</div></div>
+<div class="ttc" id="main_8h_html_a5a06aa053942f906276afd1a5c465090"><div class="ttname"><a href="main_8h.html#a5a06aa053942f906276afd1a5c465090">showMessageDialog</a></div><div class="ttdeci">void showMessageDialog(GtkWindow *parent, GtkMessageType type, const gchar *msg)</div><div class="ttdoc">Crea e mostra una GtkDialog con i parametri passati. </div><div class="ttdef"><b>Definition:</b> main.cc:242</div></div>
+<div class="ttc" id="main_8h_html_a5331c046c01eec997ef4865da817ed35"><div class="ttname"><a href="main_8h.html#a5331c046c01eec997ef4865da817ed35">getFileViewSelectedRow</a></div><div class="ttdeci">int getFileViewSelectedRow()</div><div class="ttdoc">Ritorna l&#39;indice della riga correntemente selezionata nella fileListView. </div><div class="ttdef"><b>Definition:</b> main.cc:307</div></div>
+<div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
+<div class="ttc" id="HuffmanCo_8h_html"><div class="ttname"><a href="HuffmanCo_8h.html">HuffmanCo.h</a></div></div>
+<div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468">COL_CMP_RATEO</a></div><div class="ttdef"><b>Definition:</b> main.h:31</div></div>
+<div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe">COL_CMP_SIZE</a></div><div class="ttdef"><b>Definition:</b> main.h:30</div></div>
+<div class="ttc" id="main_8h_html_a7b2c2d4491b2eb0b280c85094c1c7c27"><div class="ttname"><a href="main_8h.html#a7b2c2d4491b2eb0b280c85094c1c7c27">parseArgFileList</a></div><div class="ttdeci">gboolean parseArgFileList(int argc, char *argv[])</div><div class="ttdoc">Aggiunge a fileList i file passati da linea di comando. </div><div class="ttdef"><b>Definition:</b> main.cc:193</div></div>
+<div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24">COL_NAME</a></div><div class="ttdef"><b>Definition:</b> main.h:27</div></div>
+<div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2">COL_SIZE</a></div><div class="ttdef"><b>Definition:</b> main.h:29</div></div>
+<div class="ttc" id="main_8h_html_a5818fb053a614c5a264e884ac6d7e433"><div class="ttname"><a href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a></div><div class="ttdeci">static gchar * fileToDecompress</div><div class="ttdef"><b>Definition:</b> main.h:56</div></div>
+<div class="ttc" id="main_8h_html_a46c8a310cf4c094f8c80e1cb8dc1f911a36e3418e8d662d2bdaa39409c84415b2"><div class="ttname"><a href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911a36e3418e8d662d2bdaa39409c84415b2">COMPRESS</a></div><div class="ttdef"><b>Definition:</b> main.h:39</div></div>
+<div class="ttc" id="main_8h_html_adbb5c9a558d9ad058e9f089f40a6a60d"><div class="ttname"><a href="main_8h.html#adbb5c9a558d9ad058e9f089f40a6a60d">createFileChooser</a></div><div class="ttdeci">GtkWidget * createFileChooser(GtkWindow *parent, GtkFileChooserAction action, const gchar *title)</div><div class="ttdoc">Crea un&#39;istanza di GtkFileChooser con i parametri passati. </div><div class="ttdef"><b>Definition:</b> main.cc:221</div></div>
+<div class="ttc" id="main_8h_html_a46c8a310cf4c094f8c80e1cb8dc1f911"><div class="ttname"><a href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a></div><div class="ttdeci">Mode</div><div class="ttdoc">Enumerato contenente gli stati in cui può lavorare il programma. </div><div class="ttdef"><b>Definition:</b> main.h:38</div></div>
+<div class="ttc" id="structFileInfo_html"><div class="ttname"><a href="structFileInfo.html">FileInfo</a></div><div class="ttdoc">Struttura contenente le informazioni di un singolo file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:4</div></div>
+<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:80</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generato Dom 8 Mag 2016 18:10:00 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
