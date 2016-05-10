@@ -8,7 +8,7 @@ using namespace std;
 /**
 * @file
 * Libreria per la gestione dei messaggi di debug a console.
-* Le funzionalità di debug possono essere disabilitate definendo NDEBUG
+* Le funzionalità di debug possono essere disabilitate definendo NDEBUG.
 */
 
 #ifndef NDEBUG

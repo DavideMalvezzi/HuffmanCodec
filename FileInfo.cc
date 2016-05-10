@@ -25,7 +25,8 @@ FileInfo* createNewFileInfo(const gchar* path){
     info->keywords = NULL;
 
     in.close();
-    return info;
+
+    return info->size > 0 ? info : NULL;
   }
 
   return NULL;

@@ -157,7 +157,7 @@ Funzioni</h2></td></tr>
 <tr class="separator:a3b5de4ee136185618a8695261b4813b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Libreria per la gestione delle informazioni relative ai file compressi e da comprimere </p>
+<div class="textblock"><p>Libreria per la gestione delle informazioni relative ai file compressi e da comprimere. </p>
 </div><h2 class="groupheader">Documentazione delle definizioni</h2>
 <a class="anchor" id="adebebe79bb84190296da4c5d67e4e434"></a>
 <div class="memitem">
@@ -216,11 +216,12 @@ Funzioni</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> = NULL;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    in.close();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> info;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#aa55c742b7ac95cc30258068524c77889">size</a> &gt; 0 ? info : NULL;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_a7d248755c4e758c9316708a207f20142"><div class="ttname"><a href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">FileInfo::path</a></div><div class="ttdeci">const gchar * path</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:6</div></div>
 <div class="ttc" id="structFileInfo_html_abd3f6e354b925c097d1286ec048ec74c"><div class="ttname"><a href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">FileInfo::name</a></div><div class="ttdeci">const gchar * name</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:5</div></div>
 <div class="ttc" id="structFileInfo_html_af4d738f377b0c764e342c66ede070e26"><div class="ttname"><a href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">FileInfo::keywords</a></div><div class="ttdeci">Trie * keywords</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:9</div></div>
@@ -279,18 +280,18 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore alla nuova istanza </dd></dl>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                                                        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="structFileInfo.html">FileInfo</a>* info = <span class="keyword">new</span> <a class="code" href="structFileInfo.html">FileInfo</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a> = name;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">path</a> = NULL;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#aa55c742b7ac95cc30258068524c77889">size</a> = size;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">comprSize</a> = compSize;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> = keywords;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> info;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                                                        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="structFileInfo.html">FileInfo</a>* info = <span class="keyword">new</span> <a class="code" href="structFileInfo.html">FileInfo</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a> = name;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">path</a> = NULL;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#aa55c742b7ac95cc30258068524c77889">size</a> = size;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">comprSize</a> = compSize;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> = keywords;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> info;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_a7d248755c4e758c9316708a207f20142"><div class="ttname"><a href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">FileInfo::path</a></div><div class="ttdeci">const gchar * path</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:6</div></div>
 <div class="ttc" id="structFileInfo_html_abd3f6e354b925c097d1286ec048ec74c"><div class="ttname"><a href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">FileInfo::name</a></div><div class="ttdeci">const gchar * name</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:5</div></div>
 <div class="ttc" id="structFileInfo_html_af4d738f377b0c764e342c66ede070e26"><div class="ttname"><a href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">FileInfo::keywords</a></div><div class="ttdeci">Trie * keywords</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:9</div></div>
@@ -321,20 +322,20 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                 {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="structFileInfo.html">FileInfo</a>* info = (<a class="code" href="structFileInfo.html">FileInfo</a>*)ptr;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">delete</span>[] info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">delete</span>[] info-&gt;<a class="code" href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">path</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span>(info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> != NULL){</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="Trie_8cc.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a>(info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a>, <a class="code" href="FileInfo_8cc.html#aabd9b2fdb54b2f4388778b2b35ff7118">deleteTrieItem</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">delete</span> info;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                 {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="structFileInfo.html">FileInfo</a>* info = (<a class="code" href="structFileInfo.html">FileInfo</a>*)ptr;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">delete</span>[] info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">delete</span>[] info-&gt;<a class="code" href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">path</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span>(info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> != NULL){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="Trie_8cc.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a>(info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a>, <a class="code" href="FileInfo_8cc.html#aabd9b2fdb54b2f4388778b2b35ff7118">deleteTrieItem</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">delete</span> info;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_a7d248755c4e758c9316708a207f20142"><div class="ttname"><a href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">FileInfo::path</a></div><div class="ttdeci">const gchar * path</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:6</div></div>
 <div class="ttc" id="Trie_8cc_html_a95bf83689db2b814ab05a9aa9d836a3e"><div class="ttname"><a href="Trie_8cc.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a></div><div class="ttdeci">void deleteTrie(Trie *trie, GDestroyNotify deleteFun)</div><div class="ttdoc">Funzione ricorsiva per l&#39;eliminazione dell&#39;albero radicato in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:18</div></div>
 <div class="ttc" id="structFileInfo_html_abd3f6e354b925c097d1286ec048ec74c"><div class="ttname"><a href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">FileInfo::name</a></div><div class="ttdeci">const gchar * name</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:5</div></div>
 <div class="ttc" id="structFileInfo_html_af4d738f377b0c764e342c66ede070e26"><div class="ttname"><a href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">FileInfo::keywords</a></div><div class="ttdeci">Trie * keywords</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:9</div></div>
-<div class="ttc" id="FileInfo_8cc_html_aabd9b2fdb54b2f4388778b2b35ff7118"><div class="ttname"><a href="FileInfo_8cc.html#aabd9b2fdb54b2f4388778b2b35ff7118">deleteTrieItem</a></div><div class="ttdeci">void deleteTrieItem(gpointer ptr)</div><div class="ttdoc">Cancellazione di un&#39;istanza di TrieItem. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:47</div></div>
+<div class="ttc" id="FileInfo_8cc_html_aabd9b2fdb54b2f4388778b2b35ff7118"><div class="ttname"><a href="FileInfo_8cc.html#aabd9b2fdb54b2f4388778b2b35ff7118">deleteTrieItem</a></div><div class="ttdeci">void deleteTrieItem(gpointer ptr)</div><div class="ttdoc">Cancellazione di un&#39;istanza di TrieItem. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:48</div></div>
 <div class="ttc" id="structFileInfo_html"><div class="ttname"><a href="structFileInfo.html">FileInfo</a></div><div class="ttdoc">Struttura contenente le informazioni di un singolo file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:4</div></div>
 </div><!-- fragment -->
 </div>
@@ -360,10 +361,10 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="structTrieItem.html">TrieItem</a>* item = (<a class="code" href="structTrieItem.html">TrieItem</a>*)ptr;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">delete</span> item;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="structTrieItem.html">TrieItem</a>* item = (<a class="code" href="structTrieItem.html">TrieItem</a>*)ptr;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">delete</span> item;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="ttc" id="structTrieItem_html"><div class="ttname"><a href="structTrieItem.html">TrieItem</a></div><div class="ttdoc">Struttura usata per salvare dentro un Trie i dati relativi ai caratteri e alle rispettive frequenze...</div><div class="ttdef"><b>Definition:</b> FileInfo.h:51</div></div>
 </div><!-- fragment -->
 </div>
@@ -401,12 +402,12 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>0 se il le due string sono uguali, -1 se la prima è minore altrimenti 1 </dd></dl>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                     {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="structFileInfo.html">FileInfo</a>* info = (<a class="code" href="structFileInfo.html">FileInfo</a>*)a;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  gchar* name = (gchar*)b;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">return</span> strcmp(info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>, name);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                     {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="structFileInfo.html">FileInfo</a>* info = (<a class="code" href="structFileInfo.html">FileInfo</a>*)a;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  gchar* name = (gchar*)b;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> strcmp(info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>, name);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_abd3f6e354b925c097d1286ec048ec74c"><div class="ttname"><a href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">FileInfo::name</a></div><div class="ttdeci">const gchar * name</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:5</div></div>
 <div class="ttc" id="structFileInfo_html"><div class="ttname"><a href="structFileInfo.html">FileInfo</a></div><div class="ttdoc">Struttura contenente le informazioni di un singolo file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:4</div></div>
 </div><!-- fragment -->
@@ -434,9 +435,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Array di interi </dd></dl>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                             {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff">charSetFreq</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                             {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff">charSetFreq</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_ab22f751ed9d8393e0eb3d70038aac1ff"><div class="ttname"><a href="structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff">FileInfo::charSetFreq</a></div><div class="ttdeci">int charSetFreq[CHAR_SET_SIZE]</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:7</div></div>
 </div><!-- fragment -->
 </div>
@@ -463,9 +464,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Dimensione del file compresso </dd></dl>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                          {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">comprSize</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                          {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">comprSize</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_a7bf3e45cf6d0a08c8d60f9c51d1771d6"><div class="ttname"><a href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">FileInfo::comprSize</a></div><div class="ttdeci">word comprSize</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:8</div></div>
 </div><!-- fragment -->
 </div>
@@ -492,10 +493,10 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Stringa contenente la tipologia del file </dd></dl>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                          {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  gboolean isCertain;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">return</span> g_content_type_guess(info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>, NULL, 0, &amp;isCertain);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                          {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  gboolean isCertain;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> g_content_type_guess(info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>, NULL, 0, &amp;isCertain);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_abd3f6e354b925c097d1286ec048ec74c"><div class="ttname"><a href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">FileInfo::name</a></div><div class="ttdeci">const gchar * name</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:5</div></div>
 </div><!-- fragment -->
 </div>
@@ -522,9 +523,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a> </dd></dl>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                     {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                     {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_af4d738f377b0c764e342c66ede070e26"><div class="ttname"><a href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">FileInfo::keywords</a></div><div class="ttdeci">Trie * keywords</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -551,9 +552,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore al nome del file </dd></dl>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">name</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_abd3f6e354b925c097d1286ec048ec74c"><div class="ttname"><a href="structFileInfo.html#abd3f6e354b925c097d1286ec048ec74c">FileInfo::name</a></div><div class="ttdeci">const gchar * name</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:5</div></div>
 </div><!-- fragment -->
 </div>
@@ -580,9 +581,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore al path del file </dd></dl>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">path</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">path</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_a7d248755c4e758c9316708a207f20142"><div class="ttname"><a href="structFileInfo.html#a7d248755c4e758c9316708a207f20142">FileInfo::path</a></div><div class="ttdeci">const gchar * path</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:6</div></div>
 </div><!-- fragment -->
 </div>
@@ -609,9 +610,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Dimensione del file </dd></dl>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#aa55c742b7ac95cc30258068524c77889">size</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">return</span> info-&gt;<a class="code" href="structFileInfo.html#aa55c742b7ac95cc30258068524c77889">size</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_aa55c742b7ac95cc30258068524c77889"><div class="ttname"><a href="structFileInfo.html#aa55c742b7ac95cc30258068524c77889">FileInfo::size</a></div><div class="ttdeci">word size</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:8</div></div>
 </div><!-- fragment -->
 </div>
@@ -648,9 +649,9 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                              {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  memcpy(info-&gt;<a class="code" href="structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff">charSetFreq</a>, charSetFreq, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * <a class="code" href="FileInfo_8h.html#adebebe79bb84190296da4c5d67e4e434">CHAR_SET_SIZE</a>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                              {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  memcpy(info-&gt;<a class="code" href="structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff">charSetFreq</a>, charSetFreq, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) * <a class="code" href="FileInfo_8h.html#adebebe79bb84190296da4c5d67e4e434">CHAR_SET_SIZE</a>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_ab22f751ed9d8393e0eb3d70038aac1ff"><div class="ttname"><a href="structFileInfo.html#ab22f751ed9d8393e0eb3d70038aac1ff">FileInfo::charSetFreq</a></div><div class="ttdeci">int charSetFreq[CHAR_SET_SIZE]</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:7</div></div>
 <div class="ttc" id="FileInfo_8h_html_adebebe79bb84190296da4c5d67e4e434"><div class="ttname"><a href="FileInfo_8h.html#adebebe79bb84190296da4c5d67e4e434">CHAR_SET_SIZE</a></div><div class="ttdeci">#define CHAR_SET_SIZE</div><div class="ttdoc">Numero massimo di caratteri ASCII. </div><div class="ttdef"><b>Definition:</b> FileInfo.h:21</div></div>
 </div><!-- fragment -->
@@ -688,9 +689,9 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                     {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">comprSize</a> = size;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                     {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">comprSize</a> = size;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_a7bf3e45cf6d0a08c8d60f9c51d1771d6"><div class="ttname"><a href="structFileInfo.html#a7bf3e45cf6d0a08c8d60f9c51d1771d6">FileInfo::comprSize</a></div><div class="ttdeci">word comprSize</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:8</div></div>
 </div><!-- fragment -->
 </div>
@@ -727,9 +728,9 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> = keywords;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  info-&gt;<a class="code" href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">keywords</a> = keywords;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="ttc" id="structFileInfo_html_af4d738f377b0c764e342c66ede070e26"><div class="ttname"><a href="structFileInfo.html#af4d738f377b0c764e342c66ede070e26">FileInfo::keywords</a></div><div class="ttdeci">Trie * keywords</div><div class="ttdef"><b>Definition:</b> FileInfo.cc:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -737,7 +738,7 @@ Funzioni</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Lun 9 Mag 2016 19:58:28 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Mar 10 Mag 2016 10:09:31 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

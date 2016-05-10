@@ -3,7 +3,7 @@
 
 /**
 * @file
-* Libreria per la lettura e scrittura dei bit della variabili di tipo byte
+* Libreria per la lettura e scrittura dei bit.
 */
 
 /**

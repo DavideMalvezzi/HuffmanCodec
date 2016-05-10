@@ -15,6 +15,7 @@ gboolean compressToFile(const gchar* path, GSList* fileList){
     //Write files count
     outputFile.write(MEM_BUFFER(fileNum), sizeof(int));
     //Save each file header
+    DPRINTLN("Saving files header...");
     while(current != NULL){
 
       if(!saveFileHeader(outputFile, (FileInfo*)current->data)){
@@ -28,6 +29,7 @@ gboolean compressToFile(const gchar* path, GSList* fileList){
 
     current = fileList;
     //Compress each file
+    DPRINTLN("Compressing files...");
     while(current != NULL){
       if(!compressFile(outputFile, (FileInfo*)current->data)){
         //If return false the write failed, so close and abort
@@ -55,16 +57,6 @@ gboolean saveFileHeader(ofstream& outputFile, FileInfo* fileInfo){
 
   //Work out the frequencies
   if(getFileFrequencies(path, charSetFreq)){
-    /*
-    cout << "File " << getFileName(fileInfo) << endl;
-    cout << "Frequencies:" << endl;
-    for(int i = 0; i < CHAR_SET_SIZE; i++){
-      if(charSetFreq[i] != 0){
-        cout << (int)i << " " << charSetFreq[i] << endl;
-      }
-    }
-    */
-
     //Set the file frequencies
     setFileCharsFrequencies(fileInfo, charSetFreq);
 
@@ -103,6 +95,8 @@ word computeFileKeywords(const gchar* path, gint* charSetFreq, Trie*& keywordsTr
 
   //If there isn't a key word trie associated to the file
   if(keywordsTrie == NULL){
+    DPRINTLN("Generating keywords...");
+
     //Insert elements in the PriorityList
     for(int i = 0; i < CHAR_SET_SIZE; i++){
       if(charSetFreq[i] > 0){
@@ -125,6 +119,8 @@ word computeFileKeywords(const gchar* path, gint* charSetFreq, Trie*& keywordsTr
   //Get the file compressedSize from the keywordsTrie and the charSetFreq
   compressedSize = getFileCompressedSize(keywordsTrie, charSetFreq);
 
+  DPRINTLN("File compressed size is " << compressedSize << " bytes");
+
   //Put the deleteFun param to NULL because we don't want to destroy the trieItem in the list
   //They will be deleted with the Trie from the FileInfo destruction function
   deletePriorityList(pList, NULL);
@@ -137,6 +133,8 @@ gboolean getFileFrequencies(const gchar* path, int* charSetFreq){
 
   //Open input file
   ifstream inputFile(path, ios::binary | ios::in);
+
+  DPRINTLN("Calcolating characters frequencies...");
 
   //Reset the chars count
   for(int i = 0; i < CHAR_SET_SIZE; i++){

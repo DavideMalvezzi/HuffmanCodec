@@ -85,7 +85,21 @@ Introduzione</h1>
 <li><b>decomprimere</b> un file *.hca all'interno di una cartella per riotterenere i file compressi.</li>
 </ul>
 <p>Entrambe le funzionalità sono accessibili sia via interfaccia grafica, sia via linea di comando.</p>
-<h1><a class="anchor" id="Moduli"></a>
+<h1><a class="anchor" id="Funzionalità"></a>
+Funzionalità</h1>
+<h2><a class="anchor" id="Compressione"></a>
+Compressione</h2>
+<p>Una volta aperto il programma, per comprimere uno o più file in un archivio sarà sufficiente premere il pulsante <em>Add</em> nella toolbar e selezionare i file che si è scelto di comprimere. Dato l'ok, la lista dei file si aggiornerà e saranno mostrate le informazioni dei file selezionati. E' possibile aggiungere altri file, sempre utilizzando il pulsante <em>Add</em>, oppure rimuovere uno o più file, selezionando dalla lista la riga contenente il file da eliminare e premendo il pulsante <em>Remove</em>. A questo punto è possibile comprimere i file premendo il pulsante <em>Compress</em> e selezionado il nome dell'archivio da creare.<br/>
+ In caso si riscontrino dei problemi durante la compressione verrà mostrato una dialog di errore.</p>
+<p>Per comprimere via linea di comando: </p>
+<div class="fragment"><div class="line">./HuffmanCodec -c File1.txt ... FileN.txt -o ArchiveFile.hca</div>
+</div><!-- fragment --><h2><a class="anchor" id="Decompressione"></a>
+Decompressione</h2>
+<p>Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante <em>Open</em> nella toolbar. Se l'archivio è valido, nella lista dei file verranno caricate le informazioni dei file contenuti al suo interno. A questo punto si può procedere alla decompressione cliccando sul pulsante <em>Decompress</em> e selezionare la cartella in cui salvare i file.<br/>
+ In caso si riscontrino dei problemi durante la decompressione verrà mostrato una dialog di errore.</p>
+<p>Per decomprimere via linea di comando: </p>
+<div class="fragment"><div class="line">./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/</div>
+</div><!-- fragment --><h1><a class="anchor" id="Moduli"></a>
 Moduli</h1>
 <p>Il progetto è stato suddiviso nei seguenti moduli:</p>
 <ul>
@@ -98,19 +112,7 @@ Moduli</h1>
 <li><a class="el" href="BitUtils_8h.html">BitUtils.h</a>: modulo contenente tutte le funzionalità di gestione dei bit.</li>
 <li><a class="el" href="Debug_8h.html">Debug.h</a>: modulo contenente tutte le funzionalità di debug.</li>
 </ul>
-<h1><a class="anchor" id="Funzionalità"></a>
-Funzionalità</h1>
-<h2><a class="anchor" id="Compressione"></a>
-Compressione</h2>
-<p>Una volta aperto il programma, per comprimere uno o più file in un archivio sarà sufficiente premere il pulsante <em>Add</em> nella toolbar e selezionare i file che si è scelto di comprimere. Dato l'ok, la lista dei file si aggiornerà e saranno mostrate le informazioni dei file selezionati. E' possibile aggiungere altri file, sempre utilizzando il pulsante <em>Add</em>, oppure rimuovere uno o più file, selezionando dalla lista la riga contenente il file da eliminare e premendo il pulsante <em>Remove</em>. A questo punto è possibile comprimere i file premendo il pulsante <em>Compress</em> e selezionado il nome dell'archivio da creare. In caso si riscontrino dei problemi durante la compressione verrà mostrato una dialog di errore.</p>
-<p>Per comprimere via linea di comando: </p>
-<div class="fragment"><div class="line">./HuffmanCodec -c File1.txt ... FileN.txt -o ArchiveFile.hca</div>
-</div><!-- fragment --><h2><a class="anchor" id="Decompressione"></a>
-Decompressione</h2>
-<p>Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante <em>Open</em> nella toolbar. Se l'archivio è valido, nella lista dei file verranno caricate le informazioni dei file contenuti al suo interno. A questo punto si può procedere alla decompressione cliccando sul pulsante <em>Decompress</em> e selezionare la cartella in cui salvare i file. In caso si riscontrino dei problemi durante la decompressione verrà mostrato una dialog di errore.</p>
-<p>Per decomprimere via linea di comando: </p>
-<div class="fragment"><div class="line">./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/</div>
-</div><!-- fragment --><h1><a class="anchor" id="Struttura"></a>
+<h1><a class="anchor" id="Struttura"></a>
 Struttura file archivio</h1>
 <p>Ogni file archivio è diviso in due sezioni:</p>
 <ul>
@@ -132,7 +134,7 @@ Struttura file archivio</h1>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Lun 9 Mag 2016 19:58:28 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Mar 10 Mag 2016 10:09:31 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -12,17 +12,6 @@
 *		- @b decomprimere un file *.hca all'interno di una cartella per riotterenere i file compressi.
 *
 * Entrambe le funzionalità sono accessibili sia via interfaccia grafica, sia via linea di comando.
-
-* @section Moduli Moduli
-* Il progetto è stato suddiviso nei seguenti moduli:
-* 	- main.h: modulo contenente tutte le funzionalità di interfacciamento con l'utente, sia a livello di GUI, sia a linea di comando.
-* 	- HuffmanCo.h: modulo contenente tutte le funzionalità di compressione.
-* 	- HuffmanDec.h: modulo contenente tutte le funzionalità di decompressione.
-* 	- PriorityList.h: modulo contenente l'implementazione di una lista con priorità attraverso un heap binario.
-* 	- Trie.h: modulo contenente l'implementazione di un trie.
-* 	- FileInfo.h: modulo contenente le strutture dati per la gestione delle informazioni dei file.
-* 	- BitUtils.h: modulo contenente tutte le funzionalità di gestione dei bit.
-* 	- Debug.h: modulo contenente tutte le funzionalità di debug.
 *
 * @section Funzionalità Funzionalità
 * @subsection Compressione Compressione
@@ -31,7 +20,7 @@
 * saranno mostrate le informazioni dei file selezionati. E' possibile aggiungere altri file, sempre utilizzando
 * il pulsante @a Add, oppure rimuovere uno o più file, selezionando dalla lista la riga contenente il file da eliminare e
 * premendo il pulsante @a Remove. A questo punto è possibile comprimere i file premendo il pulsante @a Compress e selezionado il nome
-* dell'archivio da creare.
+* dell'archivio da creare.<br>
 * In caso si riscontrino dei problemi durante la compressione verrà mostrato una dialog di errore.
 *
 * Per comprimere via linea di comando:
@@ -43,13 +32,24 @@
 * Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante
 * @a Open nella toolbar. Se l'archivio è valido, nella lista dei file verranno caricate le informazioni dei file
 * contenuti al suo interno. A questo punto si può procedere alla decompressione cliccando sul pulsante @a Decompress
-* e selezionare la cartella in cui salvare i file.
+* e selezionare la cartella in cui salvare i file.<br>
 * In caso si riscontrino dei problemi durante la decompressione verrà mostrato una dialog di errore.
 *
 * Per decomprimere via linea di comando:
 * \code{.sh}
   	./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/
 *	\endcode
+*
+* @section Moduli Moduli
+* Il progetto è stato suddiviso nei seguenti moduli:
+* 	- main.h: modulo contenente tutte le funzionalità di interfacciamento con l'utente, sia a livello di GUI, sia a linea di comando.
+* 	- HuffmanCo.h: modulo contenente tutte le funzionalità di compressione.
+* 	- HuffmanDec.h: modulo contenente tutte le funzionalità di decompressione.
+* 	- PriorityList.h: modulo contenente l'implementazione di una lista con priorità attraverso un heap binario.
+* 	- Trie.h: modulo contenente l'implementazione di un trie.
+* 	- FileInfo.h: modulo contenente le strutture dati per la gestione delle informazioni dei file.
+* 	- BitUtils.h: modulo contenente tutte le funzionalità di gestione dei bit.
+* 	- Debug.h: modulo contenente tutte le funzionalità di debug.
 *
 * @section Struttura Struttura file archivio
 * Ogni file archivio è diviso in due sezioni:
@@ -91,15 +91,20 @@ void initGUI(int argc, char* argv[]){
 
 		//Load gui
 		builder = gtk_builder_new();
-		gtk_builder_add_from_file(builder,"/bin/gui/HuffmanCodecUI.glade", NULL);
+		gtk_builder_add_from_file(builder,"gui/HuffmanCodecUI.glade", NULL);
 		gtk_builder_connect_signals(builder, NULL);
+
+		//Get widget
+		mainWindow = GTK_WIDGET(gtk_builder_get_object(builder, "mainWindow"));
+		fileListModel = GTK_LIST_STORE(gtk_builder_get_object(builder, "fileListModel"));
+
+		assert(mainWindow != NULL);
+		assert(fileListModel != NULL);
 
 		//Disable compress, decompress and remove button
 		gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "compToolButton")), FALSE);
 		gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "removeToolButton")), FALSE);
 		gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "decToolButton")), FALSE);
-
-		fileListModel = GTK_LIST_STORE(gtk_builder_get_object(builder, "fileListModel"));
 
 		gtk_main();
 }
@@ -111,6 +116,7 @@ void parseCommandLine(int argc, char* argv[]){
 	gchar* outPath = NULL;
 	int c;
 
+	//Parse all the options
 	while((c = getopt(argc, argv, "c:d:ho:")) != -1){
 		switch (c) {
 			//Compress -c [FILE1] [FILE2] ... [FILEn]
@@ -257,10 +263,13 @@ void addToFileList(const gchar* path){
 	if(g_slist_find_custom(fileList, g_path_get_basename(path), findFileByName) == NULL){
 		//Create the fileInfo
 		fileInfo = createNewFileInfo(path);
-		//Add the fileInfo to the fileList
-		fileList = g_slist_append(fileList, fileInfo);
-		//Add the file to the view
-		addToFileView(fileInfo);
+
+		if(fileInfo != NULL){
+			//Add the fileInfo to the fileList
+			fileList = g_slist_append(fileList, fileInfo);
+			//Add the file to the view
+			addToFileView(fileInfo);
+		}
 	}
 }
 
@@ -305,7 +314,7 @@ void reloadFileView(){
 
 int getFileViewSelectedRow(){
 	GtkTreeView* fileListView = GTK_TREE_VIEW(gtk_builder_get_object(builder, "fileListView"));
-	GtkTreeSelection* selection = gtk_tree_view_get_selection (fileListView);
+	GtkTreeSelection* selection = gtk_tree_view_get_selection(fileListView);
 	GtkTreeModel* model;
 	GtkTreePath* path;
 	GtkTreeIter iter;
@@ -313,7 +322,7 @@ int getFileViewSelectedRow(){
 
 	if (gtk_tree_selection_get_selected(selection , &model , &iter)){
 	  path = gtk_tree_model_get_path(model , &iter) ;
-	  i = gtk_tree_path_get_indices (path);
+	  i = gtk_tree_path_get_indices(path);
 	  return (*i);
 	}
 
@@ -324,9 +333,6 @@ int getFileViewSelectedRow(){
 
 //Open file to decompress
 GTK_HANDLER(void onOpenClick){
-	//Get mainWindow
-	GtkWidget* mainWindow = GTK_WIDGET(gtk_builder_get_object(builder, "mainWindow"));
-
 	//Create file chooser dialog
 	GtkWidget* dialog = createFileChooser(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_OPEN, "Open file");
 
@@ -369,9 +375,6 @@ GTK_HANDLER(void onOpenClick){
 
 //Decompress the selected file
 GTK_HANDLER(void onDecompressClick){
-	//Get mainWindow
-	GtkWidget* mainWindow = GTK_WIDGET(gtk_builder_get_object(builder, "mainWindow"));
-
 	//Create file chooser dialog
 	GtkWidget* fileChooser = createFileChooser(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, "Select a directory");
 	gtk_file_chooser_set_create_folders (GTK_FILE_CHOOSER(fileChooser), TRUE);
@@ -397,9 +400,6 @@ GTK_HANDLER(void onDecompressClick){
 
 //Add file to compress
 GTK_HANDLER(void onAddClick){
-	//Get mainWindow
-	GtkWidget* mainWindow = GTK_WIDGET(gtk_builder_get_object(builder, "mainWindow"));
-
 	//Create file chooser dialog
 	GtkWidget* dialog = createFileChooser(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_OPEN, "Open file");
 
@@ -429,11 +429,6 @@ GTK_HANDLER(void onAddClick){
 				clearFileView();
 			}
 
-			//Enable compress and remove button and disable decompress
-			gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "compToolButton")), TRUE);
-			gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "decToolButton")), FALSE);
-			gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "removeToolButton")), TRUE);
-
 			currentMode = COMPRESS;
 			//Get all selected files list
 	    GSList* filenames = gtk_file_chooser_get_filenames(GTK_FILE_CHOOSER(dialog));
@@ -447,6 +442,15 @@ GTK_HANDLER(void onAddClick){
 				//Go to the next file
 				current = g_slist_next(current);
 			}
+
+			//If there is at least one valid file
+			if(fileList != NULL){
+				//Enable compress and remove button and disable decompress
+				gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "compToolButton")), TRUE);
+				gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "decToolButton")), FALSE);
+				gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(builder, "removeToolButton")), TRUE);
+			}
+
 			//Free list
 			g_slist_free(filenames);
 	}
@@ -486,9 +490,6 @@ GTK_HANDLER(void onRemoveClick){
 
 //Compress the selected files
 GTK_HANDLER(void onCompressClick){
-	//Get mainWindow
-	GtkWidget* mainWindow = GTK_WIDGET(gtk_builder_get_object(builder, "mainWindow"));
-
 	//If there is at least a file
 	if(fileList != NULL){
 		gchar* outputFilePath;

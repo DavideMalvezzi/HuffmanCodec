@@ -8,7 +8,7 @@ using namespace std;
 
 /**
 * @file
-* Libreria contenente le funzioni per la gestione dell'interfaccia grafica
+* Libreria contenente le funzioni per la gestione dell'interfaccia grafica e a linea di comando.
 */
 
 /**
@@ -72,6 +72,13 @@ static GSList* fileList;
 * Puntatore a GtkBuilder per accedere ai widget dell'interfaccia grafica
 */
 static GtkBuilder* builder;
+
+
+/**
+* @var fileListModel
+* Puntatore alla finestra principale del programma
+*/
+static GtkWidget* mainWindow;
 
 /**
 * @var fileListModel

@@ -153,23 +153,26 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                     {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">//fileInfo pointer</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="structFileInfo.html">FileInfo</a>* fileInfo;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">//If the file is not already in the fileList</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span>(g_slist_find_custom(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, g_path_get_basename(path), <a class="code" href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a>) == NULL){</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">//Create the fileInfo</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        fileInfo = <a class="code" href="FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd">createNewFileInfo</a>(path);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">//Add the fileInfo to the fileList</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> = g_slist_append(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, fileInfo);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">//Add the file to the view</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <a class="code" href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a>(fileInfo);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
-<div class="ttc" id="FileInfo_8cc_html_a3b5de4ee136185618a8695261b4813b3"><div class="ttname"><a href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a></div><div class="ttdeci">gint findFileByName(gconstpointer a, gconstpointer b)</div><div class="ttdoc">Confronta il nome di un&#39;istanza di FileInfo con una stringa data. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:62</div></div>
+<div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                     {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">//fileInfo pointer</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="structFileInfo.html">FileInfo</a>* fileInfo;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">//If the file is not already in the fileList</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span>(g_slist_find_custom(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, g_path_get_basename(path), <a class="code" href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a>) == NULL){</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">//Create the fileInfo</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        fileInfo = <a class="code" href="FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd">createNewFileInfo</a>(path);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">if</span>(fileInfo != NULL){</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="comment">//Add the fileInfo to the fileList</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> = g_slist_append(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, fileInfo);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="comment">//Add the file to the view</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <a class="code" href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a>(fileInfo);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="ttc" id="FileInfo_8cc_html_a3b5de4ee136185618a8695261b4813b3"><div class="ttname"><a href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a></div><div class="ttdeci">gint findFileByName(gconstpointer a, gconstpointer b)</div><div class="ttdoc">Confronta il nome di un&#39;istanza di FileInfo con una stringa data. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:63</div></div>
 <div class="ttc" id="FileInfo_8cc_html_a8291875b8cbc4b67e1572a9ed6b25dcd"><div class="ttname"><a href="FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd">createNewFileInfo</a></div><div class="ttdeci">FileInfo * createNewFileInfo(const gchar *path)</div><div class="ttdoc">Crea una nuova istanza di FileInfo a partire dal path di un file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:13</div></div>
-<div class="ttc" id="main_8cc_html_a2c6c449e0366687d868d91bd26f07e3c"><div class="ttname"><a href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a></div><div class="ttdeci">void addToFileView(FileInfo *info)</div><div class="ttdoc">Aggiunge un&#39;istanza di FileInfo a fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:267</div></div>
+<div class="ttc" id="main_8cc_html_a2c6c449e0366687d868d91bd26f07e3c"><div class="ttname"><a href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a></div><div class="ttdeci">void addToFileView(FileInfo *info)</div><div class="ttdoc">Aggiunge un&#39;istanza di FileInfo a fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:276</div></div>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
 <div class="ttc" id="structFileInfo_html"><div class="ttname"><a href="structFileInfo.html">FileInfo</a></div><div class="ttdoc">Struttura contenente le informazioni di un singolo file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:4</div></div>
 </div><!-- fragment -->
@@ -196,33 +199,33 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                  {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">//Get file list model</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    GtkTreeIter iter;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">//Calculate compress rateo</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordtype">int</span> rateo = <a class="code" href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a>(info) == 0 ? 0 : (float)(<a class="code" href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a>(info) - <a class="code" href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a>(info)) / <a class="code" href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a>(info) * 100;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">//Append the file to the fileListModel</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    gtk_list_store_append(<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>, &amp;iter);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    gtk_list_store_set (<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>, &amp;iter,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24">COL_NAME</a>, <a class="code" href="FileInfo_8cc.html#a05b5104effdb69deb1f0a7d255d94641">getFileName</a>(info),</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442">COL_TYPE</a>, <a class="code" href="FileInfo_8cc.html#a13f1ab330d385507924793ef9e87cf1f">getFileFormat</a>(info),</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2">COL_SIZE</a>, <a class="code" href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a>(info),</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe">COL_CMP_SIZE</a>, <a class="code" href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a>(info),</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468">COL_CMP_RATEO</a>, rateo,</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        -1);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
-<div class="ttc" id="FileInfo_8cc_html_a05b5104effdb69deb1f0a7d255d94641"><div class="ttname"><a href="FileInfo_8cc.html#a05b5104effdb69deb1f0a7d255d94641">getFileName</a></div><div class="ttdeci">const gchar * getFileName(FileInfo *info)</div><div class="ttdoc">Ritorna il nome di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:70</div></div>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                  {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">//Get file list model</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    GtkTreeIter iter;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">//Calculate compress rateo</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">int</span> rateo = <a class="code" href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a>(info) == 0 ? 0 : (float)(<a class="code" href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a>(info) - <a class="code" href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a>(info)) / <a class="code" href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a>(info) * 100;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">//Append the file to the fileListModel</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    gtk_list_store_append(<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>, &amp;iter);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    gtk_list_store_set (<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>, &amp;iter,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24">COL_NAME</a>, <a class="code" href="FileInfo_8cc.html#a05b5104effdb69deb1f0a7d255d94641">getFileName</a>(info),</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442">COL_TYPE</a>, <a class="code" href="FileInfo_8cc.html#a13f1ab330d385507924793ef9e87cf1f">getFileFormat</a>(info),</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2">COL_SIZE</a>, <a class="code" href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a>(info),</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe">COL_CMP_SIZE</a>, <a class="code" href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a>(info),</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                        <a class="code" href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468">COL_CMP_RATEO</a>, rateo,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                        -1);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+<div class="ttc" id="FileInfo_8cc_html_a05b5104effdb69deb1f0a7d255d94641"><div class="ttname"><a href="FileInfo_8cc.html#a05b5104effdb69deb1f0a7d255d94641">getFileName</a></div><div class="ttdeci">const gchar * getFileName(FileInfo *info)</div><div class="ttdoc">Ritorna il nome di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:71</div></div>
 <div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae82b107fa2be7713a91806f3ed94c442">COL_TYPE</a></div><div class="ttdef"><b>Definition:</b> main.h:28</div></div>
-<div class="ttc" id="FileInfo_8cc_html_a13f1ab330d385507924793ef9e87cf1f"><div class="ttname"><a href="FileInfo_8cc.html#a13f1ab330d385507924793ef9e87cf1f">getFileFormat</a></div><div class="ttdeci">const gchar * getFileFormat(FileInfo *info)</div><div class="ttdoc">Ritorna la tipologia di file di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:78</div></div>
+<div class="ttc" id="FileInfo_8cc_html_a13f1ab330d385507924793ef9e87cf1f"><div class="ttname"><a href="FileInfo_8cc.html#a13f1ab330d385507924793ef9e87cf1f">getFileFormat</a></div><div class="ttdeci">const gchar * getFileFormat(FileInfo *info)</div><div class="ttdoc">Ritorna la tipologia di file di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:79</div></div>
 <div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a876b644169e1c6fcadb4afe314e4a468">COL_CMP_RATEO</a></div><div class="ttdef"><b>Definition:</b> main.h:31</div></div>
 <div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a584a787521c84c289c251b48014021fe">COL_CMP_SIZE</a></div><div class="ttdef"><b>Definition:</b> main.h:30</div></div>
-<div class="ttc" id="FileInfo_8cc_html_a254d3e3441d3bd8bc5546ced6bed9923"><div class="ttname"><a href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a></div><div class="ttdeci">word getFileSize(FileInfo *info)</div><div class="ttdoc">Ritorna la dimensione del file di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:83</div></div>
+<div class="ttc" id="FileInfo_8cc_html_a254d3e3441d3bd8bc5546ced6bed9923"><div class="ttname"><a href="FileInfo_8cc.html#a254d3e3441d3bd8bc5546ced6bed9923">getFileSize</a></div><div class="ttdeci">word getFileSize(FileInfo *info)</div><div class="ttdoc">Ritorna la dimensione del file di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:84</div></div>
 <div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4a621a0fec1bcdb27626ca53cd7e8b8f24">COL_NAME</a></div><div class="ttdef"><b>Definition:</b> main.h:27</div></div>
 <div class="ttc" id="main_8h_html_a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2"><div class="ttname"><a href="main_8h.html#a740868c78d45deba9daa4c7d835108b4ae94286ddde71247f592a1bae60be02e2">COL_SIZE</a></div><div class="ttdef"><b>Definition:</b> main.h:29</div></div>
-<div class="ttc" id="FileInfo_8cc_html_a5ad5931ee23df6d4469b3cd704c18849"><div class="ttname"><a href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a></div><div class="ttdeci">word getFileCompressedSize(FileInfo *info)</div><div class="ttdoc">Ritorna la dimensione del file compresso di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:87</div></div>
-<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:80</div></div>
+<div class="ttc" id="FileInfo_8cc_html_a5ad5931ee23df6d4469b3cd704c18849"><div class="ttname"><a href="FileInfo_8cc.html#a5ad5931ee23df6d4469b3cd704c18849">getFileCompressedSize</a></div><div class="ttdeci">word getFileCompressedSize(FileInfo *info)</div><div class="ttdoc">Ritorna la dimensione del file compresso di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:88</div></div>
+<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:87</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -240,14 +243,14 @@ Funzioni</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Libera la memoria occupata da <a class="el" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>. </p>
-<div class="fragment"><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> != NULL){</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        g_slist_free_full(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, <a class="code" href="FileInfo_8cc.html#ae94305fd7cf9e94ab810da115614fb06">deleteFileInfo</a>);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> = NULL;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> != NULL){</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        g_slist_free_full(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, <a class="code" href="FileInfo_8cc.html#ae94305fd7cf9e94ab810da115614fb06">deleteFileInfo</a>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> = NULL;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
-<div class="ttc" id="FileInfo_8cc_html_ae94305fd7cf9e94ab810da115614fb06"><div class="ttname"><a href="FileInfo_8cc.html#ae94305fd7cf9e94ab810da115614fb06">deleteFileInfo</a></div><div class="ttdeci">void deleteFileInfo(gpointer ptr)</div><div class="ttdoc">Cancellazione di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:52</div></div>
+<div class="ttc" id="FileInfo_8cc_html_ae94305fd7cf9e94ab810da115614fb06"><div class="ttname"><a href="FileInfo_8cc.html#ae94305fd7cf9e94ab810da115614fb06">deleteFileInfo</a></div><div class="ttdeci">void deleteFileInfo(gpointer ptr)</div><div class="ttdoc">Cancellazione di un&#39;istanza di FileInfo. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:53</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,10 +268,10 @@ Funzioni</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Rimuove tutte le righe da <a class="el" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>. </p>
-<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    gtk_list_store_clear(<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
-<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:80</div></div>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    gtk_list_store_clear(<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a>);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
+<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:87</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -312,26 +315,26 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore all'istanza </dd></dl>
-<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                                                                                {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">//Prepare file open dialog</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    GtkWidget* dialog = gtk_file_chooser_dialog_new (</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                                                            title,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                                                            parent,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                                                            action,</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                                            <span class="stringliteral">&quot;Cancel&quot;</span>,</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                                                            GTK_RESPONSE_CANCEL,</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                                                            <span class="stringliteral">&quot;OK&quot;</span>,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                                            GTK_RESPONSE_ACCEPT,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                                                            NULL);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    GdkGeometry geom;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    geom.min_width = 800;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    geom.min_height = 600;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">//Resize the window</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    gtk_window_set_geometry_hints(GTK_WINDOW(dialog), NULL, &amp;geom, GDK_HINT_MIN_SIZE);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> dialog;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                                                                {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">//Prepare file open dialog</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    GtkWidget* dialog = gtk_file_chooser_dialog_new (</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                                            title,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                                                            parent,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                                                            action,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                                            <span class="stringliteral">&quot;Cancel&quot;</span>,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                                            GTK_RESPONSE_CANCEL,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                                                            <span class="stringliteral">&quot;OK&quot;</span>,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                                                            GTK_RESPONSE_ACCEPT,</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                                                            NULL);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    GdkGeometry geom;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    geom.min_width = 800;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    geom.min_height = 600;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">//Resize the window</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    gtk_window_set_geometry_hints(GTK_WINDOW(dialog), NULL, &amp;geom, GDK_HINT_MIN_SIZE);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">return</span> dialog;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -350,22 +353,22 @@ Funzioni</h2></td></tr>
 
 <p>Ritorna l'indice della riga correntemente selezionata nella fileListView. </p>
 <dl class="section return"><dt>Restituisce</dt><dd>Indice della riga selezionata o -1 se nessuna riga è selezionata </dd></dl>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                            {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    GtkTreeView* fileListView = GTK_TREE_VIEW(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;fileListView&quot;</span>));</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    GtkTreeSelection* selection = gtk_tree_view_get_selection (fileListView);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    GtkTreeModel* model;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    GtkTreePath* path;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    GtkTreeIter iter;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    gint* i;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (gtk_tree_selection_get_selected(selection , &amp;model , &amp;iter)){</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      path = gtk_tree_model_get_path(model , &amp;iter) ;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      i = gtk_tree_path_get_indices (path);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <span class="keywordflow">return</span> (*i);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                            {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    GtkTreeView* fileListView = GTK_TREE_VIEW(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;fileListView&quot;</span>));</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    GtkTreeSelection* selection = gtk_tree_view_get_selection(fileListView);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    GtkTreeModel* model;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    GtkTreePath* path;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    GtkTreeIter iter;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    gint* i;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span> (gtk_tree_selection_get_selected(selection , &amp;model , &amp;iter)){</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;      path = gtk_tree_model_get_path(model , &amp;iter) ;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      i = gtk_tree_path_get_indices(path);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      <span class="keywordflow">return</span> (*i);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="ttc" id="main_8h_html_a25cb099170736b974f91fbc5282f0106"><div class="ttname"><a href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a></div><div class="ttdeci">static GtkBuilder * builder</div><div class="ttdef"><b>Definition:</b> main.h:74</div></div>
 </div><!-- fragment -->
 </div>
@@ -390,59 +393,57 @@ Funzioni</h2></td></tr>
 <p>Handler pressione del tasto compress.</p>
 <p>Handler pressione del tasto remove.</p>
 <p>Handler pressione del tasto add. </p>
-<div class="fragment"><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                             {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">//Get mainWindow</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    GtkWidget* mainWindow = GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;mainWindow&quot;</span>));</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//Create file chooser dialog</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    GtkWidget* dialog = <a class="code" href="main_8cc.html#adbb5c9a558d9ad058e9f089f40a6a60d">createFileChooser</a>(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_OPEN, <span class="stringliteral">&quot;Open file&quot;</span>);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">//Set file chooser filter</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    GtkFileFilter* filter = gtk_file_filter_new();</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    gtk_file_filter_add_pattern(filter, <span class="stringliteral">&quot;*.hca&quot;</span>);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(dialog), filter);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">//Exec the dialog</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    gint res = gtk_dialog_run(GTK_DIALOG(dialog));</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">//If ok button is pressed</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span> (res == GTK_RESPONSE_ACCEPT){</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="comment">//Change currentMode</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <a class="code" href="main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998">currentMode</a> = <a class="code" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88">DECOMPRESS</a>;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="comment">//Disable compress and remove button</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;compToolButton&quot;</span>)), FALSE);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;removeToolButton&quot;</span>)), FALSE);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="comment">//Remove all loaded files</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <a class="code" href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a>();</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">//Get the file to decompress path</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <a class="code" href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a> = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));</div>
+<div class="fragment"><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                             {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">//Create file chooser dialog</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    GtkWidget* dialog = <a class="code" href="main_8cc.html#adbb5c9a558d9ad058e9f089f40a6a60d">createFileChooser</a>(GTK_WINDOW(<a class="code" href="main_8h.html#a929776169582ba270fc197a352f288e8">mainWindow</a>), GTK_FILE_CHOOSER_ACTION_OPEN, <span class="stringliteral">&quot;Open file&quot;</span>);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">//Set file chooser filter</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    GtkFileFilter* filter = gtk_file_filter_new();</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    gtk_file_filter_add_pattern(filter, <span class="stringliteral">&quot;*.hca&quot;</span>);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(dialog), filter);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">//Exec the dialog</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    gint res = gtk_dialog_run(GTK_DIALOG(dialog));</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">//If ok button is pressed</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (res == GTK_RESPONSE_ACCEPT){</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment">//Change currentMode</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998">currentMode</a> = <a class="code" href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88">DECOMPRESS</a>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="comment">//Disable compress and remove button</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;compToolButton&quot;</span>)), FALSE);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;removeToolButton&quot;</span>)), FALSE);</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">//Parse the file header</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="HuffmanDec_8cc.html#aef5e5d864d4c66ec3a84f94cf9893622">getCompressedFileInfo</a>(<a class="code" href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a>, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="comment">//If the parse is correct enable the decompress button</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;decToolButton&quot;</span>)), TRUE);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="comment">//Reload the parsed file header</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <a class="code" href="main_8cc.html#a336e3c041a1bc0d243f2e414af4e7891">reloadFileView</a>();</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <a class="code" href="main_8cc.html#a5a06aa053942f906276afd1a5c465090">showMessageDialog</a>(GTK_WINDOW(mainWindow), GTK_MESSAGE_ERROR, <span class="stringliteral">&quot;Invalid file header&quot;</span>);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    gtk_widget_destroy(dialog);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
-<div class="ttc" id="main_8cc_html_a336e3c041a1bc0d243f2e414af4e7891"><div class="ttname"><a href="main_8cc.html#a336e3c041a1bc0d243f2e414af4e7891">reloadFileView</a></div><div class="ttdeci">void reloadFileView()</div><div class="ttdoc">Rimuove tutte le righe da fileListModel e reinserisce tutti i dati presenti in fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:296</div></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">//Remove all loaded files</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <a class="code" href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a>();</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="comment">//Get the file to decompress path</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <a class="code" href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a> = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(dialog));</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="comment">//Parse the file header</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="HuffmanDec_8cc.html#aef5e5d864d4c66ec3a84f94cf9893622">getCompressedFileInfo</a>(<a class="code" href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a>, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="comment">//If the parse is correct enable the decompress button</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;decToolButton&quot;</span>)), TRUE);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="comment">//Reload the parsed file header</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <a class="code" href="main_8cc.html#a336e3c041a1bc0d243f2e414af4e7891">reloadFileView</a>();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <a class="code" href="main_8cc.html#a5a06aa053942f906276afd1a5c465090">showMessageDialog</a>(GTK_WINDOW(<a class="code" href="main_8h.html#a929776169582ba270fc197a352f288e8">mainWindow</a>), GTK_MESSAGE_ERROR, <span class="stringliteral">&quot;Invalid file header&quot;</span>);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    gtk_widget_destroy(dialog);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
+<div class="ttc" id="main_8cc_html_a336e3c041a1bc0d243f2e414af4e7891"><div class="ttname"><a href="main_8cc.html#a336e3c041a1bc0d243f2e414af4e7891">reloadFileView</a></div><div class="ttdeci">void reloadFileView()</div><div class="ttdoc">Rimuove tutte le righe da fileListModel e reinserisce tutti i dati presenti in fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:305</div></div>
 <div class="ttc" id="main_8h_html_a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88"><div class="ttname"><a href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911ae742e6a2cec84239bdd54b83bdc3fa88">DECOMPRESS</a></div><div class="ttdef"><b>Definition:</b> main.h:39</div></div>
 <div class="ttc" id="main_8h_html_a25cb099170736b974f91fbc5282f0106"><div class="ttname"><a href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a></div><div class="ttdeci">static GtkBuilder * builder</div><div class="ttdef"><b>Definition:</b> main.h:74</div></div>
 <div class="ttc" id="main_8h_html_af712cc9f4bd2ad4a901a5ba0727a6998"><div class="ttname"><a href="main_8h.html#af712cc9f4bd2ad4a901a5ba0727a6998">currentMode</a></div><div class="ttdeci">static Mode currentMode</div><div class="ttdef"><b>Definition:</b> main.h:62</div></div>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
-<div class="ttc" id="main_8cc_html_affc83df88722646ada6c05050c9a4288"><div class="ttname"><a href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a></div><div class="ttdeci">void clearFileList()</div><div class="ttdoc">Libera la memoria occupata da fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:289</div></div>
+<div class="ttc" id="main_8cc_html_affc83df88722646ada6c05050c9a4288"><div class="ttname"><a href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a></div><div class="ttdeci">void clearFileList()</div><div class="ttdoc">Libera la memoria occupata da fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:298</div></div>
 <div class="ttc" id="HuffmanDec_8cc_html_aef5e5d864d4c66ec3a84f94cf9893622"><div class="ttname"><a href="HuffmanDec_8cc.html#aef5e5d864d4c66ec3a84f94cf9893622">getCompressedFileInfo</a></div><div class="ttdeci">gboolean getCompressedFileInfo(const gchar *fileToDecompress, GSList *&amp;fileList)</div><div class="ttdoc">Salva in una lista un puntatore a FileInfo per ogni file trovato dentro un archivio. </div><div class="ttdef"><b>Definition:</b> HuffmanDec.cc:6</div></div>
-<div class="ttc" id="main_8cc_html_adbb5c9a558d9ad058e9f089f40a6a60d"><div class="ttname"><a href="main_8cc.html#adbb5c9a558d9ad058e9f089f40a6a60d">createFileChooser</a></div><div class="ttdeci">GtkWidget * createFileChooser(GtkWindow *parent, GtkFileChooserAction action, const gchar *title)</div><div class="ttdoc">Crea un&#39;istanza di GtkFileChooser con i parametri passati. </div><div class="ttdef"><b>Definition:</b> main.cc:220</div></div>
+<div class="ttc" id="main_8h_html_a929776169582ba270fc197a352f288e8"><div class="ttname"><a href="main_8h.html#a929776169582ba270fc197a352f288e8">mainWindow</a></div><div class="ttdeci">static GtkWidget * mainWindow</div><div class="ttdef"><b>Definition:</b> main.h:81</div></div>
+<div class="ttc" id="main_8cc_html_adbb5c9a558d9ad058e9f089f40a6a60d"><div class="ttname"><a href="main_8cc.html#adbb5c9a558d9ad058e9f089f40a6a60d">createFileChooser</a></div><div class="ttdeci">GtkWidget * createFileChooser(GtkWindow *parent, GtkFileChooserAction action, const gchar *title)</div><div class="ttdoc">Crea un&#39;istanza di GtkFileChooser con i parametri passati. </div><div class="ttdef"><b>Definition:</b> main.cc:226</div></div>
 <div class="ttc" id="main_8h_html_a5818fb053a614c5a264e884ac6d7e433"><div class="ttname"><a href="main_8h.html#a5818fb053a614c5a264e884ac6d7e433">fileToDecompress</a></div><div class="ttdeci">static gchar * fileToDecompress</div><div class="ttdef"><b>Definition:</b> main.h:56</div></div>
-<div class="ttc" id="main_8cc_html_a5a06aa053942f906276afd1a5c465090"><div class="ttname"><a href="main_8cc.html#a5a06aa053942f906276afd1a5c465090">showMessageDialog</a></div><div class="ttdeci">void showMessageDialog(GtkWindow *parent, GtkMessageType type, const gchar *msg)</div><div class="ttdoc">Crea e mostra una GtkDialog con i parametri passati. </div><div class="ttdef"><b>Definition:</b> main.cc:241</div></div>
+<div class="ttc" id="main_8cc_html_a5a06aa053942f906276afd1a5c465090"><div class="ttname"><a href="main_8cc.html#a5a06aa053942f906276afd1a5c465090">showMessageDialog</a></div><div class="ttdeci">void showMessageDialog(GtkWindow *parent, GtkMessageType type, const gchar *msg)</div><div class="ttdoc">Crea e mostra una GtkDialog con i parametri passati. </div><div class="ttdef"><b>Definition:</b> main.cc:247</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -462,12 +463,12 @@ Funzioni</h2></td></tr>
 
 <p>Handler chiusura aboutDialog, per prevenire distruzione della finestra. </p>
 <p>Handler della chiusura del programma. </p>
-<div class="fragment"><div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                                    {</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <a class="code" href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a>();</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    gtk_main_quit() ;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="keywordflow">return</span> TRUE ;</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;}</div>
-<div class="ttc" id="main_8cc_html_affc83df88722646ada6c05050c9a4288"><div class="ttname"><a href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a></div><div class="ttdeci">void clearFileList()</div><div class="ttdoc">Libera la memoria occupata da fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:289</div></div>
+<div class="fragment"><div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                                    {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <a class="code" href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a>();</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    gtk_main_quit() ;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordflow">return</span> TRUE ;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;}</div>
+<div class="ttc" id="main_8cc_html_affc83df88722646ada6c05050c9a4288"><div class="ttname"><a href="main_8cc.html#affc83df88722646ada6c05050c9a4288">clearFileList</a></div><div class="ttdeci">void clearFileList()</div><div class="ttdoc">Libera la memoria occupata da fileList. </div><div class="ttdef"><b>Definition:</b> main.cc:298</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -508,20 +509,26 @@ Funzioni</h2></td></tr>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">//Load gui</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a> = gtk_builder_new();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        gtk_builder_add_from_file(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>,<span class="stringliteral">&quot;/bin/gui/HuffmanCodecUI.glade&quot;</span>, NULL);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        gtk_builder_add_from_file(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>,<span class="stringliteral">&quot;gui/HuffmanCodecUI.glade&quot;</span>, NULL);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        gtk_builder_connect_signals(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, NULL);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//Disable compress, decompress and remove button</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;compToolButton&quot;</span>)), FALSE);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;removeToolButton&quot;</span>)), FALSE);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;decToolButton&quot;</span>)), FALSE);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a> = GTK_LIST_STORE(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;fileListModel&quot;</span>));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//Get widget</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="main_8h.html#a929776169582ba270fc197a352f288e8">mainWindow</a> = GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;mainWindow&quot;</span>));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a> = GTK_LIST_STORE(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;fileListModel&quot;</span>));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        assert(<a class="code" href="main_8h.html#a929776169582ba270fc197a352f288e8">mainWindow</a> != NULL);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        assert(<a class="code" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a> != NULL);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        gtk_main();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//Disable compress, decompress and remove button</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;compToolButton&quot;</span>)), FALSE);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;removeToolButton&quot;</span>)), FALSE);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        gtk_widget_set_sensitive(GTK_WIDGET(gtk_builder_get_object(<a class="code" href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a>, <span class="stringliteral">&quot;decToolButton&quot;</span>)), FALSE);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        gtk_main();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="ttc" id="main_8h_html_a25cb099170736b974f91fbc5282f0106"><div class="ttname"><a href="main_8h.html#a25cb099170736b974f91fbc5282f0106">builder</a></div><div class="ttdeci">static GtkBuilder * builder</div><div class="ttdef"><b>Definition:</b> main.h:74</div></div>
-<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:80</div></div>
+<div class="ttc" id="main_8h_html_a929776169582ba270fc197a352f288e8"><div class="ttname"><a href="main_8h.html#a929776169582ba270fc197a352f288e8">mainWindow</a></div><div class="ttdeci">static GtkWidget * mainWindow</div><div class="ttdef"><b>Definition:</b> main.h:81</div></div>
+<div class="ttc" id="main_8h_html_abaa992d15e57d9a81ab818cad5307486"><div class="ttname"><a href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a></div><div class="ttdeci">static GtkListStore * fileListModel</div><div class="ttdef"><b>Definition:</b> main.h:87</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -567,7 +574,7 @@ Funzioni</h2></td></tr>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
 <div class="ttc" id="main_8cc_html_a8a7e6d0713d20bfff044bf84b69a4590"><div class="ttname"><a href="main_8cc.html#a8a7e6d0713d20bfff044bf84b69a4590">initGUI</a></div><div class="ttdeci">void initGUI(int argc, char *argv[])</div><div class="ttdoc">Inizializza l&#39;interfaccia grafica. </div><div class="ttdef"><b>Definition:</b> main.cc:89</div></div>
 <div class="ttc" id="main_8h_html_a46c8a310cf4c094f8c80e1cb8dc1f911a36e3418e8d662d2bdaa39409c84415b2"><div class="ttname"><a href="main_8h.html#a46c8a310cf4c094f8c80e1cb8dc1f911a36e3418e8d662d2bdaa39409c84415b2">COMPRESS</a></div><div class="ttdef"><b>Definition:</b> main.h:39</div></div>
-<div class="ttc" id="main_8cc_html_ad65aae470e8d427480930bea6377d819"><div class="ttname"><a href="main_8cc.html#ad65aae470e8d427480930bea6377d819">parseCommandLine</a></div><div class="ttdeci">void parseCommandLine(int argc, char *argv[])</div><div class="ttdoc">Esegue le operazioni richieste da linea di comando. </div><div class="ttdef"><b>Definition:</b> main.cc:107</div></div>
+<div class="ttc" id="main_8cc_html_ad65aae470e8d427480930bea6377d819"><div class="ttname"><a href="main_8cc.html#ad65aae470e8d427480930bea6377d819">parseCommandLine</a></div><div class="ttdeci">void parseCommandLine(int argc, char *argv[])</div><div class="ttdoc">Esegue le operazioni richieste da linea di comando. </div><div class="ttdef"><b>Definition:</b> main.cc:112</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -604,34 +611,34 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>TRUE se tutti i file esistono, altrimenti FALSE </dd></dl>
-<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                                 {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    gchar* path;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">int</span> index = optind - 1;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="structFileInfo.html">FileInfo</a>* info;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">while</span>(index &lt; argc){</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;         path = strdup(argv[index]);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;         index++;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;         <span class="keywordflow">if</span>(path[0] != <span class="charliteral">&#39;-&#39;</span>){</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                 info = <a class="code" href="FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd">createNewFileInfo</a>(path);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                 <span class="keywordflow">if</span>(info != NULL){</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        <span class="comment">//If the file is not already in the fileList</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="keywordflow">if</span>(g_slist_find_custom(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, g_path_get_basename(path), <a class="code" href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a>) == NULL){</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                            <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> = g_slist_append(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, info);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                 }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                 <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                     <span class="keywordflow">return</span> FALSE;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                 }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;         }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;         <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;             optind = index - 1;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;             <span class="keywordflow">return</span> TRUE;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> TRUE;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
-<div class="ttc" id="FileInfo_8cc_html_a3b5de4ee136185618a8695261b4813b3"><div class="ttname"><a href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a></div><div class="ttdeci">gint findFileByName(gconstpointer a, gconstpointer b)</div><div class="ttdoc">Confronta il nome di un&#39;istanza di FileInfo con una stringa data. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:62</div></div>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                                 {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    gchar* path;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">int</span> index = optind - 1;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="structFileInfo.html">FileInfo</a>* info;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">while</span>(index &lt; argc){</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;         path = strdup(argv[index]);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;         index++;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;         <span class="keywordflow">if</span>(path[0] != <span class="charliteral">&#39;-&#39;</span>){</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                 info = <a class="code" href="FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd">createNewFileInfo</a>(path);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                 <span class="keywordflow">if</span>(info != NULL){</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        <span class="comment">//If the file is not already in the fileList</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        <span class="keywordflow">if</span>(g_slist_find_custom(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, g_path_get_basename(path), <a class="code" href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a>) == NULL){</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                            <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a> = g_slist_append(<a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>, info);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                 }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                 <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                     <span class="keywordflow">return</span> FALSE;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                 }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;         }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;         <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;             optind = index - 1;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;             <span class="keywordflow">return</span> TRUE;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> TRUE;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="ttc" id="FileInfo_8cc_html_a3b5de4ee136185618a8695261b4813b3"><div class="ttname"><a href="FileInfo_8cc.html#a3b5de4ee136185618a8695261b4813b3">findFileByName</a></div><div class="ttdeci">gint findFileByName(gconstpointer a, gconstpointer b)</div><div class="ttdoc">Confronta il nome di un&#39;istanza di FileInfo con una stringa data. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:63</div></div>
 <div class="ttc" id="FileInfo_8cc_html_a8291875b8cbc4b67e1572a9ed6b25dcd"><div class="ttname"><a href="FileInfo_8cc.html#a8291875b8cbc4b67e1572a9ed6b25dcd">createNewFileInfo</a></div><div class="ttdeci">FileInfo * createNewFileInfo(const gchar *path)</div><div class="ttdoc">Crea una nuova istanza di FileInfo a partire dal path di un file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:13</div></div>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
 <div class="ttc" id="structFileInfo_html"><div class="ttname"><a href="structFileInfo.html">FileInfo</a></div><div class="ttdoc">Struttura contenente le informazioni di un singolo file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:4</div></div>
@@ -670,91 +677,92 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                             {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    gboolean useCompress = FALSE;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    gboolean useDecompress = FALSE;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    gchar* inPath = NULL;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    gchar* outPath = NULL;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> c;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">while</span>((c = getopt(argc, argv, <span class="stringliteral">&quot;c:d:ho:&quot;</span>)) != -1){</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">switch</span> (c) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">//Compress -c [FILE1] [FILE2] ... [FILEn]</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">if</span>(useDecompress){</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Cannot use -c with option -d&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    exit(1);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    useCompress = TRUE;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="keywordflow">if</span>(!<a class="code" href="main_8cc.html#a7b2c2d4491b2eb0b280c85094c1c7c27">parseArgFileList</a>(argc, argv)){</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        cout &lt;&lt; <span class="stringliteral">&quot;Some file in the list don&#39;t exist&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="comment">//Decompress -d [FILE]</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span>(useCompress){</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Cannot use -d with option -c&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    exit(1);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    useDecompress = TRUE;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    inPath = optarg;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">//Help -h</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;\t-c [FILE]...\t to compress. The first file is archive output file name.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;\t-d [FILE]   \t to decompress.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;\t-o [FILE] | [DIR]   \t to set the output  [FILE] | [DIR].&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="comment">//Set output file/dir   -o [FILE] | [DIR]</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                outPath = optarg;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="comment">//Error</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                exit(1);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">//Compress</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span>(useCompress){</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span>(outPath != NULL){</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="HuffmanCo_8cc.html#ac53c32ba2d1b0a98bea974586b6e1046">compressToFile</a>(outPath, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Error during the compression&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                exit(1);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;No output dir setted. Use -o to set.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">//Decompress</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(useDecompress){</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span>(outPath != NULL){</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="HuffmanDec_8cc.html#aef5e5d864d4c66ec3a84f94cf9893622">getCompressedFileInfo</a>(inPath, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Error opening the archive file&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                exit(1);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="HuffmanDec_8cc.html#aaf1256db29f6838b3f5ce82351cb46b2">decompressFileToDir</a>(inPath, outPath, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Error during the decompression&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                exit(1);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;No input file name setted. Use -o to set.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
-<div class="ttc" id="main_8cc_html_a7b2c2d4491b2eb0b280c85094c1c7c27"><div class="ttname"><a href="main_8cc.html#a7b2c2d4491b2eb0b280c85094c1c7c27">parseArgFileList</a></div><div class="ttdeci">gboolean parseArgFileList(int argc, char *argv[])</div><div class="ttdoc">Aggiunge a fileList i file passati da linea di comando. </div><div class="ttdef"><b>Definition:</b> main.cc:192</div></div>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                             {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    gboolean useCompress = FALSE;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    gboolean useDecompress = FALSE;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    gchar* inPath = NULL;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    gchar* outPath = NULL;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> c;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">//Parse all the options</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">while</span>((c = getopt(argc, argv, <span class="stringliteral">&quot;c:d:ho:&quot;</span>)) != -1){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">switch</span> (c) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="comment">//Compress -c [FILE1] [FILE2] ... [FILEn]</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">if</span>(useDecompress){</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Cannot use -c with option -d&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    exit(1);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    useCompress = TRUE;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    <span class="keywordflow">if</span>(!<a class="code" href="main_8cc.html#a7b2c2d4491b2eb0b280c85094c1c7c27">parseArgFileList</a>(argc, argv)){</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                        cout &lt;&lt; <span class="stringliteral">&quot;Some file in the list don&#39;t exist&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="comment">//Decompress -d [FILE]</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">if</span>(useCompress){</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;Cannot use -d with option -c&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    exit(1);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    useDecompress = TRUE;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    inPath = optarg;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="comment">//Help -h</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;h&#39;</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;\t-c [FILE]...\t to compress. The first file is archive output file name.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;\t-d [FILE]   \t to decompress.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;\t-o [FILE] | [DIR]   \t to set the output  [FILE] | [DIR].&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="comment">//Set output file/dir   -o [FILE] | [DIR]</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;o&#39;</span>:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                outPath = optarg;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="comment">//Error</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;?&#39;</span>:</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                exit(1);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">//Compress</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span>(useCompress){</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span>(outPath != NULL){</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="HuffmanCo_8cc.html#ac53c32ba2d1b0a98bea974586b6e1046">compressToFile</a>(outPath, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Error during the compression&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                exit(1);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;No output dir setted. Use -o to set.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            exit(1);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">//Decompress</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(useDecompress){</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span>(outPath != NULL){</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="HuffmanDec_8cc.html#aef5e5d864d4c66ec3a84f94cf9893622">getCompressedFileInfo</a>(inPath, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Error opening the archive file&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                exit(1);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="HuffmanDec_8cc.html#aaf1256db29f6838b3f5ce82351cb46b2">decompressFileToDir</a>(inPath, outPath, <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>)){</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;Error during the decompression&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                exit(1);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;No input file name setted. Use -o to set.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            exit(1);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="ttc" id="main_8cc_html_a7b2c2d4491b2eb0b280c85094c1c7c27"><div class="ttname"><a href="main_8cc.html#a7b2c2d4491b2eb0b280c85094c1c7c27">parseArgFileList</a></div><div class="ttdeci">gboolean parseArgFileList(int argc, char *argv[])</div><div class="ttdoc">Aggiunge a fileList i file passati da linea di comando. </div><div class="ttdef"><b>Definition:</b> main.cc:198</div></div>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
 <div class="ttc" id="HuffmanDec_8cc_html_aaf1256db29f6838b3f5ce82351cb46b2"><div class="ttname"><a href="HuffmanDec_8cc.html#aaf1256db29f6838b3f5ce82351cb46b2">decompressFileToDir</a></div><div class="ttdeci">gboolean decompressFileToDir(const gchar *fileToDecompress, const gchar *decompressPath, GSList *fileList)</div><div class="ttdoc">Decomprime un archivio all&#39;interno una cartella. </div><div class="ttdef"><b>Definition:</b> HuffmanDec.cc:112</div></div>
 <div class="ttc" id="HuffmanDec_8cc_html_aef5e5d864d4c66ec3a84f94cf9893622"><div class="ttname"><a href="HuffmanDec_8cc.html#aef5e5d864d4c66ec3a84f94cf9893622">getCompressedFileInfo</a></div><div class="ttdeci">gboolean getCompressedFileInfo(const gchar *fileToDecompress, GSList *&amp;fileList)</div><div class="ttdoc">Salva in una lista un puntatore a FileInfo per ogni file trovato dentro un archivio. </div><div class="ttdef"><b>Definition:</b> HuffmanDec.cc:6</div></div>
@@ -776,18 +784,18 @@ Funzioni</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Rimuove tutte le righe da <a class="el" href="main_8h.html#abaa992d15e57d9a81ab818cad5307486">fileListModel</a> e reinserisce tutti i dati presenti in <a class="el" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>. </p>
-<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                     {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    GSList* current = <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="main_8cc.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24">clearFileView</a>();</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">while</span>(current != NULL){</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <a class="code" href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a>((<a class="code" href="structFileInfo.html">FileInfo</a>*)current-&gt;data);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        current = g_slist_next(current);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
-<div class="ttc" id="main_8cc_html_a2c6c449e0366687d868d91bd26f07e3c"><div class="ttname"><a href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a></div><div class="ttdeci">void addToFileView(FileInfo *info)</div><div class="ttdoc">Aggiunge un&#39;istanza di FileInfo a fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:267</div></div>
+<div class="fragment"><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                     {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    GSList* current = <a class="code" href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="main_8cc.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24">clearFileView</a>();</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">while</span>(current != NULL){</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a>((<a class="code" href="structFileInfo.html">FileInfo</a>*)current-&gt;data);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        current = g_slist_next(current);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
+<div class="ttc" id="main_8cc_html_a2c6c449e0366687d868d91bd26f07e3c"><div class="ttname"><a href="main_8cc.html#a2c6c449e0366687d868d91bd26f07e3c">addToFileView</a></div><div class="ttdeci">void addToFileView(FileInfo *info)</div><div class="ttdoc">Aggiunge un&#39;istanza di FileInfo a fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:276</div></div>
 <div class="ttc" id="main_8h_html_a44d90b71da623632b88b9ea1fb239cd6"><div class="ttname"><a href="main_8h.html#a44d90b71da623632b88b9ea1fb239cd6">fileList</a></div><div class="ttdeci">static GSList * fileList</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
-<div class="ttc" id="main_8cc_html_a7427a09ca1ad0f2a73d96a0d9e3a5c24"><div class="ttname"><a href="main_8cc.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24">clearFileView</a></div><div class="ttdeci">void clearFileView()</div><div class="ttdoc">Rimuove tutte le righe da fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:285</div></div>
+<div class="ttc" id="main_8cc_html_a7427a09ca1ad0f2a73d96a0d9e3a5c24"><div class="ttname"><a href="main_8cc.html#a7427a09ca1ad0f2a73d96a0d9e3a5c24">clearFileView</a></div><div class="ttdeci">void clearFileView()</div><div class="ttdoc">Rimuove tutte le righe da fileListModel. </div><div class="ttdef"><b>Definition:</b> main.cc:294</div></div>
 <div class="ttc" id="structFileInfo_html"><div class="ttname"><a href="structFileInfo.html">FileInfo</a></div><div class="ttdoc">Struttura contenente le informazioni di un singolo file. </div><div class="ttdef"><b>Definition:</b> FileInfo.cc:4</div></div>
 </div><!-- fragment -->
 </div>
@@ -831,23 +839,23 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                                                                {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    GtkWidget* dialog = gtk_message_dialog_new(</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                                        parent,</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                        GTK_DIALOG_MODAL,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                                        type,</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                                        GTK_BUTTONS_OK,</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                                        <span class="stringliteral">&quot;%s&quot;</span>, msg);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    gtk_dialog_run(GTK_DIALOG(dialog));</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    gtk_widget_destroy(dialog);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                                                                {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    GtkWidget* dialog = gtk_message_dialog_new(</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                                        parent,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                                        GTK_DIALOG_MODAL,</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                                        type,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                                        GTK_BUTTONS_OK,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                                        <span class="stringliteral">&quot;%s&quot;</span>, msg);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    gtk_dialog_run(GTK_DIALOG(dialog));</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    gtk_widget_destroy(dialog);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Lun 9 Mag 2016 19:58:28 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Mar 10 Mag 2016 10:09:31 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

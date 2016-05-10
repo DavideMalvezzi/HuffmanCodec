@@ -12,7 +12,7 @@ using namespace std;
 
 /**
 * @file
-* Libreria per la gestione delle informazioni relative ai file compressi e da comprimere
+* Libreria per la gestione delle informazioni relative ai file compressi e da comprimere.
 */
 
 /**

@@ -17,6 +17,12 @@
 using namespace std;
 
 /**
+* @file
+* Libreria contenente le funzioni e le strutture dati per la decompressione dei file.
+*/
+
+
+/**
 * @brief Salva in una lista un puntatore a ::FileInfo per ogni file trovato dentro un archivio
 *
 * @param[in] fileToDecompress Path del file da decomprimere

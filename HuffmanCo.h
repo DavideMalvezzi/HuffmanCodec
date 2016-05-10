@@ -16,7 +16,7 @@ using namespace std;
 
 /**
 * @file
-* Libreria contenente le funzioni e le strutture dati per la compressione dei file
+* Libreria contenente le funzioni e le strutture dati per la compressione dei file.
 */
 
 /**
