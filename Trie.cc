@@ -69,6 +69,18 @@ void getTrieElementCount(Trie* root, gint* count){
   }
 }
 
+void getTrieLeafCount(Trie* root, gint* count){
+  assert(root != NULL);
+
+  if(isTrieALeaf(root)){
+    (*count)++;
+  }
+  else{
+    getTrieLeafCount(root->left, count);
+    getTrieLeafCount(root->right, count);
+  }
+}
+
 void* getTrieData(Trie* root){
   assert(root != NULL);
 

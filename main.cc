@@ -24,9 +24,9 @@
 * In caso si riscontrino dei problemi durante la compressione verrà mostrato una dialog di errore.
 *
 * Per comprimere via linea di comando:
-* \code{.sh}
+* @code{.sh}
   	./HuffmanCodec -c File1.txt ... FileN.txt -o ArchiveFile.hca
-*	\endcode
+*	@endcode
 *
 * @subsection Decompressione Decompressione
 * Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante
@@ -36,9 +36,9 @@
 * In caso si riscontrino dei problemi durante la decompressione verrà mostrato una dialog di errore.
 *
 * Per decomprimere via linea di comando:
-* \code{.sh}
+* @code{.sh}
   	./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/
-*	\endcode
+*	@endcode
 *
 * @section Moduli Moduli
 * Il progetto è stato suddiviso nei seguenti moduli:

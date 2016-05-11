@@ -83,7 +83,7 @@ Trie* parseKeywordsTrie(ifstream& inputFile);
 * @param[in] count Puntatore a variabile di supporto per la ricorsione. Deve essere inizializzato a 0
 * return Puntatore al ::Trie letto
 */
-Trie* trieFromFile(byte* trieChild, byte* trieElem, int* count);
+Trie* trieFromFile(ifstream& inputFile, byte* trieChild, int* count);
 
 /**
 * @brief Decomprime un archivio all'interno una cartella

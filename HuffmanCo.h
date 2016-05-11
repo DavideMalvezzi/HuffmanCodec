@@ -126,9 +126,10 @@ void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords);
 * @param[in] root ::Trie delle keywords
 * @param[in] trieChild Array di byte. L'n-simo bit indica se l'n-simo nodo del ::Trie ha dei figli
 * @param[in] trieElem Array in cui verranno salvati tutti i caratteri dei nodi in pre-order
-* @param[in] count Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione
+* @param[in] arcCount Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione
+* @param[in] leafCount Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione
 */
-void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* count);
+void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* arcCount, int* leafCount);
 
 /**
 * @brief Compressione e salvataggio di un file nell'archivio

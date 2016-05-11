@@ -98,6 +98,15 @@ void setTrieRightChild(Trie* root, Trie* child);
 void getTrieElementCount(Trie* root, gint* count);
 
 /**
+* @brief Funzione ricorsiva per il conteggio delle foglie in un ::Trie
+*
+*
+* @param[in] root Nodo da cui partire per il conteggio
+* @param[out] count Puntatore ad una variabile in cui salvare il conteggio
+*/
+void getTrieLeafCount(Trie* root, gint* count);
+
+/**
 * @brief Ritorna il puntatore ai dati in un nodo ::Trie
 *
 * @param[in] trie Puntatore a ::Trie

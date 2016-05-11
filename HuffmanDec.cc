@@ -66,44 +66,41 @@ word parseWord(ifstream& inputFile){
 }
 
 Trie* parseKeywordsTrie(ifstream& inputFile){
-  byte *trieChild, *trieElem;
-  int bytesCount;
-  int count = parseInt(inputFile);
+  byte* trieChild;
+  int bytesCount = parseInt(inputFile);
+  int arcCount;
   Trie* keywords;
 
-  bytesCount = ceil((float)count / 8);
   trieChild = new byte[bytesCount];
-  trieElem = new byte[count];
 
   for(int i = 0; i < bytesCount; i++){
     inputFile.read(MEM_BUFFER(trieChild[i]), sizeof(byte));
   }
 
-  for(int i = 0; i < count; i++){
-    inputFile.read(MEM_BUFFER(trieElem[i]), sizeof(byte));
-  }
-
-  count = 0;
-  keywords = trieFromFile(trieChild, trieElem, &count);
+  arcCount = 0;
+  keywords = trieFromFile(inputFile, trieChild, &arcCount);
 
   delete[] trieChild;
-  delete[] trieElem;
 
   return keywords;
 }
 
-Trie* trieFromFile(byte* trieChild, byte* trieElem, int* count){
-  TrieItem* item = new TrieItem;
-  item->c = trieElem[*count];
-  Trie* root = createNewTrieRoot(NULL, NULL, item);
+Trie* trieFromFile(ifstream& inputFile, byte* trieChild, int* count){
   int byte = (*count) / 8;
   int bit = (*count) % 8;
 
+  //Create the new node
+  TrieItem* item = new TrieItem;
+  Trie* root = createNewTrieRoot(NULL, NULL, item);
+
   if(readBit(trieChild[byte], 7 - bit)){
     (*count)++;
-    setTrieLeftChild(root, trieFromFile(trieChild, trieElem, count));
+    setTrieLeftChild(root, trieFromFile(inputFile, trieChild, count));
     (*count)++;
-    setTrieRightChild(root, trieFromFile(trieChild, trieElem, count));
+    setTrieRightChild(root, trieFromFile(inputFile, trieChild, count));
+  }
+  else{
+    item->c = inputFile.get();
   }
 
   return root;

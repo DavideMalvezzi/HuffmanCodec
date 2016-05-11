@@ -249,12 +249,16 @@ gboolean compressFile(ofstream& outputFile, FileInfo* fileInfo){
 
 void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords){
   byte *trieChild, *trieElem;
-  int count = 0, bytesCount, i = 0;
-  getTrieElementCount(keywords, &count);
+  int leafCount = 0, arcCount = 0, bytesCount;
 
-  bytesCount = ceil((float)count / 8);
+  //Get counts
+  getTrieLeafCount(keywords, &leafCount);
+  getTrieElementCount(keywords, &arcCount);
+
+  //Need max because if only 1 node return 0
+  bytesCount = max(1.0f, ceil((float)(arcCount - 1) / 8));
   trieChild = new byte[bytesCount];
-  trieElem = new byte[count];
+  trieElem = new byte[leafCount];
 
   //Reset child bits
   for(int i = 0; i < bytesCount; i++){
@@ -262,15 +266,17 @@ void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords){
   }
 
   //Get elements and child bits
-  trieToFile(keywords, trieChild, trieElem, &i);
+  leafCount = 0;
+  arcCount = 0;
+  trieToFile(keywords, trieChild, trieElem, &arcCount, &leafCount);
 
-  outputFile.write(MEM_BUFFER(count), sizeof(int));
+  outputFile.write(MEM_BUFFER(bytesCount), sizeof(int));
 
   for(int i = 0; i < bytesCount; i++){
     outputFile.write(MEM_BUFFER(trieChild[i]), sizeof(byte));
   }
 
-  for(int i = 0; i < count; i++){
+  for(int i = 0; i < leafCount; i++){
     outputFile.write(MEM_BUFFER(trieElem[i]), sizeof(byte));
   }
 
@@ -278,22 +284,25 @@ void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords){
   delete[] trieElem;
 }
 
-void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* count){
-  //Seve the n-th element in the trieElem array
-  trieElem[*count] = ((TrieItem*)getTrieData(root))->c;
+void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* arcCount, int* leafCount){
+
+  int byte = (*arcCount) / 8;
+  int bit = (*arcCount) % 8;
+
+  //Update the element count
+  (*arcCount)++;
 
   //If not a leaf call recursively on the children
   if(!isTrieALeaf(root)){
-    int byte = (*count) / 8;
-    int bit = (*count) % 8;
-
     //Update the trieChild header
     trieChild[byte] = setBit(trieChild[byte], 7 - bit);
-
+    trieToFile(navigateTrie(root, LEFT), trieChild, trieElem, arcCount, leafCount);
+    trieToFile(navigateTrie(root, RIGHT), trieChild, trieElem, arcCount, leafCount);
+  }
+  else{
+    //Save the n-th element in the trieElem array
+    trieElem[*leafCount] = ((TrieItem*)getTrieData(root))->c;
     //Update the element count
-    (*count)++;
-    trieToFile(navigateTrie(root, LEFT), trieChild, trieElem, count);
-    (*count)++;
-    trieToFile(navigateTrie(root, RIGHT), trieChild, trieElem, count);
+    (*leafCount)++;
   }
 }
