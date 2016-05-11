@@ -113,15 +113,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a>(<a class="code" href="structTrie.html">Trie</a>* root, gint* count);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a>(<a class="code" href="structTrie.html">Trie</a>* trie);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a>(<a class="code" href="structTrie.html">Trie</a>* root, gint* count);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a>(<a class="code" href="structTrie.html">Trie</a>* trie);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="Trie_8h_html_a641186accc13dba1460a14fb9981cf66"><div class="ttname"><a href="Trie_8h.html#a641186accc13dba1460a14fb9981cf66">setTrieRightChild</a></div><div class="ttdeci">void setTrieRightChild(Trie *root, Trie *child)</div><div class="ttdoc">Setta il puntatore del figlio destro ad un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:56</div></div>
-<div class="ttc" id="Trie_8h_html_a3d9a53b59e733fc4c324f6ef298b0906"><div class="ttname"><a href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *trie)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
+<div class="ttc" id="Trie_8h_html_a3d9a53b59e733fc4c324f6ef298b0906"><div class="ttname"><a href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *trie)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:84</div></div>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:33</div></div>
 <div class="ttc" id="Trie_8h_html_a42f01fbaa4f1a2e740c146a338c3da58"><div class="ttname"><a href="Trie_8h.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a></div><div class="ttdeci">gboolean isTrieALeaf(Trie *root)</div><div class="ttdoc">Controlla se un Trie è una foglia. </div><div class="ttdef"><b>Definition:</b> Trie.cc:44</div></div>
 <div class="ttc" id="Trie_8h_html_ae3c1e70e5c9c8d399a5878fcfa5f6c12"><div class="ttname"><a href="Trie_8h.html#ae3c1e70e5c9c8d399a5878fcfa5f6c12">setTrieLeftChild</a></div><div class="ttdeci">void setTrieLeftChild(Trie *root, Trie *child)</div><div class="ttdoc">Setta il puntatore del figlio sinistro ad un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:50</div></div>
 <div class="ttc" id="Trie_8h_html_a0f0613b02207253e2f88ad45515c66d1"><div class="ttname"><a href="Trie_8h.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a></div><div class="ttdeci">Trie * navigateTrie(Trie *root, TrieDirection direction)</div><div class="ttdoc">Ritorna il nodo figlio di un Trie data la TrieDirection in cui scorrere. </div><div class="ttdef"><b>Definition:</b> Trie.cc:34</div></div>
+<div class="ttc" id="Trie_8h_html_aad1e072b8bcfd3530d9b47e289637ce3"><div class="ttname"><a href="Trie_8h.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a></div><div class="ttdeci">void getTrieLeafCount(Trie *root, gint *count)</div><div class="ttdoc">Funzione ricorsiva per il conteggio delle foglie in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
 <div class="ttc" id="Trie_8h_html_a7faf8c8701264541ada285fa0673c373"><div class="ttname"><a href="Trie_8h.html#a7faf8c8701264541ada285fa0673c373">createNewTrieRoot</a></div><div class="ttdeci">Trie * createNewTrieRoot(Trie *left, Trie *right, void *data)</div><div class="ttdoc">Ritorna una nuova istanza di Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:10</div></div>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:34</div></div>
 <div class="ttc" id="structTrie_html_abcf1b1f9fb12bb0eb3b1d56125ffd5f6"><div class="ttname"><a href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">Trie::left</a></div><div class="ttdeci">Trie * left</div><div class="ttdef"><b>Definition:</b> Trie.cc:6</div></div>
@@ -134,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 11 Mag 2016 11:17:27 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Mer 11 Mag 2016 17:05:55 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

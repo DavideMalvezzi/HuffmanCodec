@@ -130,9 +130,9 @@ Funzioni</h2></td></tr>
 <tr class="memitem:a8fce36a4c93fa66ede3e5577439b60e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HuffmanCo_8h.html#a8fce36a4c93fa66ede3e5577439b60e5">saveTrieKeywordsOnFile</a> (ofstream &amp;outputFile, <a class="el" href="structTrie.html">Trie</a> *keywords)</td></tr>
 <tr class="memdesc:a8fce36a4c93fa66ede3e5577439b60e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva un <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a> all'interno di un file.  <a href="#a8fce36a4c93fa66ede3e5577439b60e5">Continua...</a><br/></td></tr>
 <tr class="separator:a8fce36a4c93fa66ede3e5577439b60e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27449f594f2d3d2b1774f1dbb9729bdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HuffmanCo_8h.html#a27449f594f2d3d2b1774f1dbb9729bdc">trieToFile</a> (<a class="el" href="structTrie.html">Trie</a> *root, <a class="el" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *trieChild, <a class="el" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *trieElem, int *count)</td></tr>
-<tr class="memdesc:a27449f594f2d3d2b1774f1dbb9729bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione ricorsiva che comprime un <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a> per essere salvato su un file.  <a href="#a27449f594f2d3d2b1774f1dbb9729bdc">Continua...</a><br/></td></tr>
-<tr class="separator:a27449f594f2d3d2b1774f1dbb9729bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35cdfb14a82b36374ef0cc1f36e1e04c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HuffmanCo_8h.html#a35cdfb14a82b36374ef0cc1f36e1e04c">trieToFile</a> (<a class="el" href="structTrie.html">Trie</a> *root, <a class="el" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *trieChild, <a class="el" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *trieElem, int *arcCount, int *leafCount)</td></tr>
+<tr class="memdesc:a35cdfb14a82b36374ef0cc1f36e1e04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione ricorsiva che comprime un <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a> per essere salvato su un file.  <a href="#a35cdfb14a82b36374ef0cc1f36e1e04c">Continua...</a><br/></td></tr>
+<tr class="separator:a35cdfb14a82b36374ef0cc1f36e1e04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75cdd32ca021fd11e1b95ece95c42d64"><td class="memItemLeft" align="right" valign="top">gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="HuffmanCo_8h.html#a75cdd32ca021fd11e1b95ece95c42d64">compressFile</a> (ofstream &amp;outputFile, <a class="el" href="structFileInfo.html">FileInfo</a> *fileInfo)</td></tr>
 <tr class="memdesc:a75cdd32ca021fd11e1b95ece95c42d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compressione e salvataggio di un file nell'archivio.  <a href="#a75cdd32ca021fd11e1b95ece95c42d64">Continua...</a><br/></td></tr>
 <tr class="separator:a75cdd32ca021fd11e1b95ece95c42d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -596,7 +596,7 @@ Funzioni</h2></td></tr>
 <div class="ttc" id="PriorityList_8cc_html_a75a5232be7e94c15648e9ed10d3322db"><div class="ttname"><a href="PriorityList_8cc.html#a75a5232be7e94c15648e9ed10d3322db">insertListItem</a></div><div class="ttdeci">void insertListItem(PriorityList *list, void *data, const int priority)</div><div class="ttdoc">Inserisce un nuovo elemento nella PriorityList. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:31</div></div>
 <div class="ttc" id="structTrieItem_html"><div class="ttname"><a href="structTrieItem.html">TrieItem</a></div><div class="ttdoc">Struttura usata per salvare dentro un Trie i dati relativi ai caratteri e alle rispettive frequenze...</div><div class="ttdef"><b>Definition:</b> FileInfo.h:51</div></div>
 <div class="ttc" id="Trie_8cc_html_a7faf8c8701264541ada285fa0673c373"><div class="ttname"><a href="Trie_8cc.html#a7faf8c8701264541ada285fa0673c373">createNewTrieRoot</a></div><div class="ttdeci">Trie * createNewTrieRoot(Trie *left, Trie *right, void *data)</div><div class="ttdoc">Ritorna una nuova istanza di Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:10</div></div>
-<div class="ttc" id="Trie_8cc_html_a34ba1e898e41061a1e90e5244743ee47"><div class="ttname"><a href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *root)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
+<div class="ttc" id="Trie_8cc_html_a34ba1e898e41061a1e90e5244743ee47"><div class="ttname"><a href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *root)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:84</div></div>
 <div class="ttc" id="PriorityList_8cc_html_aaa33a728da5efe782936dd8946c8b174"><div class="ttname"><a href="PriorityList_8cc.html#aaa33a728da5efe782936dd8946c8b174">getListMinData</a></div><div class="ttdeci">void * getListMinData(PriorityList *list)</div><div class="ttdoc">Rimuove l&#39;elemento di priorità minima eitorna il puntatore all&#39;informazione. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:55</div></div>
 <div class="ttc" id="structTrie_html_abcf1b1f9fb12bb0eb3b1d56125ffd5f6"><div class="ttname"><a href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">Trie::left</a></div><div class="ttdeci">Trie * left</div><div class="ttdef"><b>Definition:</b> Trie.cc:6</div></div>
 <div class="ttc" id="structTrie_html"><div class="ttname"><a href="structTrie.html">Trie</a></div><div class="ttdoc">Struttura utilizzata per memorizzare un singolo nodo di un trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:4</div></div>
@@ -670,7 +670,7 @@ Funzioni</h2></td></tr>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:33</div></div>
 <div class="ttc" id="HuffmanCo_8cc_html_aa9ca4c969a089ac8f89ab806616e061c"><div class="ttname"><a href="HuffmanCo_8cc.html#aa9ca4c969a089ac8f89ab806616e061c">keywordsTrieToKeywordsArray</a></div><div class="ttdeci">void keywordsTrieToKeywordsArray(Trie *trie, CharKey *arr, hword path, hword deep)</div><div class="ttdoc">Funzione ricorsiva per convertire in un array il Trie delle keywords. </div><div class="ttdef"><b>Definition:</b> HuffmanCo.cc:201</div></div>
 <div class="ttc" id="structTrieItem_html_a3def553589ae0f8d6d23b0cdf7da24e4"><div class="ttname"><a href="structTrieItem.html#a3def553589ae0f8d6d23b0cdf7da24e4">TrieItem::c</a></div><div class="ttdeci">byte c</div><div class="ttdef"><b>Definition:</b> FileInfo.h:52</div></div>
-<div class="ttc" id="Trie_8cc_html_a34ba1e898e41061a1e90e5244743ee47"><div class="ttname"><a href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *root)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
+<div class="ttc" id="Trie_8cc_html_a34ba1e898e41061a1e90e5244743ee47"><div class="ttname"><a href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *root)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:84</div></div>
 <div class="ttc" id="Trie_8cc_html_a42f01fbaa4f1a2e740c146a338c3da58"><div class="ttname"><a href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a></div><div class="ttdeci">gboolean isTrieALeaf(Trie *root)</div><div class="ttdoc">Controlla se un Trie è una foglia. </div><div class="ttdef"><b>Definition:</b> Trie.cc:44</div></div>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:34</div></div>
 <div class="ttc" id="Trie_8cc_html_a0f0613b02207253e2f88ad45515c66d1"><div class="ttname"><a href="Trie_8cc.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a></div><div class="ttdeci">Trie * navigateTrie(Trie *root, TrieDirection direction)</div><div class="ttdoc">Ritorna il nodo figlio di un Trie data la TrieDirection in cui scorrere. </div><div class="ttdef"><b>Definition:</b> Trie.cc:34</div></div>
@@ -804,42 +804,49 @@ Funzioni</h2></td></tr>
 </dl>
 <div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                                                 {</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *trieChild, *trieElem;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">int</span> count = 0, bytesCount, i = 0;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <a class="code" href="Trie_8cc.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a>(keywords, &amp;count);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  bytesCount = ceil((<span class="keywordtype">float</span>)count / 8);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  trieChild = <span class="keyword">new</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>[bytesCount];</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  trieElem = <span class="keyword">new</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>[count];</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="comment">//Reset child bits</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bytesCount; i++){</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    trieChild[i] = 0;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="comment">//Get elements and child bits</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="HuffmanCo_8cc.html#a27449f594f2d3d2b1774f1dbb9729bdc">trieToFile</a>(keywords, trieChild, trieElem, &amp;i);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  outputFile.write(<a class="code" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a>(count), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bytesCount; i++){</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    outputFile.write(<a class="code" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a>(trieChild[i]), <span class="keyword">sizeof</span>(<a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>));</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">int</span> leafCount = 0, arcCount = 0, bytesCount;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="comment">//Get counts</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <a class="code" href="Trie_8cc.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a>(keywords, &amp;leafCount);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <a class="code" href="Trie_8cc.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a>(keywords, &amp;arcCount);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="comment">//Need max because if only 1 node return 0</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  bytesCount = max(1.0f, ceil((<span class="keywordtype">float</span>)(arcCount - 1) / 8));</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  trieChild = <span class="keyword">new</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>[bytesCount];</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  trieElem = <span class="keyword">new</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>[leafCount];</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="comment">//Reset child bits</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bytesCount; i++){</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    trieChild[i] = 0;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="comment">//Get elements and child bits</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  leafCount = 0;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  arcCount = 0;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <a class="code" href="HuffmanCo_8cc.html#a35cdfb14a82b36374ef0cc1f36e1e04c">trieToFile</a>(keywords, trieChild, trieElem, &amp;arcCount, &amp;leafCount);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; count; i++){</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    outputFile.write(<a class="code" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a>(trieElem[i]), <span class="keyword">sizeof</span>(<a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>));</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keyword">delete</span>[] trieChild;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keyword">delete</span>[] trieElem;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
-<div class="ttc" id="HuffmanCo_8cc_html_a27449f594f2d3d2b1774f1dbb9729bdc"><div class="ttname"><a href="HuffmanCo_8cc.html#a27449f594f2d3d2b1774f1dbb9729bdc">trieToFile</a></div><div class="ttdeci">void trieToFile(Trie *root, byte *trieChild, byte *trieElem, int *count)</div><div class="ttdoc">Funzione ricorsiva che comprime un Trie per essere salvato su un file. </div><div class="ttdef"><b>Definition:</b> HuffmanCo.cc:281</div></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  outputFile.write(<a class="code" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a>(bytesCount), <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bytesCount; i++){</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    outputFile.write(<a class="code" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a>(trieChild[i]), <span class="keyword">sizeof</span>(<a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>));</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; leafCount; i++){</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    outputFile.write(<a class="code" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a>(trieElem[i]), <span class="keyword">sizeof</span>(<a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>));</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="keyword">delete</span>[] trieChild;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keyword">delete</span>[] trieElem;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="ttc" id="Trie_8cc_html_aad1e072b8bcfd3530d9b47e289637ce3"><div class="ttname"><a href="Trie_8cc.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a></div><div class="ttdeci">void getTrieLeafCount(Trie *root, gint *count)</div><div class="ttdoc">Funzione ricorsiva per il conteggio delle foglie in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
 <div class="ttc" id="BitUtils_8h_html_a0c8186d9b9b7880309c27230bbb5e69d"><div class="ttname"><a href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a></div><div class="ttdeci">unsigned char byte</div><div class="ttdoc">Definizione del tipo byte. </div><div class="ttdef"><b>Definition:</b> BitUtils.h:18</div></div>
 <div class="ttc" id="Trie_8cc_html_ae6296b1aee6f86514187c33f2dd31d82"><div class="ttname"><a href="Trie_8cc.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a></div><div class="ttdeci">void getTrieElementCount(Trie *root, gint *count)</div><div class="ttdoc">Funzione ricorsiva per il conteggio dei nodi radicati in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:62</div></div>
 <div class="ttc" id="BitUtils_8h_html_aafc9e600312f3b8291e5fa6e3190ad2c"><div class="ttname"><a href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">MEM_BUFFER</a></div><div class="ttdeci">#define MEM_BUFFER(variable)</div><div class="ttdef"><b>Definition:</b> BitUtils.h:13</div></div>
+<div class="ttc" id="HuffmanCo_8cc_html_a35cdfb14a82b36374ef0cc1f36e1e04c"><div class="ttname"><a href="HuffmanCo_8cc.html#a35cdfb14a82b36374ef0cc1f36e1e04c">trieToFile</a></div><div class="ttdeci">void trieToFile(Trie *root, byte *trieChild, byte *trieElem, int *arcCount, int *leafCount)</div><div class="ttdoc">Funzione ricorsiva che comprime un Trie per essere salvato su un file. </div><div class="ttdef"><b>Definition:</b> HuffmanCo.cc:287</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a27449f594f2d3d2b1774f1dbb9729bdc"></a>
+<a class="anchor" id="a35cdfb14a82b36374ef0cc1f36e1e04c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -865,7 +872,13 @@ Funzioni</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
+          <td class="paramname"><em>arcCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>leafCount</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -881,37 +894,41 @@ Funzioni</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td><a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a> delle keywords </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">trieChild</td><td>Array di byte. L'n-simo bit indica se l'n-simo nodo del <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a> ha dei figli </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">trieElem</td><td>Array in cui verranno salvati tutti i caratteri dei nodi in pre-order </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arcCount</td><td>Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">leafCount</td><td>Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="comment">//Seve the n-th element in the trieElem array</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  trieElem[*count] = ((<a class="code" href="structTrieItem.html">TrieItem</a>*)<a class="code" href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a>(root))-&gt;c;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="comment">//If not a leaf call recursively on the children</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a>(root)){</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> = (*count) / 8;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">int</span> bit = (*count) % 8;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="comment">//Update the trieChild header</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    trieChild[<a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>] = <a class="code" href="BitUtils_8cc.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a>(trieChild[byte], 7 - bit);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment">//Update the element count</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    (*count)++;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="HuffmanCo_8cc.html#a27449f594f2d3d2b1774f1dbb9729bdc">trieToFile</a>(<a class="code" href="Trie_8cc.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a>(root, <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a>), trieChild, trieElem, count);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    (*count)++;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="HuffmanCo_8cc.html#a27449f594f2d3d2b1774f1dbb9729bdc">trieToFile</a>(<a class="code" href="Trie_8cc.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a>(root, <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a>), trieChild, trieElem, count);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
-<div class="ttc" id="HuffmanCo_8cc_html_a27449f594f2d3d2b1774f1dbb9729bdc"><div class="ttname"><a href="HuffmanCo_8cc.html#a27449f594f2d3d2b1774f1dbb9729bdc">trieToFile</a></div><div class="ttdeci">void trieToFile(Trie *root, byte *trieChild, byte *trieElem, int *count)</div><div class="ttdoc">Funzione ricorsiva che comprime un Trie per essere salvato su un file. </div><div class="ttdef"><b>Definition:</b> HuffmanCo.cc:281</div></div>
+<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                                                                           {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> = (*arcCount) / 8;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordtype">int</span> bit = (*arcCount) % 8;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="comment">//Update the element count</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  (*arcCount)++;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="comment">//If not a leaf call recursively on the children</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a>(root)){</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">//Update the trieChild header</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    trieChild[<a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>] = <a class="code" href="BitUtils_8cc.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a>(trieChild[byte], 7 - bit);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="HuffmanCo_8cc.html#a35cdfb14a82b36374ef0cc1f36e1e04c">trieToFile</a>(<a class="code" href="Trie_8cc.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a>(root, <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a>), trieChild, trieElem, arcCount, leafCount);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="HuffmanCo_8cc.html#a35cdfb14a82b36374ef0cc1f36e1e04c">trieToFile</a>(<a class="code" href="Trie_8cc.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a>(root, <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a>), trieChild, trieElem, arcCount, leafCount);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">//Save the n-th element in the trieElem array</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    trieElem[*leafCount] = ((<a class="code" href="structTrieItem.html">TrieItem</a>*)<a class="code" href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a>(root))-&gt;c;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">//Update the element count</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    (*leafCount)++;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
 <div class="ttc" id="structTrieItem_html"><div class="ttname"><a href="structTrieItem.html">TrieItem</a></div><div class="ttdoc">Struttura usata per salvare dentro un Trie i dati relativi ai caratteri e alle rispettive frequenze...</div><div class="ttdef"><b>Definition:</b> FileInfo.h:51</div></div>
 <div class="ttc" id="BitUtils_8cc_html_a74cd91e9cb0afd68b839169dddb24afc"><div class="ttname"><a href="BitUtils_8cc.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a></div><div class="ttdeci">word setBit(word b, int bit)</div><div class="ttdoc">Setta a 1 l&#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:4</div></div>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:33</div></div>
 <div class="ttc" id="BitUtils_8h_html_a0c8186d9b9b7880309c27230bbb5e69d"><div class="ttname"><a href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a></div><div class="ttdeci">unsigned char byte</div><div class="ttdoc">Definizione del tipo byte. </div><div class="ttdef"><b>Definition:</b> BitUtils.h:18</div></div>
-<div class="ttc" id="Trie_8cc_html_a34ba1e898e41061a1e90e5244743ee47"><div class="ttname"><a href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *root)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
+<div class="ttc" id="Trie_8cc_html_a34ba1e898e41061a1e90e5244743ee47"><div class="ttname"><a href="Trie_8cc.html#a34ba1e898e41061a1e90e5244743ee47">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *root)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:84</div></div>
 <div class="ttc" id="Trie_8cc_html_a42f01fbaa4f1a2e740c146a338c3da58"><div class="ttname"><a href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a></div><div class="ttdeci">gboolean isTrieALeaf(Trie *root)</div><div class="ttdoc">Controlla se un Trie è una foglia. </div><div class="ttdef"><b>Definition:</b> Trie.cc:44</div></div>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:34</div></div>
+<div class="ttc" id="HuffmanCo_8cc_html_a35cdfb14a82b36374ef0cc1f36e1e04c"><div class="ttname"><a href="HuffmanCo_8cc.html#a35cdfb14a82b36374ef0cc1f36e1e04c">trieToFile</a></div><div class="ttdeci">void trieToFile(Trie *root, byte *trieChild, byte *trieElem, int *arcCount, int *leafCount)</div><div class="ttdoc">Funzione ricorsiva che comprime un Trie per essere salvato su un file. </div><div class="ttdef"><b>Definition:</b> HuffmanCo.cc:287</div></div>
 <div class="ttc" id="Trie_8cc_html_a0f0613b02207253e2f88ad45515c66d1"><div class="ttname"><a href="Trie_8cc.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a></div><div class="ttdeci">Trie * navigateTrie(Trie *root, TrieDirection direction)</div><div class="ttdoc">Ritorna il nodo figlio di un Trie data la TrieDirection in cui scorrere. </div><div class="ttdef"><b>Definition:</b> Trie.cc:34</div></div>
 </div><!-- fragment -->
 </div>
@@ -919,7 +936,7 @@ Funzioni</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 11 Mag 2016 11:17:27 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Mer 11 Mag 2016 17:05:55 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

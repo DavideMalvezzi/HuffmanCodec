@@ -124,6 +124,9 @@ Funzioni</h2></td></tr>
 <tr class="memitem:ae6296b1aee6f86514187c33f2dd31d82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Trie_8h.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a> (<a class="el" href="structTrie.html">Trie</a> *root, gint *count)</td></tr>
 <tr class="memdesc:ae6296b1aee6f86514187c33f2dd31d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione ricorsiva per il conteggio dei nodi radicati in un <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a>.  <a href="#ae6296b1aee6f86514187c33f2dd31d82">Continua...</a><br/></td></tr>
 <tr class="separator:ae6296b1aee6f86514187c33f2dd31d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1e072b8bcfd3530d9b47e289637ce3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Trie_8h.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a> (<a class="el" href="structTrie.html">Trie</a> *root, gint *count)</td></tr>
+<tr class="memdesc:aad1e072b8bcfd3530d9b47e289637ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione ricorsiva per il conteggio delle foglie in un <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a>.  <a href="#aad1e072b8bcfd3530d9b47e289637ce3">Continua...</a><br/></td></tr>
+<tr class="separator:aad1e072b8bcfd3530d9b47e289637ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d9a53b59e733fc4c324f6ef298b0906"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a> (<a class="el" href="structTrie.html">Trie</a> *trie)</td></tr>
 <tr class="memdesc:a3d9a53b59e733fc4c324f6ef298b0906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ritorna il puntatore ai dati in un nodo <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a>.  <a href="#a3d9a53b59e733fc4c324f6ef298b0906">Continua...</a><br/></td></tr>
 <tr class="separator:a3d9a53b59e733fc4c324f6ef298b0906"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,11 +291,11 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore ai dati del nodo </dd></dl>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                             {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  assert(root != NULL);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> root-&gt;data;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                             {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  assert(root != NULL);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> root-&gt;data;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,6 +342,56 @@ Funzioni</h2></td></tr>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="ttc" id="Trie_8cc_html_ae6296b1aee6f86514187c33f2dd31d82"><div class="ttname"><a href="Trie_8cc.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a></div><div class="ttdeci">void getTrieElementCount(Trie *root, gint *count)</div><div class="ttdoc">Funzione ricorsiva per il conteggio dei nodi radicati in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:62</div></div>
+<div class="ttc" id="Trie_8cc_html_a42f01fbaa4f1a2e740c146a338c3da58"><div class="ttname"><a href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a></div><div class="ttdeci">gboolean isTrieALeaf(Trie *root)</div><div class="ttdoc">Controlla se un Trie è una foglia. </div><div class="ttdef"><b>Definition:</b> Trie.cc:44</div></div>
+<div class="ttc" id="structTrie_html_abcf1b1f9fb12bb0eb3b1d56125ffd5f6"><div class="ttname"><a href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">Trie::left</a></div><div class="ttdeci">Trie * left</div><div class="ttdef"><b>Definition:</b> Trie.cc:6</div></div>
+<div class="ttc" id="structTrie_html_a53ed6640d2866708bd7d8ba2280d0afa"><div class="ttname"><a href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">Trie::right</a></div><div class="ttdeci">Trie * right</div><div class="ttdef"><b>Definition:</b> Trie.cc:7</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aad1e072b8bcfd3530d9b47e289637ce3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getTrieLeafCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTrie.html">Trie</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gint *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funzione ricorsiva per il conteggio delle foglie in un <a class="el" href="structTrie.html" title="Struttura utilizzata per memorizzare un singolo nodo di un trie. ">Trie</a>. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>Nodo da cui partire per il conteggio </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>Puntatore ad una variabile in cui salvare il conteggio </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                              {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  assert(root != NULL);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a>(root)){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    (*count)++;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="Trie_8cc.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a>(root-&gt;<a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>, count);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="Trie_8cc.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a>(root-&gt;<a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>, count);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="Trie_8cc_html_aad1e072b8bcfd3530d9b47e289637ce3"><div class="ttname"><a href="Trie_8cc.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a></div><div class="ttdeci">void getTrieLeafCount(Trie *root, gint *count)</div><div class="ttdoc">Funzione ricorsiva per il conteggio delle foglie in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:72</div></div>
 <div class="ttc" id="Trie_8cc_html_a42f01fbaa4f1a2e740c146a338c3da58"><div class="ttname"><a href="Trie_8cc.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a></div><div class="ttdeci">gboolean isTrieALeaf(Trie *root)</div><div class="ttdoc">Controlla se un Trie è una foglia. </div><div class="ttdef"><b>Definition:</b> Trie.cc:44</div></div>
 <div class="ttc" id="structTrie_html_abcf1b1f9fb12bb0eb3b1d56125ffd5f6"><div class="ttname"><a href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">Trie::left</a></div><div class="ttdeci">Trie * left</div><div class="ttdef"><b>Definition:</b> Trie.cc:6</div></div>
 <div class="ttc" id="structTrie_html_a53ed6640d2866708bd7d8ba2280d0afa"><div class="ttname"><a href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">Trie::right</a></div><div class="ttdeci">Trie * right</div><div class="ttdef"><b>Definition:</b> Trie.cc:7</div></div>
@@ -511,7 +564,7 @@ Funzioni</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 11 Mag 2016 11:17:27 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Mer 11 Mag 2016 17:05:55 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
