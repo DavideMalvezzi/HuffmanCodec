@@ -7,6 +7,75 @@
 using namespace std;
 
 /**
+* @mainpage Huffman CoDec
+* @section Introduzione Introduzione
+* Lo scopo del progetto è quello di realizzare un compressore/decompressore di file testuali attraverso l'utilizzo
+* della codifica di Huffman.
+* Con questo programma sarà possibile:
+*		- @b comprimere uno o più file testuali all'interno di un unico file-archivio compresso
+* 		in formato *.hca (Huffman Compressed Archive), e allo stesso modo decomprimere;
+*		- @b decomprimere un file *.hca all'interno di una cartella per riotterenere i file compressi.
+*
+* Entrambe le funzionalità sono accessibili sia via interfaccia grafica, sia via linea di comando.
+*
+* @section Funzionalità Funzionalità
+* @subsection Compressione Compressione
+*	Una volta aperto il programma, per comprimere uno o più file in un archivio sarà sufficiente premere il pulsante
+* @a Add nella toolbar e selezionare i file che si è scelto di comprimere. Dato l'ok, la lista dei file si aggiornerà e
+* saranno mostrate le informazioni dei file selezionati. E' possibile aggiungere altri file, sempre utilizzando
+* il pulsante @a Add, oppure rimuovere uno o più file, selezionando dalla lista la riga contenente il file da eliminare e
+* premendo il pulsante @a Remove. A questo punto è possibile comprimere i file premendo il pulsante @a Compress e selezionado il nome
+* dell'archivio da creare.<br>
+* In caso si riscontrino dei problemi durante la compressione verrà mostrato una dialog di errore.
+*
+* Per comprimere via linea di comando:
+* @code{.sh}
+  	./HuffmanCodec -c File1.txt ... FileN.txt -o ArchiveFile.hca
+*	@endcode
+*
+* @subsection Decompressione Decompressione
+* Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante
+* @a Open nella toolbar. Se l'archivio è valido, nella lista dei file verranno caricate le informazioni dei file
+* contenuti al suo interno. A questo punto si può procedere alla decompressione cliccando sul pulsante @a Decompress
+* e selezionare la cartella in cui salvare i file.<br>
+* In caso si riscontrino dei problemi durante la decompressione verrà mostrato una dialog di errore.
+*
+* Per decomprimere via linea di comando:
+* @code{.sh}
+  	./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/
+*	@endcode
+*
+* @section Moduli Moduli
+* Il progetto è stato suddiviso nei seguenti moduli:
+* 	- main.h: modulo contenente tutte le funzionalità di interfacciamento con l'utente, sia a livello di GUI, sia a linea di comando.
+* 	- HuffmanCo.h: modulo contenente tutte le funzionalità di compressione.
+* 	- HuffmanDec.h: modulo contenente tutte le funzionalità di decompressione.
+* 	- PriorityList.h: modulo contenente l'implementazione di una lista con priorità attraverso un heap binario.
+* 	- Trie.h: modulo contenente l'implementazione di un trie.
+* 	- FileInfo.h: modulo contenente le strutture dati per la gestione delle informazioni dei file.
+* 	- BitUtils.h: modulo contenente tutte le funzionalità di gestione dei bit.
+* 	- Debug.h: modulo contenente tutte le funzionalità di debug.
+*
+* @section Struttura Struttura file archivio
+* Ogni file archivio è diviso in due sezioni:
+*		- @b Header: contiene le informazioni relative ad ogni file compresso all'interno dell'archivio;
+*		- @b Files: contiene, accodati uno dopo l'altro, tutti i file compressi.
+*
+* I primi 4 byte dell'header rappresentano il numero di file presenti all'interno dell'archivio.
+*
+* L'header è poi composto da tanti sotto-header, uno per ogni file, contenenti le seguenti informazioni:
+*		- Lunghezza del nome del file (1 byte);
+* 	- Nome del file (1-256 byte);
+* 	- Dimensione file originale in byte (8 byte);
+*		- Dimensione file compresso in byte (8 byte);
+*		- Numero nodi del Trie delle keywords (4 byte);
+*		- Array di bit, vedi ::trieFromFile (Dimensione variabile);
+*		- Contenuto nodi del Trie delle keywords (Dimensione variabile).
+*
+* @author Davide Malvezzi
+*/
+
+/**
 * @file
 * Libreria contenente le funzioni per la gestione dell'interfaccia grafica e a linea di comando.
 */

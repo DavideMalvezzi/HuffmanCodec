@@ -47,6 +47,9 @@ gboolean compressToFile(const gchar* path, GSList* fileList){
     return TRUE;
   }
 
+  DPRINTLN("Compression failed...");
+  DLINE('=');
+
   return FALSE;
 }
 
@@ -83,6 +86,8 @@ gboolean saveFileHeader(ofstream& outputFile, FileInfo* fileInfo){
       return TRUE;
     }
   }
+
+  DPRINTLN("Failed to save file header...");
 
   return FALSE;
 }
@@ -152,6 +157,8 @@ gboolean getFileFrequencies(const gchar* path, int* charSetFreq){
     return TRUE;
   }
 
+  DPRINTLN("Failed to open the file...");
+
   return FALSE;
 }
 
@@ -189,23 +196,28 @@ word getFileCompressedSize(Trie* keywordsTrie, int* charSetFreq){
   CharKey keywords[CHAR_SET_SIZE];
   keywordsTrieToKeywordsArray(keywordsTrie, keywords);
 
+  //Get the size in bits
   for(int i = 0; i < CHAR_SET_SIZE; i++){
     if(charSetFreq[i] > 0){
       size += charSetFreq[i] * keywords[i].size;
     }
   }
 
+  //Return the size in bytes
   return size / 8 + 1;
 }
 
 void keywordsTrieToKeywordsArray(Trie* trie, CharKey* arr, hword path, hword deep){
   TrieItem* item;
+
   if(isTrieALeaf(trie)){
+    //Add the item to the array
     item = (TrieItem*)getTrieData(trie);
     arr[item->c].key = path;
     arr[item->c].size = deep;
   }
   else{
+    //Navigate the trie
     keywordsTrieToKeywordsArray(navigateTrie(trie, LEFT), arr, path, deep + 1);
     keywordsTrieToKeywordsArray(navigateTrie(trie, RIGHT), arr, setBit(path, KEY_BIT_SIZE - deep - 1), deep + 1);
   }
@@ -224,6 +236,7 @@ gboolean compressFile(ofstream& outputFile, FileInfo* fileInfo){
     DPRINTLN("Compressing " << getFileName(fileInfo));
     while((c = inputFile.get()) != EOF){
 
+      //Convert the char to the keywords
       for(hword i = 0; i < keywords[c].size; i++){
         if(bufferSize == 8){
           outputFile.write(MEM_BUFFER(buffer), sizeof(byte));
@@ -244,6 +257,9 @@ gboolean compressFile(ofstream& outputFile, FileInfo* fileInfo){
     inputFile.close();
     return TRUE;
   }
+
+  DPRINTLN("Error opening file " << getFileName(fileInfo));
+
   return FALSE;
 }
 

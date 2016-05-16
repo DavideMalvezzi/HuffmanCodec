@@ -34,13 +34,15 @@ void insertListItem(PriorityList* list, void* data, const int priority){
 
 	i = list->last;
 
+	//If list is not full
 	if(i + 1 <= list->size){
+		//Insert the element
 		list->items[i].priority = priority;
 		list->items[i].data = data;
 		list->last++;
 
+		//Adjust heap
 		parent = getParent(list, i);
-
 		while(i > 0 && list->items[parent].priority > priority){
 			temp = list->items[i];
 			list->items[i] = list->items[parent];
@@ -54,10 +56,13 @@ void insertListItem(PriorityList* list, void* data, const int priority){
 
 void* getListMinData(PriorityList* list){
 	void* data = NULL;
+	//If list is not empty
 	if(list->last > 0){
+		//Remove the element
 		data = list->items[0].data;
 		list->items[0] = list->items[list->last - 1];
 		list->last--;
+		//Heapify the heap
 		heapify(list);
 	}
 	return data;

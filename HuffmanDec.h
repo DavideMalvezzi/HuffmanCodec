@@ -78,8 +78,8 @@ Trie* parseKeywordsTrie(ifstream& inputFile);
 /**
 * @brief Funzione ricorsiva che crea un ::Trie di keywords a partire dai dati letti da file
 *
-* @param[in] trieChild Array di bit. L'n-simo bit indica se l'n-simo ::Trie ha figli oppure se è una foglia
-* @param[in] trieElem Array contenente i valori dei singoli nodi del ::Trie
+* @param[in] inputFile Stream di lettura del file archivio
+* @param[in] trieChild Array di bit. L'n-simo bit indica se l'n-simo nodo del ::Trie ha figli oppure se è una foglia
 * @param[in] count Puntatore a variabile di supporto per la ricorsione. Deve essere inizializzato a 0
 * return Puntatore al ::Trie letto
 */

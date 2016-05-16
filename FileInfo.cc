@@ -18,6 +18,7 @@ FileInfo* createNewFileInfo(const gchar* path){
   if(in.is_open()){
     FileInfo* info = new FileInfo;
 
+    //Set file params
     info->name = g_path_get_basename(path);
     info->path = path;
     info->size = in.tellg();
@@ -26,7 +27,14 @@ FileInfo* createNewFileInfo(const gchar* path){
 
     in.close();
 
-    return info->size > 0 ? info : NULL;
+    //Discard the file if it's size is 0
+    if(info->size > 0){
+      return info;
+    }
+
+    delete info;
+
+    return NULL;
   }
 
   return NULL;
@@ -35,6 +43,7 @@ FileInfo* createNewFileInfo(const gchar* path){
 FileInfo* createNewFileInfo(const gchar* name, word size, word compSize, Trie* keywords){
   FileInfo* info = new FileInfo;
 
+  //Set file params
   info->name = name;
   info->path = NULL;
   info->size = size;

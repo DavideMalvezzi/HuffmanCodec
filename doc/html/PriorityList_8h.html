@@ -244,10 +244,10 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Indice del nodo figlio sinistro o -1 se il nodo non ha un figlio sinistro </dd></dl>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                     {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> child = 2 * index + 1;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> child &gt;= list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> ? -1 : child;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                     {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> child = 2 * index + 1;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> child &gt;= list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> ? -1 : child;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="ttc" id="structPriorityList_html_abc3ed95ddfcb0b5c8c4437d0e7761193"><div class="ttname"><a href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">PriorityList::last</a></div><div class="ttdeci">int last</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -274,19 +274,22 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore all'informazione </dd></dl>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a> = NULL;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span>(list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> &gt; 0){</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        data = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[0].<a class="code" href="structPriorityListItem.html#a5791df62adfbb00662850cb5ffda7745">data</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[0] = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> - 1];</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>--;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="PriorityList_8cc.html#aca3d1330227326eb12d81da0e51dd5b9">heapify</a>(list);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a> = NULL;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//If list is not empty</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span>(list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> &gt; 0){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">//Remove the element</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        data = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[0].<a class="code" href="structPriorityListItem.html#a5791df62adfbb00662850cb5ffda7745">data</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[0] = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> - 1];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>--;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">//Heapify the heap</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="PriorityList_8cc.html#aca3d1330227326eb12d81da0e51dd5b9">heapify</a>(list);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="ttc" id="structPriorityList_html_abc3ed95ddfcb0b5c8c4437d0e7761193"><div class="ttname"><a href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">PriorityList::last</a></div><div class="ttdeci">int last</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:9</div></div>
 <div class="ttc" id="structPriorityListItem_html_a5791df62adfbb00662850cb5ffda7745"><div class="ttname"><a href="structPriorityListItem.html#a5791df62adfbb00662850cb5ffda7745">PriorityListItem::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:5</div></div>
-<div class="ttc" id="PriorityList_8cc_html_aca3d1330227326eb12d81da0e51dd5b9"><div class="ttname"><a href="PriorityList_8cc.html#aca3d1330227326eb12d81da0e51dd5b9">heapify</a></div><div class="ttdeci">void heapify(const PriorityList *list)</div><div class="ttdoc">Controlla e modifica la lista per mantenere le proprietà di un min-heap. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:70</div></div>
+<div class="ttc" id="PriorityList_8cc_html_aca3d1330227326eb12d81da0e51dd5b9"><div class="ttname"><a href="PriorityList_8cc.html#aca3d1330227326eb12d81da0e51dd5b9">heapify</a></div><div class="ttdeci">void heapify(const PriorityList *list)</div><div class="ttdoc">Controlla e modifica la lista per mantenere le proprietà di un min-heap. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:75</div></div>
 <div class="ttc" id="structTrie_html_a25d301cda45b83ca54cd4a16ebd5815f"><div class="ttname"><a href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">Trie::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> Trie.cc:5</div></div>
 <div class="ttc" id="structPriorityList_html_aa3b8876e18679a4fdee05878e4da0595"><div class="ttname"><a href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">PriorityList::items</a></div><div class="ttdeci">PriorityListItem * items</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:10</div></div>
 </div><!-- fragment -->
@@ -314,9 +317,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Numero di elementi </dd></dl>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                   {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                   {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="ttc" id="structPriorityList_html_abc3ed95ddfcb0b5c8c4437d0e7761193"><div class="ttname"><a href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">PriorityList::last</a></div><div class="ttdeci">int last</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -354,24 +357,24 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Indice del nodo figlio con priorità più bassa o -1 se il nodo non ha figli </dd></dl>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                    {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a> = <a class="code" href="PriorityList_8cc.html#a906535ab5e44031549df5bbfed8b2574">getLeftChild</a>(list, index);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a> = <a class="code" href="PriorityList_8cc.html#ae2b0c207a91e515a17600d5c2ec165a7">getRightChild</a>(list, index);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span>(left == -1 &amp;&amp; right == -1){</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right == -1){</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(left == -1){</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[<a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> &lt;= list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[<a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> ? left : <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
-<div class="ttc" id="PriorityList_8cc_html_ae2b0c207a91e515a17600d5c2ec165a7"><div class="ttname"><a href="PriorityList_8cc.html#ae2b0c207a91e515a17600d5c2ec165a7">getRightChild</a></div><div class="ttdeci">int getRightChild(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo figlio destro. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:95</div></div>
-<div class="ttc" id="PriorityList_8cc_html_a906535ab5e44031549df5bbfed8b2574"><div class="ttname"><a href="PriorityList_8cc.html#a906535ab5e44031549df5bbfed8b2574">getLeftChild</a></div><div class="ttdeci">int getLeftChild(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo figlio sinistro. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:90</div></div>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a> = <a class="code" href="PriorityList_8cc.html#a906535ab5e44031549df5bbfed8b2574">getLeftChild</a>(list, index);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a> = <a class="code" href="PriorityList_8cc.html#ae2b0c207a91e515a17600d5c2ec165a7">getRightChild</a>(list, index);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span>(left == -1 &amp;&amp; right == -1){</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right == -1){</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(left == -1){</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[<a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> &lt;= list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[<a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> ? left : <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="ttc" id="PriorityList_8cc_html_ae2b0c207a91e515a17600d5c2ec165a7"><div class="ttname"><a href="PriorityList_8cc.html#ae2b0c207a91e515a17600d5c2ec165a7">getRightChild</a></div><div class="ttdeci">int getRightChild(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo figlio destro. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:100</div></div>
+<div class="ttc" id="PriorityList_8cc_html_a906535ab5e44031549df5bbfed8b2574"><div class="ttname"><a href="PriorityList_8cc.html#a906535ab5e44031549df5bbfed8b2574">getLeftChild</a></div><div class="ttdeci">int getLeftChild(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo figlio sinistro. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:95</div></div>
 <div class="ttc" id="structPriorityListItem_html_a48c01a8c9ac4f630319b74f9beb00427"><div class="ttname"><a href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">PriorityListItem::priority</a></div><div class="ttdeci">int priority</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:4</div></div>
 <div class="ttc" id="structTrie_html_abcf1b1f9fb12bb0eb3b1d56125ffd5f6"><div class="ttname"><a href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">Trie::left</a></div><div class="ttdeci">Trie * left</div><div class="ttdef"><b>Definition:</b> Trie.cc:6</div></div>
 <div class="ttc" id="structPriorityList_html_aa3b8876e18679a4fdee05878e4da0595"><div class="ttname"><a href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">PriorityList::items</a></div><div class="ttdeci">PriorityListItem * items</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:10</div></div>
@@ -412,9 +415,9 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Indice del nodo padre </dd></dl>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                  {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> ceil((<span class="keywordtype">float</span>)index / 2) - 1;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                  {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> ceil((<span class="keywordtype">float</span>)index / 2) - 1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -451,10 +454,10 @@ Funzioni</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Indice del nodo figlio destro o -1 se il nodo non ha un figlio destro </dd></dl>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                      {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> child = 2 * index + 2;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> child &gt;= list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> ? -1 : child;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                      {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> child = 2 * index + 2;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> child &gt;= list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a> ? -1 : child;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="ttc" id="structPriorityList_html_abc3ed95ddfcb0b5c8c4437d0e7761193"><div class="ttname"><a href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">PriorityList::last</a></div><div class="ttdeci">int last</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -480,22 +483,22 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                      {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> curr = 0, minChild;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="structPriorityListItem.html">PriorityListItem</a> temp;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    minChild = <a class="code" href="PriorityList_8cc.html#ab38a4c1a129b2d92f63a2bf153e4153f">getMinChild</a>(list, curr);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">while</span>(minChild &gt; 0 &amp;&amp; list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[curr].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> &gt; list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[minChild].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a>){</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        temp = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[curr];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[curr] = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[minChild];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[minChild] = temp;</div>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                      {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> curr = 0, minChild;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="structPriorityListItem.html">PriorityListItem</a> temp;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    minChild = <a class="code" href="PriorityList_8cc.html#ab38a4c1a129b2d92f63a2bf153e4153f">getMinChild</a>(list, curr);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        curr = minChild;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        minChild = <a class="code" href="PriorityList_8cc.html#ab38a4c1a129b2d92f63a2bf153e4153f">getMinChild</a>(list, curr);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="ttc" id="PriorityList_8cc_html_ab38a4c1a129b2d92f63a2bf153e4153f"><div class="ttname"><a href="PriorityList_8cc.html#ab38a4c1a129b2d92f63a2bf153e4153f">getMinChild</a></div><div class="ttdeci">int getMinChild(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo figlio con priorità più bassa. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:100</div></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">while</span>(minChild &gt; 0 &amp;&amp; list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[curr].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> &gt; list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[minChild].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a>){</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        temp = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[curr];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[curr] = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[minChild];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[minChild] = temp;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        curr = minChild;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        minChild = <a class="code" href="PriorityList_8cc.html#ab38a4c1a129b2d92f63a2bf153e4153f">getMinChild</a>(list, curr);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="ttc" id="PriorityList_8cc_html_ab38a4c1a129b2d92f63a2bf153e4153f"><div class="ttname"><a href="PriorityList_8cc.html#ab38a4c1a129b2d92f63a2bf153e4153f">getMinChild</a></div><div class="ttdeci">int getMinChild(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo figlio con priorità più bassa. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:105</div></div>
 <div class="ttc" id="structPriorityListItem_html"><div class="ttname"><a href="structPriorityListItem.html">PriorityListItem</a></div><div class="ttdoc">Struttura utilizzata per memorizzare un singolo nodo dell&#39;heap binario. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:3</div></div>
 <div class="ttc" id="structPriorityListItem_html_a48c01a8c9ac4f630319b74f9beb00427"><div class="ttname"><a href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">PriorityListItem::priority</a></div><div class="ttdeci">int priority</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:4</div></div>
 <div class="ttc" id="structPriorityList_html_aa3b8876e18679a4fdee05878e4da0595"><div class="ttname"><a href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">PriorityList::items</a></div><div class="ttdeci">PriorityListItem * items</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:10</div></div>
@@ -547,27 +550,29 @@ Funzioni</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    i = list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>(i + 1 &lt;= list-&gt;<a class="code" href="structPriorityList.html#a707ff866f5dbca8561f5b37aaea08eb3">size</a>){</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> = priority;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i].<a class="code" href="structPriorityListItem.html#a5791df62adfbb00662850cb5ffda7745">data</a> = <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>++;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        parent = <a class="code" href="PriorityList_8cc.html#a84c41103e194b9dd0c4c91648d0b0d4a">getParent</a>(list, i);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//If list is not full</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span>(i + 1 &lt;= list-&gt;<a class="code" href="structPriorityList.html#a707ff866f5dbca8561f5b37aaea08eb3">size</a>){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">//Insert the element</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> = priority;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i].<a class="code" href="structPriorityListItem.html#a5791df62adfbb00662850cb5ffda7745">data</a> = <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        list-&gt;<a class="code" href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">last</a>++;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">while</span>(i &gt; 0 &amp;&amp; list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[parent].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> &gt; priority){</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            temp = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i] = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[parent];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[parent] = temp;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            i = parent;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            parent = <a class="code" href="PriorityList_8cc.html#a84c41103e194b9dd0c4c91648d0b0d4a">getParent</a>(list, i);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//Adjust heap</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        parent = <a class="code" href="PriorityList_8cc.html#a84c41103e194b9dd0c4c91648d0b0d4a">getParent</a>(list, i);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span>(i &gt; 0 &amp;&amp; list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[parent].<a class="code" href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">priority</a> &gt; priority){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            temp = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[i] = list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[parent];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            list-&gt;<a class="code" href="structPriorityList.html#aa3b8876e18679a4fdee05878e4da0595">items</a>[parent] = temp;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            i = parent;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            parent = <a class="code" href="PriorityList_8cc.html#a84c41103e194b9dd0c4c91648d0b0d4a">getParent</a>(list, i);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="structPriorityList_html_abc3ed95ddfcb0b5c8c4437d0e7761193"><div class="ttname"><a href="structPriorityList.html#abc3ed95ddfcb0b5c8c4437d0e7761193">PriorityList::last</a></div><div class="ttdeci">int last</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:9</div></div>
 <div class="ttc" id="structPriorityListItem_html"><div class="ttname"><a href="structPriorityListItem.html">PriorityListItem</a></div><div class="ttdoc">Struttura utilizzata per memorizzare un singolo nodo dell&#39;heap binario. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:3</div></div>
 <div class="ttc" id="structPriorityListItem_html_a5791df62adfbb00662850cb5ffda7745"><div class="ttname"><a href="structPriorityListItem.html#a5791df62adfbb00662850cb5ffda7745">PriorityListItem::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:5</div></div>
-<div class="ttc" id="PriorityList_8cc_html_a84c41103e194b9dd0c4c91648d0b0d4a"><div class="ttname"><a href="PriorityList_8cc.html#a84c41103e194b9dd0c4c91648d0b0d4a">getParent</a></div><div class="ttdeci">int getParent(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo padre. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:86</div></div>
+<div class="ttc" id="PriorityList_8cc_html_a84c41103e194b9dd0c4c91648d0b0d4a"><div class="ttname"><a href="PriorityList_8cc.html#a84c41103e194b9dd0c4c91648d0b0d4a">getParent</a></div><div class="ttdeci">int getParent(const PriorityList *list, int index)</div><div class="ttdoc">Ritorna l&#39;indice del nodo padre. </div><div class="ttdef"><b>Definition:</b> PriorityList.cc:91</div></div>
 <div class="ttc" id="structPriorityListItem_html_a48c01a8c9ac4f630319b74f9beb00427"><div class="ttname"><a href="structPriorityListItem.html#a48c01a8c9ac4f630319b74f9beb00427">PriorityListItem::priority</a></div><div class="ttdeci">int priority</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:4</div></div>
 <div class="ttc" id="structPriorityList_html_a707ff866f5dbca8561f5b37aaea08eb3"><div class="ttname"><a href="structPriorityList.html#a707ff866f5dbca8561f5b37aaea08eb3">PriorityList::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> PriorityList.cc:9</div></div>
 <div class="ttc" id="structTrie_html_a25d301cda45b83ca54cd4a16ebd5815f"><div class="ttname"><a href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">Trie::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> Trie.cc:5</div></div>
@@ -578,7 +583,7 @@ Funzioni</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 11 Mag 2016 17:05:55 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Lun 16 Mag 2016 11:25:51 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
