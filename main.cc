@@ -58,7 +58,7 @@ void parseCommandLine(int argc, char* argv[]){
 				}else{
 					useCompress = TRUE;
 					if(!parseArgFileList(argc, argv)){
-						cout << "Some file in the list don't exist" << endl;
+						cout << "Some files in the list don't exist" << endl;
 					}
 				}
 				break;
@@ -348,6 +348,7 @@ GTK_HANDLER(void onAddClick){
 	gtk_file_filter_add_pattern(filter, "*.doc");
 	gtk_file_filter_add_pattern(filter, "*.docx");
 	gtk_file_filter_add_pattern(filter, "*.odt");
+	gtk_file_filter_add_pattern(filter, "*.json");
 	gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(dialog), filter);
 
 	//Exec the dialog
