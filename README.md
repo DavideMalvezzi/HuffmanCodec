@@ -21,6 +21,6 @@ To decompress use the GUI or use this command from the console:
 ```
 
 ##Requirements
-- Gtk 3.0
+- [Gtk 3.0](http://www.gtk.org/download/index.php)
 
 
