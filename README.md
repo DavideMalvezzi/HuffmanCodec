@@ -19,3 +19,8 @@ To decompress use the GUI or use this command from the console:
 ```
 ./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/
 ```
+
+##Requirements
+- Gtk 3.0
+
+
