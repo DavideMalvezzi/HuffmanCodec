@@ -6,13 +6,6 @@ LDFLAGS = -export-dynamic `pkg-config --libs gtk+-3.0`
 
 .PHONY: depend clean cleanAll
 
-#install: compile
-#		rm -rf $(INSTALLDIR)/gui
-#		mkdir -p $(INSTALLDIR)/gui
-#		cp -f $(EXNAME) $(INSTALLDIR)
-#		cp -rf gui/ $(INSTALLDIR)
-#		chmod +x $(INSTALLDIR)/$(EXNAME)
-
 compile: depend $(OBJS)
 	g++ -o $(EXNAME) $(OBJS) $(LDFLAGS)
 
