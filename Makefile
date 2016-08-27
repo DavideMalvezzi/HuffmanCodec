@@ -1,6 +1,5 @@
 OBJS = main.o HuffmanDec.o HuffmanCo.o PriorityList.o Trie.o FileInfo.o BitUtils.o
 EXNAME = HuffmanCodec
-#INSTALLDIR = /bin
 CXXFLAGS = -Wall `pkg-config --cflags gtk+-3.0` #-D NDEBUG
 LDFLAGS = -export-dynamic `pkg-config --libs gtk+-3.0`
 
