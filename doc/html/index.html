@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Huffman CoDec: Huffman CoDec</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,7 +22,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Huffman CoDec
    </div>
   </td>
@@ -30,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generato da Doxygen 1.8.6 -->
+<!-- Generato da Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </script>
@@ -63,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,9 +80,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="Introduzione"></a>
 Introduzione</h1>
-<p>Lo scopo del progetto è quello di realizzare un compressore/decompressore di file testuali attraverso l'utilizzo della codifica di Huffman. Con questo programma sarà possibile:</p>
-<ul>
-<li><b>comprimere</b> uno o più file testuali all'interno di un unico file-archivio compresso in formato *.hca (Huffman Compressed Archive), e allo stesso modo decomprimere;</li>
+<p>Lo scopo del progetto è quello di realizzare un compressore/decompressore di file testuali attraverso l'utilizzo della codifica di Huffman. Con questo programma sarà possibile:</p><ul>
+<li><b>comprimere</b> uno o più file testuali all'interno di un unico file-archivio compresso in formato *.hca (Huffman Compressed Archive);</li>
 <li><b>decomprimere</b> un file *.hca all'interno di una cartella per riotterenere i file compressi.</li>
 </ul>
 <p>Entrambe le funzionalità sono accessibili sia via interfaccia grafica, sia via linea di comando.</p>
@@ -89,20 +89,15 @@ Introduzione</h1>
 Funzionalità</h1>
 <h2><a class="anchor" id="Compressione"></a>
 Compressione</h2>
-<p>Una volta aperto il programma, per comprimere uno o più file in un archivio sarà sufficiente premere il pulsante <em>Add</em> nella toolbar e selezionare i file che si è scelto di comprimere. Dato l'ok, la lista dei file si aggiornerà e saranno mostrate le informazioni dei file selezionati. E' possibile aggiungere altri file, sempre utilizzando il pulsante <em>Add</em>, oppure rimuovere uno o più file, selezionando dalla lista la riga contenente il file da eliminare e premendo il pulsante <em>Remove</em>. A questo punto è possibile comprimere i file premendo il pulsante <em>Compress</em> e selezionado il nome dell'archivio da creare.<br/>
+<p>Una volta aperto il programma, per comprimere uno o più file in un archivio sarà sufficiente premere il pulsante <em>Add</em> nella toolbar e selezionare i file che si è scelto di comprimere. Dato l'ok, la lista dei file si aggiornerà e saranno mostrate le informazioni dei file selezionati. E' possibile aggiungere altri file, sempre utilizzando il pulsante <em>Add</em>, oppure rimuovere uno o più file, selezionando dalla lista la riga contenente il file da eliminare e premendo il pulsante <em>Remove</em>. A questo punto è possibile comprimere i file premendo il pulsante <em>Compress</em> e selezionado il nome dell'archivio da creare.<br />
  In caso si riscontrino dei problemi durante la compressione verrà mostrato una dialog di errore.</p>
-<p>Per comprimere via linea di comando: </p>
-<div class="fragment"><div class="line">./HuffmanCodec -c File1.txt ... FileN.txt -o ArchiveFile.hca</div>
-</div><!-- fragment --><h2><a class="anchor" id="Decompressione"></a>
+<p>Per comprimere via linea di comando: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./HuffmanCodec -c File1.txt ... FileN.txt -o ArchiveFile.hca</div></div><!-- fragment --><h2><a class="anchor" id="Decompressione"></a>
 Decompressione</h2>
-<p>Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante <em>Open</em> nella toolbar. Se l'archivio è valido, nella lista dei file verranno caricate le informazioni dei file contenuti al suo interno. A questo punto si può procedere alla decompressione cliccando sul pulsante <em>Decompress</em> e selezionare la cartella in cui salvare i file.<br/>
+<p>Una volta aperto il programma, per decomprimere un file archivio sarà sufficiente premere il pulsante <em>Open</em> nella toolbar. Se l'archivio è valido, nella lista dei file verranno caricate le informazioni dei file contenuti al suo interno. A questo punto si può procedere alla decompressione cliccando sul pulsante <em>Decompress</em> e selezionare la cartella in cui salvare i file.<br />
  In caso si riscontrino dei problemi durante la decompressione verrà mostrato una dialog di errore.</p>
-<p>Per decomprimere via linea di comando: </p>
-<div class="fragment"><div class="line">./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/</div>
-</div><!-- fragment --><h1><a class="anchor" id="Moduli"></a>
+<p>Per decomprimere via linea di comando: </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./HuffmanCodec -d ArchiveFile.hca -o DecompressFolderPath/</div></div><!-- fragment --><h1><a class="anchor" id="Moduli"></a>
 Moduli</h1>
-<p>Il progetto è stato suddiviso nei seguenti moduli:</p>
-<ul>
+<p>Il progetto è stato suddiviso nei seguenti moduli:</p><ul>
 <li><a class="el" href="main_8h.html">main.h</a>: modulo contenente tutte le funzionalità di interfacciamento con l'utente, sia a livello di GUI, sia a linea di comando.</li>
 <li><a class="el" href="HuffmanCo_8h.html">HuffmanCo.h</a>: modulo contenente tutte le funzionalità di compressione.</li>
 <li><a class="el" href="HuffmanDec_8h.html">HuffmanDec.h</a>: modulo contenente tutte le funzionalità di decompressione.</li>
@@ -114,14 +109,12 @@ Moduli</h1>
 </ul>
 <h1><a class="anchor" id="Struttura"></a>
 Struttura file archivio</h1>
-<p>Ogni file archivio è diviso in due sezioni:</p>
-<ul>
+<p>Ogni file archivio è diviso in due sezioni:</p><ul>
 <li><b>Header:</b> contiene le informazioni relative ad ogni file compresso all'interno dell'archivio;</li>
 <li><b>Files:</b> contiene, accodati uno dopo l'altro, tutti i file compressi.</li>
 </ul>
 <p>I primi 4 byte dell'header rappresentano il numero di file presenti all'interno dell'archivio.</p>
-<p>L'header è poi composto da tanti sotto-header, uno per ogni file, contenenti le seguenti informazioni:</p>
-<ul>
+<p>L'header è poi composto da tanti sotto-header, uno per ogni file, contenenti le seguenti informazioni:</p><ul>
 <li>Lunghezza del nome del file (1 byte);</li>
 <li>Nome del file (1-256 byte);</li>
 <li>Dimensione file originale in byte (8 byte);</li>
@@ -134,9 +127,9 @@ Struttura file archivio</h1>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 25 Mag 2016 11:35:42 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Ven 9 Set 2016 13:24:41 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>

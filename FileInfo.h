@@ -161,7 +161,7 @@ void setFileKeywords(FileInfo* info, Trie* keywords);
 * @param[in] info Puntatore all'istanza di ::FileInfo
 * @return Array di interi
 */
-gint* getFileCharsFrequencies(FileInfo* info);
+int* getFileCharsFrequencies(FileInfo* info);
 
 /**
 * @brief Setta l'array contenente la frequenza di ogni carattere nel file di un'istanza di ::FileInfo

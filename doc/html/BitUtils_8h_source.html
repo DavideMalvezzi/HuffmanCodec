@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Huffman CoDec:  File sorgente BitUtils.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,7 +22,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Huffman CoDec
    </div>
   </td>
@@ -30,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generato da Doxygen 1.8.6 -->
+<!-- Generato da Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </script>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,36 +84,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="title">BitUtils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="BitUtils_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIT_UTILS_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BIT_UTILS_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">   13</a></span>&#160;<span class="preprocessor">#define MEM_BUFFER(variable) (reinterpret_cast&lt;char*&gt;(&amp;variable))</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#a9e9a80939f3ec47061d3bca2a3b69836">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="BitUtils_8h.html#a9e9a80939f3ec47061d3bca2a3b69836">hword</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> <a class="code" href="BitUtils_8h.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a>(<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> b, <span class="keywordtype">int</span> bit);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> <a class="code" href="BitUtils_8h.html#ad354678ad3105fa9d6bfb68f02ec4fd5">clearBit</a>(<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> b, <span class="keywordtype">int</span> bit);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="BitUtils_8h.html#af853d4743b35fbad4a14a9e5adeabdb5">readBit</a>(<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> b, <span class="keywordtype">int</span> bit);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="BitUtils_8h_html_a74cd91e9cb0afd68b839169dddb24afc"><div class="ttname"><a href="BitUtils_8h.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a></div><div class="ttdeci">word setBit(word b, int bit)</div><div class="ttdoc">Setta a 1 l&#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:4</div></div>
+<a href="BitUtils_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIT_UTILS_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BIT_UTILS_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c">   13</a></span>&#160;<span class="preprocessor">#define MEM_BUFFER(variable) (reinterpret_cast&lt;char*&gt;(&amp;variable))</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">   18</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#a9e9a80939f3ec47061d3bca2a3b69836">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="BitUtils_8h.html#a9e9a80939f3ec47061d3bca2a3b69836">hword</a>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> <a class="code" href="BitUtils_8h.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a>(<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> b, <span class="keywordtype">int</span> bit);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> <a class="code" href="BitUtils_8h.html#ad354678ad3105fa9d6bfb68f02ec4fd5">clearBit</a>(<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> b, <span class="keywordtype">int</span> bit);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="BitUtils_8h.html#af853d4743b35fbad4a14a9e5adeabdb5">readBit</a>(<a class="code" href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a> b, <span class="keywordtype">int</span> bit);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="BitUtils_8h_html_a74cd91e9cb0afd68b839169dddb24afc"><div class="ttname"><a href="BitUtils_8h.html#a74cd91e9cb0afd68b839169dddb24afc">setBit</a></div><div class="ttdeci">word setBit(word b, int bit)</div><div class="ttdoc">Setta a 1 l&amp;#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:4</div></div>
 <div class="ttc" id="BitUtils_8h_html_aa975e5cf9a68e2ddca2085ee1fb57edb"><div class="ttname"><a href="BitUtils_8h.html#aa975e5cf9a68e2ddca2085ee1fb57edb">word</a></div><div class="ttdeci">unsigned long long word</div><div class="ttdoc">Definizione del tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.h:28</div></div>
 <div class="ttc" id="BitUtils_8h_html_a9e9a80939f3ec47061d3bca2a3b69836"><div class="ttname"><a href="BitUtils_8h.html#a9e9a80939f3ec47061d3bca2a3b69836">hword</a></div><div class="ttdeci">unsigned int hword</div><div class="ttdoc">Definizione del tipo hword. </div><div class="ttdef"><b>Definition:</b> BitUtils.h:23</div></div>
-<div class="ttc" id="BitUtils_8h_html_af853d4743b35fbad4a14a9e5adeabdb5"><div class="ttname"><a href="BitUtils_8h.html#af853d4743b35fbad4a14a9e5adeabdb5">readBit</a></div><div class="ttdeci">int readBit(word b, int bit)</div><div class="ttdoc">Ritorna il valore dell&#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:14</div></div>
+<div class="ttc" id="BitUtils_8h_html_af853d4743b35fbad4a14a9e5adeabdb5"><div class="ttname"><a href="BitUtils_8h.html#af853d4743b35fbad4a14a9e5adeabdb5">readBit</a></div><div class="ttdeci">int readBit(word b, int bit)</div><div class="ttdoc">Ritorna il valore dell&amp;#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:14</div></div>
 <div class="ttc" id="BitUtils_8h_html_a0c8186d9b9b7880309c27230bbb5e69d"><div class="ttname"><a href="BitUtils_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a></div><div class="ttdeci">unsigned char byte</div><div class="ttdoc">Definizione del tipo byte. </div><div class="ttdef"><b>Definition:</b> BitUtils.h:18</div></div>
-<div class="ttc" id="BitUtils_8h_html_ad354678ad3105fa9d6bfb68f02ec4fd5"><div class="ttname"><a href="BitUtils_8h.html#ad354678ad3105fa9d6bfb68f02ec4fd5">clearBit</a></div><div class="ttdeci">word clearBit(word b, int bit)</div><div class="ttdoc">Setta a 0 l&#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:9</div></div>
+<div class="ttc" id="BitUtils_8h_html_ad354678ad3105fa9d6bfb68f02ec4fd5"><div class="ttname"><a href="BitUtils_8h.html#ad354678ad3105fa9d6bfb68f02ec4fd5">clearBit</a></div><div class="ttdeci">word clearBit(word b, int bit)</div><div class="ttdoc">Setta a 0 l&amp;#39;n-simo bit di una variabile di tipo word. </div><div class="ttdef"><b>Definition:</b> BitUtils.cc:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 25 Mag 2016 11:35:42 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Ven 9 Set 2016 13:24:41 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>

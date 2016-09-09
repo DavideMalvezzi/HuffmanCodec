@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>Huffman CoDec:  File sorgente Trie.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
+  $(document).ready(function() { init_search(); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -21,7 +22,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Huffman CoDec
    </div>
   </td>
@@ -30,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generato da Doxygen 1.8.6 -->
+<!-- Generato da Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </script>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tutto</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classi</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>File</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funzioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variabili</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Ridefinizioni di tipo (typedef)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Tipi enumerati (enum)</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valori del tipo enumerato</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Definizioni</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pagine</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,42 +84,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="title">Trie.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="Trie_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TRIE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TRIE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">struct </span><a class="code" href="structTrie.html">Trie</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccf">   32</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccf">TrieDirection</a>{</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">   33</a></span>&#160;  <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">   34</a></span>&#160;  <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="structTrie.html">Trie</a>* <a class="code" href="Trie_8h.html#a7faf8c8701264541ada285fa0673c373">createNewTrieRoot</a>(<a class="code" href="structTrie.html">Trie</a>* <a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>, <a class="code" href="structTrie.html">Trie</a>* <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>, <span class="keywordtype">void</span>* <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a>(<a class="code" href="structTrie.html">Trie</a>* trie, GDestroyNotify deleteFun);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="structTrie.html">Trie</a>* <a class="code" href="Trie_8h.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a>(<a class="code" href="structTrie.html">Trie</a>* root, <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccf">TrieDirection</a> direction);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;gboolean <a class="code" href="Trie_8h.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a>(<a class="code" href="structTrie.html">Trie</a>* root);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#ae3c1e70e5c9c8d399a5878fcfa5f6c12">setTrieLeftChild</a>(<a class="code" href="structTrie.html">Trie</a>* root, <a class="code" href="structTrie.html">Trie</a>* child);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#a641186accc13dba1460a14fb9981cf66">setTrieRightChild</a>(<a class="code" href="structTrie.html">Trie</a>* root, <a class="code" href="structTrie.html">Trie</a>* child);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a>(<a class="code" href="structTrie.html">Trie</a>* root, gint* count);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a>(<a class="code" href="structTrie.html">Trie</a>* root, gint* count);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a>(<a class="code" href="structTrie.html">Trie</a>* trie);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="Trie_8h_html_a641186accc13dba1460a14fb9981cf66"><div class="ttname"><a href="Trie_8h.html#a641186accc13dba1460a14fb9981cf66">setTrieRightChild</a></div><div class="ttdeci">void setTrieRightChild(Trie *root, Trie *child)</div><div class="ttdoc">Setta il puntatore del figlio destro ad un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:56</div></div>
+<a href="Trie_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TRIE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TRIE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">struct </span><a class="code" href="structTrie.html">Trie</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccf">   32</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccf">TrieDirection</a>{</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">   33</a></span>&#160;  <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a>,</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">   34</a></span>&#160;  <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="structTrie.html">Trie</a>* <a class="code" href="Trie_8h.html#a7faf8c8701264541ada285fa0673c373">createNewTrieRoot</a>(<a class="code" href="structTrie.html">Trie</a>* <a class="code" href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">left</a>, <a class="code" href="structTrie.html">Trie</a>* <a class="code" href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">right</a>, <span class="keywordtype">void</span>* <a class="code" href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">data</a>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a>(<a class="code" href="structTrie.html">Trie</a>* trie, GDestroyNotify deleteFun);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="structTrie.html">Trie</a>* <a class="code" href="Trie_8h.html#a0f0613b02207253e2f88ad45515c66d1">navigateTrie</a>(<a class="code" href="structTrie.html">Trie</a>* root, <a class="code" href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccf">TrieDirection</a> direction);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;gboolean <a class="code" href="Trie_8h.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a>(<a class="code" href="structTrie.html">Trie</a>* root);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#ae3c1e70e5c9c8d399a5878fcfa5f6c12">setTrieLeftChild</a>(<a class="code" href="structTrie.html">Trie</a>* root, <a class="code" href="structTrie.html">Trie</a>* child);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#a641186accc13dba1460a14fb9981cf66">setTrieRightChild</a>(<a class="code" href="structTrie.html">Trie</a>* root, <a class="code" href="structTrie.html">Trie</a>* child);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a>(<a class="code" href="structTrie.html">Trie</a>* root, gint* count);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Trie_8h.html#aad1e072b8bcfd3530d9b47e289637ce3">getTrieLeafCount</a>(<a class="code" href="structTrie.html">Trie</a>* root, gint* count);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a>(<a class="code" href="structTrie.html">Trie</a>* trie);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="Trie_8h_html_a641186accc13dba1460a14fb9981cf66"><div class="ttname"><a href="Trie_8h.html#a641186accc13dba1460a14fb9981cf66">setTrieRightChild</a></div><div class="ttdeci">void setTrieRightChild(Trie *root, Trie *child)</div><div class="ttdoc">Setta il puntatore del figlio destro ad un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:56</div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
 <div class="ttc" id="Trie_8h_html_a3d9a53b59e733fc4c324f6ef298b0906"><div class="ttname"><a href="Trie_8h.html#a3d9a53b59e733fc4c324f6ef298b0906">getTrieData</a></div><div class="ttdeci">void * getTrieData(Trie *trie)</div><div class="ttdoc">Ritorna il puntatore ai dati in un nodo Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:84</div></div>
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfadb45120aafd37a973140edee24708065">LEFT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:33</div></div>
 <div class="ttc" id="Trie_8h_html_a42f01fbaa4f1a2e740c146a338c3da58"><div class="ttname"><a href="Trie_8h.html#a42f01fbaa4f1a2e740c146a338c3da58">isTrieALeaf</a></div><div class="ttdeci">gboolean isTrieALeaf(Trie *root)</div><div class="ttdoc">Controlla se un Trie è una foglia. </div><div class="ttdef"><b>Definition:</b> Trie.cc:44</div></div>
@@ -129,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="ttc" id="Trie_8h_html_aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38"><div class="ttname"><a href="Trie_8h.html#aff0dbc83de8db14d36ad480d7ebd7ccfaec8379af7490bb9eaaf579cf17876f38">RIGHT</a></div><div class="ttdef"><b>Definition:</b> Trie.h:34</div></div>
 <div class="ttc" id="structTrie_html_abcf1b1f9fb12bb0eb3b1d56125ffd5f6"><div class="ttname"><a href="structTrie.html#abcf1b1f9fb12bb0eb3b1d56125ffd5f6">Trie::left</a></div><div class="ttdeci">Trie * left</div><div class="ttdef"><b>Definition:</b> Trie.cc:6</div></div>
 <div class="ttc" id="structTrie_html"><div class="ttname"><a href="structTrie.html">Trie</a></div><div class="ttdoc">Struttura utilizzata per memorizzare un singolo nodo di un trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:4</div></div>
-<div class="ttc" id="Trie_8h_html_a95bf83689db2b814ab05a9aa9d836a3e"><div class="ttname"><a href="Trie_8h.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a></div><div class="ttdeci">void deleteTrie(Trie *trie, GDestroyNotify deleteFun)</div><div class="ttdoc">Funzione ricorsiva per l&#39;eliminazione dell&#39;albero radicato in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:18</div></div>
+<div class="ttc" id="Trie_8h_html_a95bf83689db2b814ab05a9aa9d836a3e"><div class="ttname"><a href="Trie_8h.html#a95bf83689db2b814ab05a9aa9d836a3e">deleteTrie</a></div><div class="ttdeci">void deleteTrie(Trie *trie, GDestroyNotify deleteFun)</div><div class="ttdoc">Funzione ricorsiva per l&amp;#39;eliminazione dell&amp;#39;albero radicato in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:18</div></div>
 <div class="ttc" id="structTrie_html_a25d301cda45b83ca54cd4a16ebd5815f"><div class="ttname"><a href="structTrie.html#a25d301cda45b83ca54cd4a16ebd5815f">Trie::data</a></div><div class="ttdeci">void * data</div><div class="ttdef"><b>Definition:</b> Trie.cc:5</div></div>
 <div class="ttc" id="Trie_8h_html_ae6296b1aee6f86514187c33f2dd31d82"><div class="ttname"><a href="Trie_8h.html#ae6296b1aee6f86514187c33f2dd31d82">getTrieElementCount</a></div><div class="ttdeci">void getTrieElementCount(Trie *root, gint *count)</div><div class="ttdoc">Funzione ricorsiva per il conteggio dei nodi radicati in un Trie. </div><div class="ttdef"><b>Definition:</b> Trie.cc:62</div></div>
 <div class="ttc" id="structTrie_html_a53ed6640d2866708bd7d8ba2280d0afa"><div class="ttname"><a href="structTrie.html#a53ed6640d2866708bd7d8ba2280d0afa">Trie::right</a></div><div class="ttdeci">Trie * right</div><div class="ttdef"><b>Definition:</b> Trie.cc:7</div></div>
@@ -137,9 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generato Mer 25 Mag 2016 11:35:42 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
+Generato Ven 9 Set 2016 13:24:41 per Huffman CoDec da &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.11
 </small></address>
 </body>
 </html>

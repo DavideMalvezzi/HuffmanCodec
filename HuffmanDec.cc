@@ -1,6 +1,11 @@
 
 #include "HuffmanDec.h"
 
+/**
+* @var compressedFileHeaderSize
+* @brief Variabile contenente il numero di byte che compone l'header di un archivio.
+* Usata durante la decompressione per saltare la lettura dell'header.
+*/
 static unsigned long compressedFileHeaderSize = 0;
 
 gboolean getCompressedFileInfo(const gchar* fileToDecompress, GSList*& fileList){
@@ -68,7 +73,7 @@ word parseWord(ifstream& inputFile){
 Trie* parseKeywordsTrie(ifstream& inputFile){
   byte* trieChild;
   int bytesCount = parseInt(inputFile);
-  int arcCount;
+  int nodeCount;
   Trie* keywords;
 
   trieChild = new byte[bytesCount];
@@ -77,8 +82,8 @@ Trie* parseKeywordsTrie(ifstream& inputFile){
     inputFile.read(MEM_BUFFER(trieChild[i]), sizeof(byte));
   }
 
-  arcCount = 0;
-  keywords = trieFromFile(inputFile, trieChild, &arcCount);
+  nodeCount = 0;
+  keywords = trieFromFile(inputFile, trieChild, &nodeCount);
 
   delete[] trieChild;
 
@@ -158,26 +163,27 @@ gboolean decompressFile(ifstream& inputFile, const gchar* destPath, FileInfo* in
 
       while(i < originalSize && buffer != EOF){
 
-          if(j == 8){
-            j = 0;
-            buffer = inputFile.get();
+        if(j == 8){
+          j = 0;
+          buffer = inputFile.get();
+        }
+
+        if(buffer != EOF){
+          keywordsTrie = navigateTrie(keywordsTrie, readBit(buffer, 7 - j) ? RIGHT : LEFT);
+          if(isTrieALeaf(keywordsTrie)){
+            outputFile.write(MEM_BUFFER(((TrieItem*)getTrieData(keywordsTrie))->c), sizeof(byte));
+            keywordsTrie = getFileKeywords(info);
+            i++;
           }
+        }
 
-          if(buffer != EOF){
-            keywordsTrie = navigateTrie(keywordsTrie, readBit(buffer, 7 - j) ? RIGHT : LEFT);
-            if(isTrieALeaf(keywordsTrie)){
-              outputFile.write(MEM_BUFFER(((TrieItem*)getTrieData(keywordsTrie))->c), sizeof(byte));
-              keywordsTrie = getFileKeywords(info);
-              i++;
-            }
-          }
-
-          j++;
-      }
-
-      outputFile.close();
-
-      return i == originalSize;
+        j++;
     }
+
+    outputFile.close();
+
+    return i == originalSize;
+  }
+
   return FALSE;
 }

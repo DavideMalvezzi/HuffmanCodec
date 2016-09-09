@@ -73,17 +73,16 @@ gboolean saveFileHeader(ofstream& file, FileInfo* fileInfo);
 gboolean getFileFrequencies(const gchar* path, int* charSetFreq);
 
 /**
-* @brief Calcola le frequenze dei caratteri e le keywords di un file
+* @brief Prepara la lista con priorità dei caratteri per la generazione del Trie delle keywords
+* a partire dalle frequenze calcolate
 *
-* @param[in] path Path del file
-* @param[in] charSetFreq Array in cui salvare le frequenze
-* @param[in] keywordsTrie Riferimento al ::Trie in cui salvare le keywords
-* @return Dimensione del file compresso o -1 in caso di errore
+* @param[in] charSetFreq Array delle frequenze
+* @return :Trie delle keywords
 */
-word computeFileKeywords(const gchar* path, gint* charSetFreq, Trie*& keywordsTrie);
+Trie* generateFileKeywords(int* charSetFreq);
 
 /**
-* @brief Calcola il ::Trie delle keywords data la lista di priorità dei caratteri
+* @brief Calcola il ::Trie delle keywords data la lista con priorità dei caratteri
 *
 * @param[in] pList ::PriorityList dei caratteri
 * @return :Trie delle keywords
@@ -126,10 +125,10 @@ void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords);
 * @param[in] root ::Trie delle keywords
 * @param[in] trieChild Array di byte. L'n-simo bit indica se l'n-simo nodo del ::Trie ha dei figli
 * @param[in] trieElem Array in cui verranno salvati tutti i caratteri dei nodi in pre-order
-* @param[in] arcCount Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione
+* @param[in] nodeCount Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione
 * @param[in] leafCount Puntatore ad una variabile di supporto per la ricorsione. La variabile puntata deve essere settata a 0 prima della chiamata alla funzione
 */
-void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* arcCount, int* leafCount);
+void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* nodeCount, int* leafCount);
 
 /**
 * @brief Compressione e salvataggio di un file nell'archivio

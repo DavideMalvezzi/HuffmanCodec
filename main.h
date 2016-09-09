@@ -13,7 +13,7 @@ using namespace std;
 * della codifica di Huffman.
 * Con questo programma sarà possibile:
 *		- @b comprimere uno o più file testuali all'interno di un unico file-archivio compresso
-* 		in formato *.hca (Huffman Compressed Archive), e allo stesso modo decomprimere;
+* 		in formato *.hca (Huffman Compressed Archive);
 *		- @b decomprimere un file *.hca all'interno di una cartella per riotterenere i file compressi.
 *
 * Entrambe le funzionalità sono accessibili sia via interfaccia grafica, sia via linea di comando.
@@ -81,15 +81,8 @@ using namespace std;
 */
 
 /**
-* @brief Macro per la creazione degli handler dei segnali generati dai widget GTK
-*
-* @param[in] constructor Tipo di ritorno e nome della funzione che dovrà fare da handler
-*/
-#define GTK_HANDLER(constructor) extern "C" constructor(GtkWidget* widget, GdkEvent* event, gpointer user_data)
-
-/**
 * @enum FileListStoreCols
-* Enumerato contenente i nomi delle colonne del modello del GtkTree che contiene i file selezionati per la
+* @brief Enumerato contenente i nomi delle colonne del modello del GtkTree che contiene i file selezionati per la
 * compressione/decomenpressione
 */
 enum FileListStoreCols{
@@ -120,38 +113,38 @@ enum Mode{
 
 /**
 * @var fileToDecompress
-* Path dell'archivio da decomprimere
+* @brief Path dell'archivio da decomprimere
 */
 static gchar* fileToDecompress;
 
 /**
 * @var currentMode
-* Modalità di lavoro del programma. Di default è ::COMPRESS.
+* @brief Modalità di lavoro del programma. Di default è ::COMPRESS.
 */
 static Mode	currentMode;
 
 /**
 * @var fileList
-* Lista contenente un puntatore a ::FileInfo per ogni file da comprimere/decomprimere
+* @brief Lista contenente un puntatore a ::FileInfo per ogni file da comprimere/decomprimere
 */
 static GSList* fileList;
 
 /**
 * @var builder
-* Puntatore a GtkBuilder per accedere ai widget dell'interfaccia grafica
+* @brief Puntatore a GtkBuilder per accedere ai widget dell'interfaccia grafica
 */
 static GtkBuilder* builder;
 
 
 /**
 * @var fileListModel
-* Puntatore alla finestra principale del programma
+* @brief Puntatore alla finestra principale del programma
 */
 static GtkWidget* mainWindow;
 
 /**
 * @var fileListModel
-* Puntatore a GtkListStore contenente il modello di fileListView
+* @brief Puntatore a GtkListStore contenente il modello di fileListView
 */
 static GtkListStore* fileListModel;
 
@@ -238,39 +231,39 @@ void showMessageDialog(GtkWindow* parent, GtkMessageType type, const gchar* msg)
 /**
 * @brief Handler pressione del tasto open
 */
-GTK_HANDLER(void onOpenClick);
+extern "C" void onOpenClick(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler pressione del tasto decompress
 */
-GTK_HANDLER(void onDecompressClick);
+extern "C" void onDecompressClick(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler pressione del tasto add
 */
-GTK_HANDLER(void onAddClick);
+extern "C" void onAddClick(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler pressione del tasto remove
 */
-GTK_HANDLER(void onRemoveClick);
+extern "C" void onRemoveClick(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler pressione del tasto compress
 */
-GTK_HANDLER(void onCompressClick);
+extern "C" void onCompressClick(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler pressione tasto info
 */
-GTK_HANDLER(void onInfoClicked);
+extern "C" void onInfoClicked(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler della chiusura del programma
 */
-GTK_HANDLER(gboolean onWindowDelete);
+extern "C" gboolean onWindowDelete(GtkWidget* widget, GdkEvent* event, gpointer user_data);
 
 /**
 * @brief Handler chiusura aboutDialog, per prevenire distruzione della finestra
 */
-GTK_HANDLER(gboolean onInfoClosed);
+extern "C" gboolean onInfoClosed(GtkWidget* widget, GdkEvent* event, gpointer user_data);

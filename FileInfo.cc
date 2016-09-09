@@ -4,7 +4,7 @@
 struct FileInfo{
   const gchar* name;
   const gchar* path;
-  int charSetFreq[CHAR_SET_SIZE];
+  int* charSetFreq;
   word size, comprSize;
   Trie* keywords;
 };
@@ -23,6 +23,7 @@ FileInfo* createNewFileInfo(const gchar* path){
     info->path = path;
     info->size = in.tellg();
     info->comprSize = 0;
+    info->charSetFreq = NULL;
     info->keywords = NULL;
 
     in.close();
@@ -48,6 +49,7 @@ FileInfo* createNewFileInfo(const gchar* name, word size, word compSize, Trie* k
   info->path = NULL;
   info->size = size;
   info->comprSize = compSize;
+  info->charSetFreq = NULL;
   info->keywords = keywords;
 
   return info;
@@ -61,11 +63,21 @@ void deleteTrieItem(gpointer ptr){
 
 void deleteFileInfo(gpointer ptr){
   FileInfo* info = (FileInfo*)ptr;
+  
   delete[] info->name;
-  delete[] info->path;
+
+  if(info->path != NULL){
+    delete[] info->path;
+  }
+
+  if(info->charSetFreq != NULL){
+    delete[] info->charSetFreq;
+  }
+
   if(info->keywords != NULL){
     deleteTrie(info->keywords, deleteTrieItem);
   }
+
   delete info;
 }
 
@@ -110,10 +122,13 @@ Trie* getFileKeywords(FileInfo* info){
   return info->keywords;
 }
 
-gint* getFileCharsFrequencies(FileInfo* info){
+int* getFileCharsFrequencies(FileInfo* info){
     return info->charSetFreq;
 }
 
 void setFileCharsFrequencies(FileInfo* info, int* charSetFreq){
+  if(info->charSetFreq == NULL){
+    info->charSetFreq = new int[CHAR_SET_SIZE];
+  }
   memcpy(info->charSetFreq, charSetFreq, sizeof(int) * CHAR_SET_SIZE);
 }

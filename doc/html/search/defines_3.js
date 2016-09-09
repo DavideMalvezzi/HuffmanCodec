@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_5fbit_5fsize',['KEY_BIT_SIZE',['../HuffmanCo_8h.html#ad79ac8c3737a632321d73ed7efde5943',1,'HuffmanCo.h']]]
+  ['mem_5fbuffer',['MEM_BUFFER',['../BitUtils_8h.html#aafc9e600312f3b8291e5fa6e3190ad2c',1,'BitUtils.h']]]
 ];

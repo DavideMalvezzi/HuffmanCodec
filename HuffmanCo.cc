@@ -5,6 +5,7 @@ struct CharKey{
   hword key, size;
 };
 
+
 gboolean compressToFile(const gchar* path, GSList* fileList){
   int fileNum = g_slist_length(fileList);
   GSList* current = fileList;
@@ -15,13 +16,15 @@ gboolean compressToFile(const gchar* path, GSList* fileList){
     //Write files count
     outputFile.write(MEM_BUFFER(fileNum), sizeof(int));
     //Save each file header
-    DPRINTLN("Saving files header...");
+    DPRINTLN("Saving files header..." << endl);
     while(current != NULL){
-
       if(!saveFileHeader(outputFile, (FileInfo*)current->data)){
         //If return false the write failed, so close and abort
         outputFile.close();
         return FALSE;
+      }
+      else{
+        DPRINTLN("Header saved!" << endl);
       }
 
       current = g_slist_next(current);
@@ -53,38 +56,70 @@ gboolean compressToFile(const gchar* path, GSList* fileList){
   return FALSE;
 }
 
+
+//Header
 gboolean saveFileHeader(ofstream& outputFile, FileInfo* fileInfo){
   const gchar* path = getFilePath(fileInfo);
-  gint charSetFreq[CHAR_SET_SIZE];
+  int charSetFreq[CHAR_SET_SIZE];
   Trie* keywords = getFileKeywords(fileInfo);
 
-  //Work out the frequencies
-  if(getFileFrequencies(path, charSetFreq)){
-    //Set the file frequencies
-    setFileCharsFrequencies(fileInfo, charSetFreq);
+  DPRINTLN("Generating header for " << getFileName(fileInfo));
 
-    //Get file header info
-    char nameLen = strlen(getFileName(fileInfo));
-    word fileSize = getFileSize(fileInfo);
-    word fileCompSize = computeFileKeywords(path, charSetFreq, keywords);
+  //If the frequencies aren't already present generate it
+  if(getFileCharsFrequencies(fileInfo) == NULL){
 
-    //if fileCompSize is -1 -> error on create the keywords
-    if(fileCompSize != (word)-1){
-      //Write header info
-      outputFile.write(MEM_BUFFER(nameLen), sizeof(char));
-      outputFile.write(getFileName(fileInfo), nameLen);
-      outputFile.write(MEM_BUFFER(fileSize), sizeof(word));
-      outputFile.write(MEM_BUFFER(fileCompSize), sizeof(word));
+    DPRINTLN("Calcolating characters frequencies...");
 
-      //Save the keywords trie on the file
-      saveTrieKeywordsOnFile(outputFile, keywords);
-
-      //Set the file compressed size and keywords trie
-      setFileCompressedSize(fileInfo, fileCompSize);
-      setFileKeywords(fileInfo, keywords);
-
-      return TRUE;
+    //Work out the frequencies
+    if(getFileFrequencies(path, charSetFreq)){
+      //Set the file frequencies
+      setFileCharsFrequencies(fileInfo, charSetFreq);
     }
+    else{
+      DPRINTLN("Failed to open the file...");
+      return FALSE;
+    }
+  }
+  else{
+    DPRINTLN("Frequencies already calculated");
+  }
+
+  //Get file header info
+  char nameLen = strlen(getFileName(fileInfo));
+  word fileSize = getFileSize(fileInfo);
+  word fileCompSize;
+
+  //If the keywords trie is not already present generate it
+  if(keywords == NULL){
+
+    DPRINTLN("Generating keywords...");
+
+    //Generate trie and calculate compressed size
+    keywords = generateFileKeywords(charSetFreq);
+    fileCompSize = getFileCompressedSize(keywords, charSetFreq);
+
+    //Set the file keywords trie and compressed size
+    setFileKeywords(fileInfo, keywords);
+    setFileCompressedSize(fileInfo, fileCompSize);
+  }
+  else{
+    DPRINTLN("Keywords already generated");
+
+    fileCompSize = getFileCompressedSize(fileInfo);
+  }
+
+  //if fileCompSize is -1 -> error on create the keywords
+  if(fileCompSize != (word)-1){
+    //Write header info
+    outputFile.write(MEM_BUFFER(nameLen), sizeof(char));
+    outputFile.write(getFileName(fileInfo), nameLen);
+    outputFile.write(MEM_BUFFER(fileSize), sizeof(word));
+    outputFile.write(MEM_BUFFER(fileCompSize), sizeof(word));
+
+    //Save the keywords trie on the file
+    saveTrieKeywordsOnFile(outputFile, keywords);
+
+    return TRUE;
   }
 
   DPRINTLN("Failed to save file header...");
@@ -92,54 +127,11 @@ gboolean saveFileHeader(ofstream& outputFile, FileInfo* fileInfo){
   return FALSE;
 }
 
-word computeFileKeywords(const gchar* path, gint* charSetFreq, Trie*& keywordsTrie){
-  word compressedSize;
-  Trie* trie;
-  TrieItem* trieItem;
-  PriorityList* pList = createNewPriorityList(CHAR_SET_SIZE);
-
-  //If there isn't a key word trie associated to the file
-  if(keywordsTrie == NULL){
-    DPRINTLN("Generating keywords...");
-
-    //Insert elements in the PriorityList
-    for(int i = 0; i < CHAR_SET_SIZE; i++){
-      if(charSetFreq[i] > 0){
-        trieItem = new TrieItem;
-        trieItem->c = i;
-        trieItem->frequency = charSetFreq[i];
-
-        //Create the trie
-        trie = createNewTrieRoot(NULL, NULL, trieItem);
-
-        //Insert in the list
-        insertListItem(pList, trie, trieItem->frequency);
-      }
-    }
-
-    //Get the keywords trie
-    keywordsTrie = getKeywordsTrie(pList);
-  }
-
-  //Get the file compressedSize from the keywordsTrie and the charSetFreq
-  compressedSize = getFileCompressedSize(keywordsTrie, charSetFreq);
-
-  DPRINTLN("File compressed size is " << compressedSize << " bytes");
-
-  //Put the deleteFun param to NULL because we don't want to destroy the trieItem in the list
-  //They will be deleted with the Trie from the FileInfo destruction function
-  deletePriorityList(pList, NULL);
-
-  return compressedSize;
-}
-
 gboolean getFileFrequencies(const gchar* path, int* charSetFreq){
   int c;
 
   //Open input file
   ifstream inputFile(path, ios::binary | ios::in);
-
-  DPRINTLN("Calcolating characters frequencies...");
 
   //Reset the chars count
   for(int i = 0; i < CHAR_SET_SIZE; i++){
@@ -157,9 +149,37 @@ gboolean getFileFrequencies(const gchar* path, int* charSetFreq){
     return TRUE;
   }
 
-  DPRINTLN("Failed to open the file...");
-
   return FALSE;
+}
+
+Trie* generateFileKeywords(int* charSetFreq){
+  Trie* trie;
+  TrieItem* trieItem;
+  PriorityList* pList = createNewPriorityList(CHAR_SET_SIZE);
+
+  //Insert elements in the PriorityList
+  for(int i = 0; i < CHAR_SET_SIZE; i++){
+    if(charSetFreq[i] > 0){
+      trieItem = new TrieItem;
+      trieItem->c = i;
+      trieItem->frequency = charSetFreq[i];
+
+      //Create the trie
+      trie = createNewTrieRoot(NULL, NULL, trieItem);
+
+      //Insert in the list
+      insertListItem(pList, trie, trieItem->frequency);
+    }
+  }
+
+  //Get the keywords trie
+  trie = getKeywordsTrie(pList);
+
+  //Put the deleteFun param to NULL because we don't want to destroy the trieItem in the list
+  //They will be deleted with the Trie from the FileInfo destruction function
+  deletePriorityList(pList, NULL);
+
+  return trie;
 }
 
 Trie* getKeywordsTrie(PriorityList* pList){
@@ -204,7 +224,7 @@ word getFileCompressedSize(Trie* keywordsTrie, int* charSetFreq){
   }
 
   //Return the size in bytes
-  return size / 8 + 1;
+  return ceil((float)size / 8);
 }
 
 void keywordsTrieToKeywordsArray(Trie* trie, CharKey* arr, hword path, hword deep){
@@ -223,6 +243,67 @@ void keywordsTrieToKeywordsArray(Trie* trie, CharKey* arr, hword path, hword dee
   }
 }
 
+void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords){
+  byte *trieChild, *trieElem;
+  int leafCount = 0, nodeCount = 0, bytesCount;
+
+  //Get counts
+  getTrieLeafCount(keywords, &leafCount);
+  getTrieElementCount(keywords, &nodeCount);
+
+  bytesCount = ceil((float)nodeCount / 8);
+  trieChild = new byte[bytesCount];
+  trieElem = new byte[leafCount];
+
+  //Reset child bits
+  for(int i = 0; i < bytesCount; i++){
+    trieChild[i] = 0;
+  }
+
+  //Get elements and child bits
+  leafCount = 0;
+  nodeCount = 0;
+
+  trieToFile(keywords, trieChild, trieElem, &nodeCount, &leafCount);
+  outputFile.write(MEM_BUFFER(bytesCount), sizeof(int));
+
+  for(int i = 0; i < bytesCount; i++){
+    outputFile.write(MEM_BUFFER(trieChild[i]), sizeof(byte));
+  }
+
+  for(int i = 0; i < leafCount; i++){
+    outputFile.write(MEM_BUFFER(trieElem[i]), sizeof(byte));
+  }
+
+  delete[] trieChild;
+  delete[] trieElem;
+}
+
+void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* nodeCount, int* leafCount){
+
+  int byte = (*nodeCount) / 8;
+  int bit = (*nodeCount) % 8;
+
+  //Update the element count
+  (*nodeCount)++;
+
+  //If not a leaf call recursively on the children
+  if(!isTrieALeaf(root)){
+    //Update the trieChild header
+    trieChild[byte] = setBit(trieChild[byte], 7 - bit);
+    trieToFile(navigateTrie(root, LEFT), trieChild, trieElem, nodeCount, leafCount);
+    trieToFile(navigateTrie(root, RIGHT), trieChild, trieElem, nodeCount, leafCount);
+  }
+  else{
+    //Save the n-th element in the trieElem array
+    trieElem[*leafCount] = ((TrieItem*)getTrieData(root))->c;
+    //Update the element count
+    (*leafCount)++;
+  }
+}
+
+
+//Compression
 gboolean compressFile(ofstream& outputFile, FileInfo* fileInfo){
   ifstream inputFile(getFilePath(fileInfo), ios::binary | ios::in);
 
@@ -261,64 +342,4 @@ gboolean compressFile(ofstream& outputFile, FileInfo* fileInfo){
   DPRINTLN("Error opening file " << getFileName(fileInfo));
 
   return FALSE;
-}
-
-void saveTrieKeywordsOnFile(ofstream& outputFile, Trie* keywords){
-  byte *trieChild, *trieElem;
-  int leafCount = 0, arcCount = 0, bytesCount;
-
-  //Get counts
-  getTrieLeafCount(keywords, &leafCount);
-  getTrieElementCount(keywords, &arcCount);
-
-  //Need max because if only 1 node return 0
-  bytesCount = max(1.0f, ceil((float)(arcCount - 1) / 8));
-  trieChild = new byte[bytesCount];
-  trieElem = new byte[leafCount];
-
-  //Reset child bits
-  for(int i = 0; i < bytesCount; i++){
-    trieChild[i] = 0;
-  }
-
-  //Get elements and child bits
-  leafCount = 0;
-  arcCount = 0;
-  trieToFile(keywords, trieChild, trieElem, &arcCount, &leafCount);
-
-  outputFile.write(MEM_BUFFER(bytesCount), sizeof(int));
-
-  for(int i = 0; i < bytesCount; i++){
-    outputFile.write(MEM_BUFFER(trieChild[i]), sizeof(byte));
-  }
-
-  for(int i = 0; i < leafCount; i++){
-    outputFile.write(MEM_BUFFER(trieElem[i]), sizeof(byte));
-  }
-
-  delete[] trieChild;
-  delete[] trieElem;
-}
-
-void trieToFile(Trie* root, byte* trieChild, byte* trieElem, int* arcCount, int* leafCount){
-
-  int byte = (*arcCount) / 8;
-  int bit = (*arcCount) % 8;
-
-  //Update the element count
-  (*arcCount)++;
-
-  //If not a leaf call recursively on the children
-  if(!isTrieALeaf(root)){
-    //Update the trieChild header
-    trieChild[byte] = setBit(trieChild[byte], 7 - bit);
-    trieToFile(navigateTrie(root, LEFT), trieChild, trieElem, arcCount, leafCount);
-    trieToFile(navigateTrie(root, RIGHT), trieChild, trieElem, arcCount, leafCount);
-  }
-  else{
-    //Save the n-th element in the trieElem array
-    trieElem[*leafCount] = ((TrieItem*)getTrieData(root))->c;
-    //Update the element count
-    (*leafCount)++;
-  }
 }

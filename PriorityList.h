@@ -61,7 +61,7 @@ void deletePriorityList(PriorityList* list, GDestroyNotify deleteFun);
 void insertListItem(PriorityList* list, void* data, const int priority);
 
 /**
-* @brief Rimuove l'elemento di priorità minima eitorna il puntatore all'informazione
+* @brief Rimuove l'elemento di priorità minima e ritorna il puntatore all'informazione
 *
 * @param[in] list Lista in cui inserire un nuovo elemento
 * @return Puntatore all'informazione

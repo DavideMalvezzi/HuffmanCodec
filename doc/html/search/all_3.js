@@ -9,6 +9,7 @@ var searchData=
   ['deleteprioritylist',['deletePriorityList',['../PriorityList_8cc.html#a3daa95fb79185b63c239f2e60e49141a',1,'deletePriorityList(PriorityList *list, GDestroyNotify deleteFun):&#160;PriorityList.cc'],['../PriorityList_8h.html#a3daa95fb79185b63c239f2e60e49141a',1,'deletePriorityList(PriorityList *list, GDestroyNotify deleteFun):&#160;PriorityList.cc']]],
   ['deletetrie',['deleteTrie',['../Trie_8cc.html#a95bf83689db2b814ab05a9aa9d836a3e',1,'deleteTrie(Trie *trie, GDestroyNotify deleteFun):&#160;Trie.cc'],['../Trie_8h.html#a95bf83689db2b814ab05a9aa9d836a3e',1,'deleteTrie(Trie *trie, GDestroyNotify deleteFun):&#160;Trie.cc']]],
   ['deletetrieitem',['deleteTrieItem',['../FileInfo_8cc.html#aabd9b2fdb54b2f4388778b2b35ff7118',1,'deleteTrieItem(gpointer ptr):&#160;FileInfo.cc'],['../FileInfo_8h.html#aabd9b2fdb54b2f4388778b2b35ff7118',1,'deleteTrieItem(gpointer ptr):&#160;FileInfo.cc']]],
+  ['depend_2etxt',['depend.txt',['../depend_8txt.html',1,'']]],
   ['dfill',['DFILL',['../Debug_8h.html#a0faece8b9c699255deb3a5b7f2af402c',1,'Debug.h']]],
   ['dline',['DLINE',['../Debug_8h.html#a2bc3d23b74cc256d06fe2f35f83804aa',1,'Debug.h']]],
   ['dprint',['DPRINT',['../Debug_8h.html#a6955c43f94b9f52871608652bb7b4957',1,'Debug.h']]],

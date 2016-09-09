@@ -263,7 +263,7 @@ int getFileViewSelectedRow(){
 //Signals handler
 
 //Open file to decompress
-GTK_HANDLER(void onOpenClick){
+void onOpenClick(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 	//Create file chooser dialog
 	GtkWidget* dialog = createFileChooser(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_OPEN, "Open file");
 
@@ -305,7 +305,7 @@ GTK_HANDLER(void onOpenClick){
 }
 
 //Decompress the selected file
-GTK_HANDLER(void onDecompressClick){
+void onDecompressClick(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 	//Create file chooser dialog
 	GtkWidget* fileChooser = createFileChooser(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER, "Select a directory");
 	gtk_file_chooser_set_create_folders (GTK_FILE_CHOOSER(fileChooser), TRUE);
@@ -330,7 +330,7 @@ GTK_HANDLER(void onDecompressClick){
 }
 
 //Add file to compress
-GTK_HANDLER(void onAddClick){
+void onAddClick(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 	//Create file chooser dialog
 	GtkWidget* dialog = createFileChooser(GTK_WINDOW(mainWindow), GTK_FILE_CHOOSER_ACTION_OPEN, "Open file");
 
@@ -391,7 +391,7 @@ GTK_HANDLER(void onAddClick){
 }
 
 //Remove file from compress list
-GTK_HANDLER(void onRemoveClick){
+void onRemoveClick(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 	int index = getFileViewSelectedRow();
 	GSList* fileInfoNode;
 	GtkTreeIter iter;
@@ -421,7 +421,7 @@ GTK_HANDLER(void onRemoveClick){
 }
 
 //Compress the selected files
-GTK_HANDLER(void onCompressClick){
+void onCompressClick(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 	//If there is at least a file
 	if(fileList != NULL){
 		gchar* outputFilePath;
@@ -461,19 +461,19 @@ GTK_HANDLER(void onCompressClick){
 	}
 }
 
-GTK_HANDLER(void onInfoClicked){
+void onInfoClicked(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 	GtkWidget* aboutDialog = GTK_WIDGET(gtk_builder_get_object(builder, "aboutDialog"));
 	gtk_widget_show_all(aboutDialog);
 }
 
 //Quit signal
-GTK_HANDLER(gboolean onWindowDelete){
+gboolean onWindowDelete(GtkWidget* widget, GdkEvent* event, gpointer user_data){
 		clearFileList();
     gtk_main_quit() ;
     return TRUE ;
 }
 
-GTK_HANDLER(gboolean onInfoClosed){
+gboolean onInfoClosed(GtkWidget* widget, GdkEvent* event, gpointer user_data){
     gtk_widget_hide(widget);
     return TRUE;
 }
